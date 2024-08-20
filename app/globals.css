@@ -2,32 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.scroll-rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  
+  .scroll-container {
+    display: flex;
+    gap: var(--spacing);
+    width: var(--container-width);
+    animation: scroll var(--scroll-duration) linear infinite;
   }
-}
+  
+  .scroll-container.reverse {
+    animation-direction: reverse;
+  }
+  
+  .scroll-item {
+    flex: none;
+  }
+  
+  /* Adding the fade effect to the edges */
+  .scroll-rows-container::before,
+  .scroll-rows-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Adjust width of the fade */
+    z-index: 1;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1 * var(--container-width) / 2));
+    }
+  }
+  
