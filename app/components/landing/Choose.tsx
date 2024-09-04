@@ -1,21 +1,32 @@
-
-import { HiOutlineArrowRightCircle } from "react-icons/hi2";
+import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
+import CustomButton from '../Button';
+import ScrollFade from '@/utils/SlideFade';
 
 export default function Choose() {
   return (
-    <section className="w-full relative overflow-hidden flex flex-col items-center justify-center py-10 px-5 md:px-10 box-border text-left text-4xl md:text-5xl lg:text-6xl text-gray font-h1-semibold animate-fade-in-up">
-      <div className="self-stretch flex flex-col items-start justify-start gap-3">
-        <div className="max-w-4xl relative leading-[140%] font-medium inline-block">
-          <p className="m-0">Choose efficiency,</p>
-          <p className="m-0">become our valued partner.</p>
+    <ScrollFade
+      className="w-full relative overflow-hidden flex flex-col items-center justify-center py-10 px-5 md:px-20 box-border
+        animate-fade-in-up"
+    >
+      <div className="self-stretch flex flex-col items-start justify-start gap-8">
+        <div className="relative leading-[180%] flex flex-col gap-10 font-semibold  text-left text-[4.5rem] md:text-5xl lg:text-6xl text-gray">
+          <ScrollFade className="m-0 text-[4.5rem] font-h1-semibold ">
+            Choose efficiency,
+          </ScrollFade>
+          <ScrollFade className="m-0 text-[4.5rem] font-h1-semibold ">
+            become our valued partner.
+          </ScrollFade>
         </div>
-		
-		<button className=' gap-2 w-full sm:w-[12%] flex justify-between sm:justify-center items-center relative p-4 text-center border rounded-full text-[1rem] text-foundation-rust-accent-rust-accent-500'>
-			Read more
-			<HiOutlineArrowRightCircle  className="size-12 sm:size-8" 
-			style={{ strokeWidth: 0.5 }} />
-		</button>
+        <ScrollFade>
+          <CustomButton
+            bgColor=""
+            borderColor="border-accent"
+            textColor="text-accent"
+            iconColor="text-accent"
+            buttonText="let’s talk"
+          />
+        </ScrollFade>
       </div>
-    </section>
+    </ScrollFade>
   );
 }

@@ -3,50 +3,62 @@
 @tailwind utilities;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 .scroll-rows-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.scroll-container {
+  display: flex;
+  gap: var(--spacing);
+  width: calc(var(--container-width) * 2);
+  animation: scroll var(--scroll-duration) linear infinite;
+}
+
+.scroll-container.reverse {
+  animation-direction: reverse;
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+}
+
+/* Adding the fade effect to the edges */
+.scroll-rows-container::before,
+.scroll-rows-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Adjust width of the fade */
+  z-index: 1;
+}
+
+.scroll-rows-container::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.scroll-rows-container::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .scroll-container {
-    display: flex;
-    gap: var(--spacing);
-    width: var(--container-width);
-    animation: scroll var(--scroll-duration) linear infinite;
+  100% {
+    transform: translateX(calc(-1 * var(--container-width)));
   }
-  
-  .scroll-container.reverse {
-    animation-direction: reverse;
-  }
-  
-  .scroll-item {
-    flex: none;
-  }
-  
-  /* Adding the fade effect to the edges */
-  .scroll-rows-container::before,
-  .scroll-rows-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px; /* Adjust width of the fade */
-    z-index: 1;
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-1 * var(--container-width) / 2));
-    }
-  }
-  
+}

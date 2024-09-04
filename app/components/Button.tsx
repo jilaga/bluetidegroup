@@ -1,85 +1,46 @@
+// components/CustomButton.tsx
 import React from 'react';
-import { IconType } from 'react-icons';
-import { HiChevronLeft } from "react-icons/hi";
-import { HiChevronRight } from "react-icons/hi";
+import { HiOutlineArrowRight } from 'react-icons/hi2';
 
-interface ButtonProps {
-  children: React.ReactNode;
-  type?: 'stroke' | 'fill' | 'plain';
-  size?: 'sm' | 'md' | 'lg';
-  icon?: IconType;
-  iconPosition?: 'left' | 'right';
-  className?: string;
+interface CustomButtonProps {
+  bgColor?: string;
+  borderColor?: string;
+  textColor?: string;
+  iconColor?: string;
+  buttonText?: string;
+  hideButton?: boolean;
+  swapIconPosition?: 'left' | 'right' | 'none';
 }
 
-const NewButton: React.FC<ButtonProps> = ({
-  children,
-  type = 'stroke',
-  size = 'md',
-  icon,
-  iconPosition = 'left',
-  className = '',
+const CustomButton: React.FC<CustomButtonProps> = ({
+  bgColor = 'bg-transparent',
+  borderColor = 'border-transparent',
+  textColor = 'text-black',
+  iconColor = 'text-black',
+  buttonText = 'Read more',
+  hideButton = false,
+  swapIconPosition = 'right', // default to showing the icon on the right
 }) => {
-  const classes = [
-    'inline-flex',
-    'items-center',
-    'justify-center',
-    'rounded-md',
-    'transition',
-    'ease-in-out',
-    'duration-200',
-  ];
+  if (hideButton) return null;
 
-  switch (type) {
-    case 'stroke':
-      classes.push('border', 'border-gray-300', 'bg-transparent');
-      break;
-    case 'fill':
-      classes.push('bg-blue-500', 'text-white');
-      break;
-    case 'plain':
-      classes.push('bg-transparent', 'text-gray-600');
-      break;
-    default:
-      break;
-  }
-
-  switch (size) {
-    case 'sm':
-      classes.push('px-2', 'py-1', 'text-xs');
-      break;
-    case 'md':
-      classes.push('px-4', 'py-2', 'text-sm');
-      break;
-    case 'lg':
-      classes.push('px-6', 'py-3', 'text-base');
-      break;
-    default:
-      break;
-  }
-
-  if (icon) {
-    classes.push('flex');
-  }
+  const renderIcon = () => (
+    <HiOutlineArrowRight
+      className={`size-6  ${iconColor}`}
+      style={{ strokeWidth: 1 }}
+    />
+  );
 
   return (
-    <button
-      type="button"
-      className={`${classes.join(' ')} ${className}`}
-    >
-      {icon && iconPosition === 'left' && (
-        <span className="mr-2">
-          <HiChevronLeft />
-        </span>
-      )}
-      {children}
-      {icon && iconPosition === 'right' && (
-        <span className="ml-2">
-          <HiChevronRight />
-        </span>
-      )}
-    </button>
+    <div>
+      <button
+        className={`gap-3 flex items-center relative px-4 sm:px-4 py-3 sm:py-4 text-center text-[1.25rem] leading-[140%] font-medium font-montserrat border rounded-full ${bgColor} ${borderColor} ${textColor}`}
+      >
+        {swapIconPosition === 'left' && renderIcon()}
+        <span>{buttonText}</span>
+        {swapIconPosition === 'right' && renderIcon()}
+      </button>
+    </div>
   );
 };
 
-export default NewButton;
+export default CustomButton;

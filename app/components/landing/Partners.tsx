@@ -1,6 +1,6 @@
-"use client";
-import React, { useEffect, useRef } from "react";
-import Image from "next/image";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 const Partners: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -14,20 +14,18 @@ const Partners: React.FC = () => {
         parseFloat(getComputedStyle(container).gap) *
           (container.children.length - 1);
 
-      container.style.setProperty("--container-width", `${containerWidth}px`);
+      container.style.setProperty('--container-width', `${containerWidth}px`);
     }
   }, []);
 
   const items = [
-    "/brands/Allison.png",
-    "/brands/CESL.png",
-    "/brands/Coat.png",
-    "/brands/desicon.png",
-    "/brands/Exon.png",
-    "/brands/Hydrodive.png",
-    "/brands/Kreuz.png",
-    "/brands/petrostuff.png",
-    "/brands/TElogo.png",
+    '/partners/partners-1.png',
+    '/partners/partners-2.png',
+    '/partners/partners-3.png',
+    '/partners/partners-4.png',
+    '/partners/partners-5.png',
+    '/partners/partners-6.png',
+    '/partners/partners.png',
   ];
 
   return (
@@ -39,21 +37,23 @@ const Partners: React.FC = () => {
         <div
           className="scroll-container reverse"
           ref={scrollContainerRef}
-          style={{
-            "--spacing": "32px",
-            "--scroll-duration": "70s",
-            "--container-width": "auto",
-            "--height": "148px",
-          } as React.CSSProperties}
+          style={
+            {
+              '--spacing': '8px',
+              '--scroll-duration': '70s',
+              '--container-width': 'auto',
+              '--height': '148px',
+            } as React.CSSProperties
+          }
         >
           {items.concat(items).map((src, idx) => (
-            <div key={idx} className="scroll-item py-4">
-              <Image 
-                src={src} 
-                alt={`Brand ${idx + 1}`} 
-                width={400} 
-                height={148} 
-                objectFit="contain"
+            <div key={idx} className="scroll-item  ">
+              <Image
+                src={src}
+                alt={`Brand ${idx + 1}`}
+                width={400}
+                height={148}
+                className="w-[60%] sm:w-[90%]  gap-2 sm:gam-2"
               />
             </div>
           ))}

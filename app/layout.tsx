@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import {twMerge} from "tailwind-merge";
+import type { Metadata } from 'next';
+import { Montserrat } from 'next/font/google';
+import './globals.css';
+import { twMerge } from 'tailwind-merge';
 import Navbar from './components/Header';
-import Footer from "./components/Footer";
+import Footer from './components/Footer';
+import Choose from './components/landing/Choose';
 
-
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Bluetide Group",
-  description: "Well... no Meta for you yet",
+  title: 'Bluetide Group',
+  description:
+    'Delivering superior solutions for Underwater Hull Cleaning, Diving and ROV Services',
 };
 
 export default function RootLayout({
@@ -19,12 +20,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="mx-auto w-full max-w-[1440px] justify-center items-center ">
-      <Navbar />
-      <body className= {twMerge(inter.className, "antialiased w-full")}>
+    <html lang="en" className=" ">
+      <body
+        className={twMerge(
+          montserrat.className,
+          'flex flex-col w-full justify-center items-center  '
+        )}
+      >
+        <Navbar />
         {children}
+        <Choose />
+        <Footer />
       </body>
-      <Footer />
     </html>
   );
-};
+}

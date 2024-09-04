@@ -1,9 +1,9 @@
-"use client"
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NextPage } from 'next';
 import { faqData } from './index'; // Assuming you have this file with the FAQ data
-import { HiChevronUp, HiChevronDown } from "react-icons/hi2";
+import { HiChevronUp, HiChevronDown } from 'react-icons/hi2';
 
 interface FAQItemProps {
   question: string;
@@ -12,7 +12,12 @@ interface FAQItemProps {
   onClick: () => void;
 }
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) => (
+const FAQItem: React.FC<FAQItemProps> = ({
+  question,
+  answer,
+  isOpen,
+  onClick,
+}) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -27,15 +32,18 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
         {question}
       </span>
       {isOpen ? (
-        <div className=' flex justify-center items-center size-8 sm:size-12 text-foundation-grey-grey-400 border rounded-3xl'>
-          <HiChevronUp className="size-4 sm:size-6 " 
-            style={{ strokeWidth: 0.25 }} />
+        <div className=" flex justify-center items-center size-8 sm:size-12 text-foundation-grey-grey-400 border rounded-3xl">
+          <HiChevronUp
+            className="size-4 sm:size-6 "
+            style={{ strokeWidth: 0.25 }}
+          />
         </div>
-            
-          ) : (
-        <div className=' flex justify-center items-center size-8 sm:size-12 text-foundation-grey-grey-400 border rounded-3xl'>
-          <HiChevronDown className="size-4 sm:size-6 " 
-            style={{ strokeWidth: 0.25 }}/>
+      ) : (
+        <div className=" flex justify-center items-center size-8 sm:size-12 text-foundation-grey-grey-400 border rounded-3xl">
+          <HiChevronDown
+            className="size-4 sm:size-6 "
+            style={{ strokeWidth: 0.25 }}
+          />
         </div>
       )}
     </button>
@@ -45,7 +53,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: 'auto', opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.2}}
+          transition={{ duration: 0.2 }}
           className="px-4 pb-4 sm:px-6 sm:pb-6"
         >
           <p className="text-[1rem]  leading-[150%] text-foundation-grey-grey-400">

@@ -1,9 +1,9 @@
-import clsx from "clsx";
-import { ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import clsx from 'clsx';
+import { ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export const cn = (...classes: ClassValue[]) => {
-	return twMerge(clsx(...classes));
+  return twMerge(clsx(...classes));
 };
 
 /**
@@ -12,7 +12,7 @@ export const cn = (...classes: ClassValue[]) => {
  * @returns A unique ID when it invokes.
  */
 export const generateId = () => {
-	return Math.random().toString(36).substring(2, 9);
+  return Math.random().toString(36).substring(2, 9);
 };
 
 /**
@@ -21,8 +21,8 @@ export const generateId = () => {
  * @returns A encoded string .
  */
 export const encryptString = (str: string): string => {
-	const buffer = Buffer.from(str);
-	return buffer.toString("base64");
+  const buffer = Buffer.from(str);
+  return buffer.toString('base64');
 };
 
 /**
@@ -32,8 +32,8 @@ export const encryptString = (str: string): string => {
  */
 
 export const decryptString = (str: string): string => {
-	const buffer = Buffer.from(str, "base64");
-	return buffer.toString();
+  const buffer = Buffer.from(str, 'base64');
+  return buffer.toString();
 };
 
 /**
@@ -44,15 +44,15 @@ export const decryptString = (str: string): string => {
  * @returns {string}
  */
 export const shrinkString = ({
-	str,
-	len,
+  str,
+  len,
 }: {
-	str: string;
-	len: number;
+  str: string;
+  len: number;
 }): string => {
-	if (!str) return "";
-	if (str.length > len) {
-		return str.substring(0, len) + "...";
-	}
-	return str;
+  if (!str) return '';
+  if (str.length > len) {
+    return str.substring(0, len) + '...';
+  }
+  return str;
 };
