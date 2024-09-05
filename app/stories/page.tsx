@@ -6,7 +6,7 @@ import ArticleCard, { ArticleCardProps } from './articleCard';
 async function page() {
   const url = path.join('./', 'app/stories/articles.json');
   const file = await fs.readFile(url, 'utf-8');
-  const articles: (ArticleCardProps & { id: string })[] = JSON.parse(file);
+  const articles: ArticleCardProps[] = JSON.parse(file);
 
   return (
     <div className="w-full p-4 pt-36 max-w-[1100px] mx-auto">

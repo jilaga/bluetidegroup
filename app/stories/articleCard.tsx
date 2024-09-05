@@ -1,11 +1,12 @@
 import Image from 'next/image';
-import { twMerge } from 'tailwind-merge';
+import Link from 'next/link';
 
 export interface ArticleCardProps {
   title: string;
   tags: string[];
   readDuration: string;
   preview: string;
+  id: string;
 }
 
 const ArticleCard = function ({
@@ -13,6 +14,7 @@ const ArticleCard = function ({
   tags,
   readDuration,
   preview,
+  id,
 }: ArticleCardProps) {
   return (
     <div className="my-4 border-b border-b-[#B2B2B2] pb-6 mt-8 max-w-[385px] min-[720px]:max-w-[unset] mx-auto">
@@ -48,16 +50,19 @@ const ArticleCard = function ({
       <p className="text-lg font-semibold mt-4">{title}</p>
       <div>
         <p className="whitespace-pre-line text-[#1E1E1E] mt-4">{preview}</p>
-        <button className="text-[#FF9954] border-[#FF9954] border outline-none flex items-center gap-3 px-5 py-3 rounded-[100vh] mt-4 cursor-pointer">
+        <Link
+          href={`/stories/${id}`}
+          className="text-[#FF9954] border-[#FF9954] border outline-none flex items-center gap-3 px-5 py-3 rounded-[100vh] mt-4 cursor-pointer w-max"
+        >
           Read more
           <Image src="/stories/arrow.svg" alt="arrow" width={30} height={30} />
-        </button>
+        </Link>
       </div>
     </div>
   );
 };
 
-function getRandomHexColor() {
+export function getRandomHexColor() {
   // Generate a random number between 0 and 16777215 (decimal equivalent of #FFFFFF)
   let randomNum = Math.round(Math.random() * 2) + 1;
 
