@@ -14,7 +14,7 @@ export default function MobileNav() {
 
   return (
     <div
-      className={`p-4  top-0 left-0 fixed flex flex-col items-center h-full jutify-between lg:hidden w-full z-[10000] ${isMenuOpen ? 'bg-foundation-primary-blue-primary-blue-50 ' : ''}`}
+      className={`p-4  top-0 left-0 fixed flex flex-col items-center h-max jutify-between lg:hidden w-full z-[10000] ${isMenuOpen ? 'bg-foundation-primary-blue-primary-blue-50 h-full' : ''}`}
     >
       <div
         className={`flex w-full justify-between items-center  p-5   ${!isMenuOpen ? '[backdrop-filter:blur(320px)] rounded-full shadow border border-white' : ''}`}
