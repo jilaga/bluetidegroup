@@ -10,16 +10,7 @@ import ScrollFade from '@/utils/SlideFade.jsx';
 export default function Newsec() {
   return (
     <section className="w-full relative h-[100dvh] flex flex-col items-center justify-center px-[1rem] md:px-[3rem] sm:px-[5rem] pb-[20dvh] sm:pb-[5rem]">
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1, // Place behind all content
-        }}
-      >
+      <div className="absolute inset-[0_auto_auto_0] w-full h-full -z-[1]">
         <Image
           src={HeroImg}
           alt="Hero background"
@@ -29,7 +20,7 @@ export default function Newsec() {
           className="h-screen w-full z-1 "
         />
       </div>
-      <div className="w-full h-full flex flex-col ">
+      <div className="w-full h-full flex flex-col max-w-[1100px] pt-8">
         <ScrollFade
           threshold={0.2}
           duration={0.7}
@@ -41,7 +32,7 @@ export default function Newsec() {
           </h1>
           <div className="w-full flex justify-start sm:justify-end items-center pb-[40px] ">
             <div className="flex flex-col justify-center items-start sm:items-start w-[24rem] md:w-[400px] gap-4 ">
-              <b className="w-[270px] pl-1 text-[1rem] leading-normal tracking-wide font-montserrat text-foundation-rust-accent-rust-accent-50 text-left">
+              <p className="w-[270px] pl-1 text-[1rem] leading-normal tracking-wide text-foundation-rust-accent-rust-accent-50 text-left font-semibold">
                 Delivering superior solutions for
                 <span className="text-[#ec9762]">
                   {' '}
@@ -49,7 +40,7 @@ export default function Newsec() {
                 </span>{' '}
                 and
                 <span className="text-[#ec9762]"> ROV Services.</span>
-              </b>
+              </p>
               <button className="gap-2 hidden sm:flex flex-row items-center justify-center box-border text-left text-[1rem] text-linen ">
                 Explore more
                 <HiOutlineArrowDownCircle className="w-6 h-6" />
