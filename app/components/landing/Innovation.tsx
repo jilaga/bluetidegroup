@@ -1,36 +1,45 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
+import { motion, useTransform, useScroll } from 'framer-motion';
 
 export default function Innovation() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['end end', 'start start'],
+  });
+  const x = useTransform(() => `-${scrollYProgress.get() * 200}%`);
+
   return (
-    <div className="w-full relative overflow-hidden flex flex-row items-center justify-start gap-[5rem] text-center text-[3.25rem] text-foundation-rust-accent-rust-accent-200 font-h2">
-      <div className="w-[90rem] bg-gray h-[48.75rem] overflow-hidden shrink-0 flex flex-col items-center justify-center py-[12.5rem] px-[4rem] box-border">
-        <div className="flex flex-col items-center justify-start gap-[0.5rem]">
-          <div className="self-stretch relative leading-[140%]">
-            To our clients and partners
+    <div ref={containerRef} className="grid w-full h-[300vh] ">
+      <div className="sticky top-0 flex items-center h-screen overflow-hidden">
+        <motion.div className="flex" style={{ x }}>
+          <div className="bg-white p-4 grid min-h-80 place-content-center text-center font-medium w-full shrink-0">
+            <p className="text-[#FFB98A] text-xl">
+              To our clients and partners
+            </p>
+            <p className="text-[#FF6700] text-2xl">
+              we offer COMPETENCE & INTEGRITY
+            </p>
           </div>
-          <div className="self-stretch relative text-[4.5rem] leading-[140%] font-semibold text-foundation-rust-accent-rust-accent-500">{` we offer COMPETENCE & INTEGRITY`}</div>
-        </div>
-      </div>
-      <div className="w-[90rem] bg-gray h-[48.75rem] overflow-hidden shrink-0 flex flex-col items-center justify-center py-[12.5rem] px-[4rem] box-border">
-        <div className="flex flex-col items-center justify-start gap-[0.5rem]">
-          <div className="self-stretch relative leading-[140%]">
-            a section that slides out its content
+          <div className="bg-[#463D12] p-4 grid min-h-80 place-content-center text-center font-medium w-full shrink-0">
+            <p className="text-[#FFB98A] text-xl">
+              To our clients and partners
+            </p>
+            <p className="text-[#FF6700] text-2xl">
+              we offer COMPETENCE & INTEGRITY
+            </p>
           </div>
-          <div className="self-stretch relative text-[4.5rem] leading-[140%] font-semibold text-foundation-rust-accent-rust-accent-500">
-            from right to left
+          <div className="bg-gray p-4 grid min-h-80 place-content-center text-center font-medium w-full shrink-0">
+            <p className="text-[#FFB98A] text-xl">
+              To our clients and partners
+            </p>
+            <p className="text-[#FF6700] text-2xl">
+              we offer COMPETENCE & INTEGRITY
+            </p>
           </div>
-        </div>
-      </div>
-      <div className="w-[90rem] bg-gray h-[48.75rem] overflow-hidden shrink-0 flex flex-col items-center justify-center py-[12.5rem] px-[4rem] box-border">
-        <div className="flex flex-col items-center justify-start gap-[0.5rem]">
-          <div className="self-stretch relative leading-[140%]">
-            avoid overflows
-          </div>
-          <div className="self-stretch relative text-[4.5rem] leading-[140%] font-semibold text-foundation-rust-accent-rust-accent-500">{`would make the whole screen shift `}</div>
-          <div className="self-stretch relative leading-[140%]">
-            from left to right
-          </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
