@@ -8,7 +8,7 @@ function Company() {
     <section className="w-full flex justify-center items-center py-20 px-4 sm:px-20 ">
       <ScrollFade className="w-full flex flex-col sm:flex-row gap-10 sm:gap-8 max-w-[1100px]">
         <div className="">
-          <p className="w-40 text-nowrap text-[0.875rem] uppercase font-medium font-clash-display text-foundation-grey-grey-100 text-left ">
+          <p className="w-40 text-nowrap text-[0.875rem] uppercase font-medium font-clash text-foundation-grey-grey-100 text-left ">
             Our Company
           </p>
         </div>

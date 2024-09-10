@@ -67,13 +67,13 @@ const config: Config = {
       spacing: {},
       fontFamily: {
         'h4-semibold': 'Montserrat',
-        'title-1-semibold': 'Clash Display',
-        'h1-semibold': "'Clash Display'",
         'body-2': 'Montserrat',
         'caption-1-semibold': 'Clash Display',
         'text-medium-normal': 'Roboto',
-        satoshi: 'Satoshi',
+        // satoshi: 'Satoshi',
         'cute-font': "'Cute Font'",
+        satoshi: ['var(--font-satoshi)'],
+        clash: ['var(--font-clash)'],
       },
       borderRadius: {
         '80xl': '99px',

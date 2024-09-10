@@ -1,12 +1,65 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
-import './globals.css';
+import localFont from 'next/font/local';
 import { twMerge } from 'tailwind-merge';
 import Navbar from './components/Header';
 import Footer from './components/Footer';
 import Choose from './components/landing/Choose';
+import './globals.css';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
+
+const clash = localFont({
+  variable: '--font-clash',
+  src: [
+    {
+      path: './fonts/Clash/ClashDisplay-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Clash/ClashDisplay-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Clash/ClashDisplay-Semibold.otf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Clash/ClashDisplay-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+});
+
+const satoshi = localFont({
+  variable: '--font-satoshi',
+  src: [
+    {
+      path: './fonts/Satoshi/Satoshi-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Satoshi/Satoshi-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Satoshi/Satoshi-Black.otf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Satoshi/Satoshi-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: 'Bluetide Group',
@@ -24,6 +77,8 @@ export default function RootLayout({
       <body
         className={twMerge(
           montserrat.className,
+          clash.variable,
+          satoshi.variable,
           'flex flex-col w-full justify-center items-center  '
         )}
       >
