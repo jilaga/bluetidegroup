@@ -41,7 +41,7 @@ function Company() {
               />
             </div>
             <Image
-              src="/Company.png"
+              src="/company.png"
               alt="Hero background"
               width={360}
               height={300}
