@@ -9,11 +9,11 @@ export default function Choose() {
         animate-fade-in-up"
     >
       <div className="self-stretch flex flex-col items-start justify-start gap-8">
-        <div className="relative leading-[180%] flex flex-col gap-10 font-semibold  text-left text-[4.5rem] md:text-5xl lg:text-6xl text-gray">
-          <ScrollFade className="m-0 text-[4.5rem] font-h1-semibold ">
+        <div className="relative flex flex-col gap-2 sm:gap-5 lg:gap-7 font-semibold text-left text-gray">
+          <ScrollFade className="m-0 text-xl sm:text-5xl lg:text-7xl">
             Choose efficiency,
           </ScrollFade>
-          <ScrollFade className="m-0 text-[4.5rem] font-h1-semibold ">
+          <ScrollFade className="m-0 text-xl sm:text-5xl lg:text-7xl">
             become our valued partner.
           </ScrollFade>
         </div>
@@ -23,7 +23,7 @@ export default function Choose() {
             borderColor="border-accent"
             textColor="text-accent"
             iconColor="text-accent"
-            buttonText="let’s talk"
+            buttonText="Let's Talk"
           />
         </ScrollFade>
       </div>
