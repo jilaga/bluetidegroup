@@ -14,7 +14,7 @@ export default function Innovation() {
   return (
     <div ref={containerRef} className="grid w-full h-[300vh] ">
       <div className="sticky top-0 flex items-center h-screen overflow-hidden">
-        <motion.div className="flex" style={{ x }}>
+        <motion.div className="flex w-full" style={{ x }}>
           <div className="bg-white p-4 grid min-h-80 place-content-center text-center font-medium w-full shrink-0">
             <p className="text-[#FFB98A] text-xl">
               To our clients and partners
