@@ -4,19 +4,17 @@ import { HiOutlineArrowUpCircle } from 'react-icons/hi2';
 
 const Footer: NextPage = () => {
   return (
-    <footer className=" mx-auto w-full relative bg-foundation-rust-accent-rust-accent-50 overflow-hidden flex flex-col items-start justify-end py-[2rem] sm:py-[7.5rem] px-[1rem] sm:px-[5rem] box-border text-left text-[1rem] text-foundation-grey-grey-700 font-clash-display">
-      <div className=" w-full flex flex-col sm:flex-row items-start justify-end gap-[2.5rem]">
+    <footer className=" mx-auto w-full relative bg-[#E6F1FD] overflow-hidden flex flex-col items-start justify-end py-[2rem] sm:py-[7.5rem] px-[1rem] sm:px-[5rem] box-border text-left text-[1rem] text-foundation-grey-grey-700">
+      <div className=" w-full flex flex-col sm:flex-row items-start justify-between gap-[2.5rem]">
         <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
           <div className="relative text-[1.5rem] leading-[150%] font-semibold">
             Call
           </div>
           <div className="flex flex-col gap-[0.5rem] sm:gap-[0.8rem]">
             <div className="relative leading-[150%] inline-block">
-              (NG) +234 906 376 6251 
+              (NG) +234 906 376 6251
             </div>
-            <div className="relative leading-[150%]">
-              (UK) +44 738 0341 592 
-            </div>
+            <div className="relative leading-[150%]">(UK) +44 738 0341 592</div>
           </div>
         </div>
         <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
@@ -30,11 +28,11 @@ const Footer: NextPage = () => {
             <p className="m-0">Nigeria</p>
           </div>
           <div className="w-[11.313rem] relative leading-[150%] font-medium hidden">
-            (NG)+2349063766251 
+            (NG)+2349063766251
           </div>
         </div>
         <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem] ">
-          <div className="relative leading-[150%] font-semibold">
+          <div className="relative text-[1.5rem] leading-[150%] font-semibold">
             LAGOS OFFICE
           </div>
           <div className="relative text-[1rem] leading-[150%]">
@@ -60,11 +58,14 @@ const Footer: NextPage = () => {
         </div>
       </div>
       <div className="flex flex-col items-start justify-start gap-[2.25rem] text-[5rem] sm:text-[18.599rem] text-darkslategray">
-        <div className="relative leading-[150%] font-semibold">
-          <span>Blue</span>
-          <span className="text-gray">tide.</span>
-        </div>
-        <div className=" border-foundation-white-white-900 border-t-[1px] border-solid flex flex-col-reverse sm:flex-row items-center justify-center w-full gap-5 pt-[3rem] sm:pt-[2rem] px-[2rem] text-[1rem] text-foundation-grey-grey-500 font-body-2">
+        <Image
+          src="/bluetide-footer.svg"
+          alt="bluetide"
+          width={1280}
+          height={206}
+          className="w-full mt-8 mb-4"
+        />
+        <div className=" border-foundation-white-white-900 border-t-[1px] border-solid flex flex-col-reverse sm:flex-row items-center justify-between w-full gap-5 pt-[3rem] sm:pt-[2rem] px-[2rem] text-[1rem] text-foundation-grey-grey-500 font-body-2">
           <div className="sm:w-1/3 flex flex-row items-center justify-start gap-[0.5rem] ">
             <HiOutlineArrowUpCircle
               className="size-4 sm:size-6"
