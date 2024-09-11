@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 'use client';
+=======
+"use client";
+>>>>>>> Stashed changes
 import React, { ComponentPropsWithoutRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
