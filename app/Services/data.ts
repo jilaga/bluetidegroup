@@ -25,13 +25,14 @@ export const servicesData: ServiceData[] = [
     date: new Date('2024-09-01'),
     imgUrl2: '/services/Multibeam2.png',
     imgUrl3: '/services/Multibeam3.png',
-    intro: 'Multibeam sonars are essential tools in oceanography.',
+    intro:
+      'Multibeam sonars are essential tools in oceanography and marine research.',
     paragraph:
-      'They provide accurate and high-resolution mapping of the seabed.',
+      'Multibeam sonar technology uses multiple sound beams to map the seabed in high detail. This method allows for the creation of precise bathymetric maps, which are critical for marine exploration, underwater construction, and resource management.',
     paragraph2:
-      'The technology is widely used in marine research and exploration.',
+      'In addition to mapping, multibeam sonars are used for habitat studies, pipeline inspections, and archaeological surveys. Their versatility and accuracy make them indispensable tools in both scientific and industrial applications.',
     paragraph3:
-      'Its applications extend to underwater navigation and object detection.',
+      'With advancements in sonar technology, modern systems can now provide real-time, high-resolution imaging, enhancing the capabilities of marine researchers and engineers around the world.',
   },
   {
     id: '2',
@@ -44,13 +45,14 @@ export const servicesData: ServiceData[] = [
     date: new Date('2024-09-01'),
     imgUrl2: '/services/serv1.png',
     imgUrl3: '/services/serv1.png',
-    intro: 'ROVs are a crucial part of subsea operations.',
+    intro:
+      'ROVs are pivotal in subsea operations, offering precise control and flexibility.',
     paragraph:
-      'They allow for precise control and monitoring in underwater environments.',
+      'Remotely Operated Vehicles (ROVs) are used for a wide range of underwater tasks, including inspections, maintenance, and repairs. Their ability to operate in harsh underwater environments makes them crucial for industries such as oil and gas, marine research, and offshore wind energy.',
     paragraph2:
-      'ROVs are used in various industries, from oil and gas to marine research.',
+      'Equipped with cameras, sensors, and manipulators, ROVs provide operators with real-time feedback and the ability to interact with objects in deep-sea environments, making them invaluable in tasks that require human intervention without direct exposure to dangerous conditions.',
     paragraph3:
-      'These vehicles can be equipped with cameras, sensors, and tools for diverse tasks.',
+      'Recent developments in ROV technology have led to greater autonomy and enhanced operational depth, allowing them to carry out complex tasks in challenging underwater environments.',
   },
   {
     id: '3',
@@ -60,14 +62,16 @@ export const servicesData: ServiceData[] = [
     link: '/services/serv3.png',
     author: 'Alice Johnson',
     date: new Date('2024-09-01'),
-    imgUrl2: '/services/serv2.png',
+    imgUrl2: '/services/Mesotec.png',
     imgUrl3: '/services/serv2.png',
-    intro: 'Mesotec provides cutting-edge technology for subsea measurements.',
+    intro:
+      'Mesotec provides cutting-edge solutions for underwater measurement and analysis.',
     paragraph:
-      'It ensures accurate data collection in challenging underwater environments.',
-    paragraph2: 'Mesotec tools are designed for durability and reliability.',
+      'Mesotec devices are designed for precise underwater measurement, providing critical data for marine research, construction, and environmental monitoring. These tools measure various parameters such as pressure, temperature, and salinity, giving scientists and engineers the ability to monitor and manage underwater conditions accurately.',
+    paragraph2:
+      'These systems are used in both shallow and deep-water applications, supporting projects ranging from habitat assessments to underwater infrastructure monitoring. The accuracy and durability of Mesotec tools make them a go-to choice for complex marine operations.',
     paragraph3:
-      'They are used in construction, inspection, and research projects worldwide.',
+      'With advanced features like real-time data collection and remote monitoring, Mesotec tools ensure efficiency and reliability in critical underwater missions.',
   },
   {
     id: '4',
@@ -80,13 +84,13 @@ export const servicesData: ServiceData[] = [
     imgUrl2: '/service/serv1.png',
     imgUrl3: '/service/serv1.png',
     intro:
-      'Cavit Blasters are essential for maintaining subsea infrastructure.',
+      'Cavit Blasters offer effective solutions for marine cleaning and maintenance.',
     paragraph:
-      'They use cavitation technology to effectively remove marine fouling.',
+      'Cavit Blasters use high-pressure cavitation to remove marine growth, biofouling, and other unwanted debris from underwater surfaces. These systems are particularly effective in cleaning ship hulls, pipelines, and offshore platforms, improving the efficiency and lifespan of underwater equipment.',
     paragraph2:
-      'These tools are essential in maintaining the performance and lifespan of subsea equipment.',
+      'The high-pressure water jets used in Cavit Blasters can reach areas that are difficult for traditional cleaning methods, ensuring thorough removal of contaminants without damaging the underlying surface.',
     paragraph3:
-      'They are widely used in the oil and gas industry, as well as in marine construction.',
+      'Cavit Blasters are a preferred solution in industries such as shipping, oil and gas, and marine research, where maintaining clean underwater surfaces is essential for optimal performance and safety.',
   },
   {
     id: '5',
@@ -99,13 +103,13 @@ export const servicesData: ServiceData[] = [
     imgUrl2: '/service/serv3.png',
     imgUrl3: '/service/serv3.png',
     intro:
-      'AUVs are unmanned, self-propelled vehicles used for underwater missions.',
+      'AUVs are key players in autonomous underwater exploration and data gathering.',
     paragraph:
-      'They operate independently and are used for deep-sea exploration.',
+      'Autonomous Underwater Vehicles (AUVs) are designed to operate independently, gathering data and performing tasks such as mapping, surveying, and environmental monitoring. These vehicles can operate in areas where it is difficult or dangerous for human divers to reach.',
     paragraph2:
-      'AUVs collect data in environments that are difficult or dangerous for humans to access.',
+      'AUVs are commonly used in applications such as seabed mapping, resource exploration, and oceanographic studies. They are equipped with various sensors, cameras, and sonar systems to collect detailed data during their missions.',
     paragraph3:
-      'They are instrumental in oceanographic research and underwater surveillance.',
+      'With the rise of autonomous technology, AUVs are becoming more efficient, capable of longer missions, deeper dives, and more complex tasks, making them invaluable tools in the future of ocean exploration.',
   },
   //   {
   //     id: '6',

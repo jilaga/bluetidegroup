@@ -54,7 +54,8 @@ const Footer: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-start justify-start gap-[1.25rem] md:gap-[2.25rem] text-[5rem] sm:text-[18.599rem] text-darkslategray">
+      <div className=" flex flex-col items-start justify-start gap-[1.25rem] md:gap-[2.25rem] text-[5rem] sm:text-[18.599rem] text-darkslategray">
+
         <Image
           src="/bluetide-footer.svg"
           alt="bluetide"
