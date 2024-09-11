@@ -5,7 +5,7 @@ import { HiOutlineArrowUpCircle } from 'react-icons/hi2';
 const Footer: NextPage = () => {
   return (
     <footer className=" mx-auto w-full relative bg-[#E6F1FD] overflow-hidden flex flex-col items-start justify-end py-[2rem] sm:py-[7.5rem] px-[1rem] sm:px-[5rem] box-border text-left text-[1rem] text-foundation-grey-grey-700">
-      <div className=" w-full flex flex-col sm:flex-row items-start justify-between gap-[2.5rem]">
+      <div className=" w-full flex flex-col sm:flex-row items-start justify-end gap-[2.5rem]">
         <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
           <div className="relative text-[1.5rem] leading-[150%] font-semibold">
             Call

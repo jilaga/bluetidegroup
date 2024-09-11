@@ -1,6 +1,7 @@
+'use client';
 import React, { ComponentPropsWithoutRef } from 'react';
 import Image from 'next/image';
-import * as motion from 'framer-motion/client';
+import { motion } from 'framer-motion';
 
 const Partners: React.FC = () => {
   const list = [
