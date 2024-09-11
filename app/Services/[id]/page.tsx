@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import ScrollFade from '@/utils/SlideFade';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { ServiceData, servicesData } from '../data';
 import { notFound } from 'next/navigation';
+import ScrollFade from '@/utils/SlideFade';
 
 type ServicePageProps = {
   params: {
