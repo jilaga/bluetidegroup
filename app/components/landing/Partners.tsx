@@ -1,11 +1,7 @@
-<<<<<<< Updated upstream
 'use client';
-=======
-"use client";
->>>>>>> Stashed changes
 import React, { ComponentPropsWithoutRef } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import * as motion from 'framer-motion/client';
 
 const Partners: React.FC = () => {
   const list = [

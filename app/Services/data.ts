@@ -62,7 +62,7 @@ export const servicesData: ServiceData[] = [
     link: '/services/serv3.png',
     author: 'Alice Johnson',
     date: new Date('2024-09-01'),
-    imgUrl2: '/services/serv2.png',
+    imgUrl2: '/services/Mesotec.png',
     imgUrl3: '/services/serv2.png',
     intro:
       'Mesotec provides cutting-edge solutions for underwater measurement and analysis.',
