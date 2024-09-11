@@ -16,7 +16,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   reverse = false,
 }) => (
   <div
-    className={`flex w-full flex-col sm:flex-row items-start justify-end  p-2 lg:p-10  ${reverse ? 'sm:flex-row-reverse' : ''} mb-10 sm:mb-0`}
+    className={`flex w-full flex-col sm:flex-row items-start justify-end  p-2  ${reverse ? 'sm:flex-row-reverse' : ''} mb-10 sm:mb-0`}
   >
     <div className="image w-full sm:w-1/2">
       <Image
@@ -46,14 +46,14 @@ export function Team() {
       threshold={0.2}
       duration={0.2}
       delay={0.2}
-      className="w-full relative flex gap-4 flex-col lg:flex-row items-center justify-center lg:items-start lg:justify-start py-10 lg:py-30 px-6 lg:px-20 text-foundation-grey-grey-100 font-title-1-semibold"
+      className="w-full relative flex gap-4 flex-col items-center justify-center  py-10 lg:py-30 px-6 text-foundation-grey-grey-100 font-title-1-semibold"
     >
-      <div className="w-full flex text-center py-2 flex-col lg:w-1/4 mb-10 sm:mb-0">
+      <div className="w-full flex text-center py-2 flex-col mb-10 sm:mb-0">
         <h2 className="text-sm sm:text-xl tracking-wider uppercase font-medium">
           our core team
         </h2>
       </div>
-      <div className="w-full lg:w-1/2">
+      <div className="w-full max-w-[1000px] mx-auto">
         <TeamMember
           name="Ifeanyi Enyia"
           position="Founder and CEO"
