@@ -84,7 +84,7 @@ const FAQ: NextPage = () => {
           <p className="tracking-[0.03em] leading-[140%] uppercase font-medium">
             FAQ
           </p>
-          <p className=" text-2xl sm:text-4xl leading-[140%] font-semibold font-h4-semibold text-foundation-grey-grey-400">
+          <p className=" text-2xl sm:text-4xl leading-[140%] font-semibold font-clash text-foundation-grey-grey-400">
             Find answers to common questions about us
           </p>
         </div>

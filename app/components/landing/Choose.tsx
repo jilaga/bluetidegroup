@@ -10,11 +10,8 @@ export default function Choose() {
     >
       <div className="self-stretch flex flex-col items-start justify-start gap-8">
         <div className="relative flex flex-col gap-2 sm:gap-5 lg:gap-7 font-semibold text-left text-gray">
-          <ScrollFade className="m-0 text-xl sm:text-5xl lg:text-7xl">
-            Choose efficiency,
-          </ScrollFade>
-          <ScrollFade className="m-0 text-xl sm:text-5xl lg:text-7xl">
-            become our valued partner.
+          <ScrollFade className="m-0 font-clash leading-[2] text-xl sm:text-5xl lg:text-7xl">
+            Let&apos;s support your operations with expert care and precision.
           </ScrollFade>
         </div>
         <ScrollFade>

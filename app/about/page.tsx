@@ -2,7 +2,6 @@ import React from 'react';
 import Leading from '../components/about/Leading';
 import { Text } from '../components/about/Text';
 import { Team } from '../components/about/Team';
-import Awards from '../components/about/Awards';
 import HeroSec from '../components/about/hero/page';
 
 export default function page() {
@@ -12,7 +11,6 @@ export default function page() {
       <Leading />
       <Text />
       <Team />
-      <Awards />
     </main>
   );
 }
