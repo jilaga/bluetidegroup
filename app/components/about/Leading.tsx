@@ -25,7 +25,7 @@ export default function Leading() {
           delay={0.2}
           className="mt-10 sm:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 sm:gap-40"
         >
-          <h2 className="text-[1.25rem] sm:text-4xl body-2 font-semibold leading-tight sm:w-1/2 text-foundation-grey-grey-500">
+          <h2 className="text-[1.25rem] sm:text-4xl body-2 font-semibold leading-tight sm:w-1/2 text-[#1E1E1E]">
             we are a leading subsea support company committed to providing
             unique top-tier solutions and equipment rentals for the offshore
             industry.
@@ -35,7 +35,7 @@ export default function Leading() {
             threshold={0.1}
             duration={0.2}
             delay={0.2}
-            className="text-[1.25rem] sm:text-xl leading-relaxed text-foundation-grey-grey-500 sm:w-1/2"
+            className="text-[1.25rem] sm:text-xl leading-relaxed text-[#1E1E1E] sm:w-1/2"
           >
             <p className="mb-4">
               With a strong foothold in Nigeria and a strategic focus on West
