@@ -48,7 +48,7 @@ export default function OurServicesPage() {
   return (
     <div
       ref={containerRef}
-      className="relative flex top-4 flex-col justify-start items-center text-left text-[2.25rem] text-accent font-h5-semibold"
+      className="relative flex top-4 flex-col justify-start items-center text-left text-[2.25rem] text-accent font-clash"
     >
       <div className="sticky top-0 w-full h-[100vh] min-h-screen">
         <motion.div

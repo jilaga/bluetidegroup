@@ -16,7 +16,7 @@ export default function Home() {
       <Partners />
       <OurServicesPage />
       <Innovation />
-      {/* <Why /> */}
+      <Why />
       <Brands />
       <FAQ />
     </main>
