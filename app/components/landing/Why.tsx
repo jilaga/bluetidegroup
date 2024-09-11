@@ -42,7 +42,7 @@ const boxes = [
 ];
 function Why() {
   return (
-    <div className="w-full p-4 text-[#1E1E1E] max-w-[500px] mx-auto md:flex md:max-w-[1100px] gap-4">
+    <div className="w-full p-4 text-[#1E1E1E] max-w-[500px] mx-auto md:flex md:max-w-[1200px] gap-4">
       <div className="md:w-1/3">
         <div className="bg-[#FF6700] p-4 w-full text-white min-h-80 grid place-content-center rounded-3xl text-5xl text-center">
           <p>Why</p>

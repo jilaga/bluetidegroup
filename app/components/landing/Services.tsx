@@ -14,14 +14,14 @@ const ServiceCard: React.FC<{
   return (
     <ResponsiveScrollSwipe delay={delay / 1000}>
       <motion.div
-        className="rounded-2xl min-h-[20rem] sm:min-h-[40.625rem] flex flex-col items-end justify-end p-4 sm:pt-[2.5rem] sm:pb-[3rem] sm:pl-[3rem] sm:pr-[2.5rem] 
+        className="rounded-2xl min-h-[20rem] md:min-h-[470px] flex flex-col items-end justify-end p-4 md:pt-[2.5rem] sm:pb-[3rem] sm:pl-[3rem] sm:pr-[2.5rem] 
           box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative overflow-hidden
-           "
+          "
         style={{ backgroundImage: `url(${imageSrc})` }}
       >
         <div className="relative flex justify-end z-10">
-          <div className="relative border p-2 rounded-full z-10 ">
-            <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0" />
+          <div className="relative cursor-pointer p-2 rounded-full z-10 bg-[#FF6700]">
+            <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-white" />
           </div>
         </div>
         <div className="self-stretch flex-1 flex flex-col items-center justify-end gap-[1rem] relative z-10">
@@ -48,7 +48,7 @@ export default function OurServicesPage() {
   return (
     <div
       ref={containerRef}
-      className="relative flex top-4 flex-col justify-start items-center text-left text-[2.25rem] text-accent font-clash"
+      className="relative flex top-4 flex-col justify-start items-center text-left text-[2.25rem]"
     >
       <div className="sticky top-0 w-full h-[100vh] min-h-screen">
         <motion.div
@@ -68,22 +68,23 @@ export default function OurServicesPage() {
           />
         </motion.div>
       </div>
-      <div className="w-full relative flex flex-col sm:flex-row gap-[2rem] sm:gap-[5rem] p-4 sm:p-[5rem] ">
-        <div className="w-full relative flex flex-col  gap-[2rem] sm:gap-[5rem]">
+      <div className="w-full relative flex flex-col md:flex-row gap-[2rem] p-4">
+        <div className="w-full relative flex flex-col gap-8 md:space-between">
           <ResponsiveScrollSwipe>
             <div
-              className="self-stretch min-h-[20rem] sm:min-h-[40.625rem] rounded-2xl flex flex-col items-start justify-start p-5 sm:p-[4rem] box-border gap-4 sm:gap-6 bg-cover relative
-             bg-foundation-rust-accent-rust-accent-500 hover:bg-orange-500 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+              className="self-stretch min-h-[20rem] rounded-2xl flex flex-col items-start justify-start p-5 box-border gap-4 md:gap-6 bg-cover relative
+             bg-[#FF8533] hover:bg-orange-500 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
             >
-              <p className="text-[2rem] sm:text-[3rem] self-stretch relative leading-[130%] font-semibold title-1-semibold text-foundation-rust-accent-rust-accent-50">
+              <p className="text-[2rem] md:text-[2.5rem] md:mb-4 self-stretch relative leading-[130%] font-semibold md:font-normal text-foundation-rust-accent-rust-accent-50 font-clash">
                 Our services
               </p>
-              <div className="h-full flex flex-col justify-between text-[1.2rem] sm:text-[2rem]">
+              <div className="h-full flex flex-col justify-between text-[1.25rem] md:text-[1.5rem]">
                 <p className="leading-[140%] text-foundation-rust-accent-rust-accent-50">
                   Our services are highly exclusive but not limited to
                   procurement, marine transportation, logistics and general
                   offshore/onshore support services in the industry.
                 </p>
+                <br />
                 <p className="leading-[140%] text-foundation-rust-accent-rust-accent-50">
                   Our specialization places us in advantageous position to
                   render the following services.
@@ -105,7 +106,7 @@ export default function OurServicesPage() {
             delay={400}
           />
         </div>
-        <div className="w-full relative flex flex-col pt-[0] sm:pt-[10rem] gap-[2rem] sm:gap-[5rem]">
+        <div className="w-full relative flex flex-col pt-[0] md:pt-[10rem] gap-[2rem] md:gap-[5rem]">
           <ServiceCard
             title="Remotely Operated Vehicle (ROV)"
             description="High quality underwater repair and underwater maintenance of ship hulls"
