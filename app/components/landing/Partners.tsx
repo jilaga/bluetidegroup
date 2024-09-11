@@ -1,3 +1,4 @@
+'use client';
 import React, { ComponentPropsWithoutRef } from 'react';
 import Image from 'next/image';
 import * as motion from 'framer-motion/client';

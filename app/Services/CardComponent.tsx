@@ -30,7 +30,7 @@ export const CardComponent: React.FC<CardProps> = ({
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <Link href={`/service/${id}`} passHref>
+    <Link href={`/Services/${id}`} passHref>
       {' '}
       {/* Wrap the entire component in a Link */}
       <section className="w-full overflow-hidden flex flex-col items-start justify-center gap-0rem]">

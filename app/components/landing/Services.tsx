@@ -14,9 +14,9 @@ const ServiceCard: React.FC<{
   return (
     <ResponsiveScrollSwipe delay={delay / 1000}>
       <motion.div
-        className="rounded-2xl min-h-[20rem] md:min-h-[470px] flex flex-col items-end justify-end p-4 md:pt-[2.5rem] sm:pb-[3rem] sm:pl-[3rem] sm:pr-[2.5rem] 
+        className=" w-full rounded-2xl h-[20rem] md:h-[650px] md:w-[600px] flex flex-col items-end justify-end p-4 md:pt-[2.5rem] sm:pb-[3rem] sm:pl-[3rem] sm:pr-[2.5rem] 
           box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative overflow-hidden
-          "
+          transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl "
         style={{ backgroundImage: `url(${imageSrc})` }}
       >
         <div className="relative flex justify-end z-10">
@@ -48,7 +48,7 @@ export default function OurServicesPage() {
   return (
     <div
       ref={containerRef}
-      className="relative flex top-4 flex-col justify-start items-center text-left text-[2.25rem]"
+      className="relative flex top-4 flex-col justify-start items-center text-left text-[2.25rem] m-4 md:m-20 gap-4 md:gap-10 "
     >
       <div className="sticky top-0 w-full h-[100vh] min-h-screen">
         <motion.div
@@ -68,11 +68,11 @@ export default function OurServicesPage() {
           />
         </motion.div>
       </div>
-      <div className="w-full relative flex flex-col md:flex-row gap-[2rem] p-4">
-        <div className="w-full relative flex flex-col gap-8 md:space-between">
+      <div className="w-full relative flex flex-col md:flex-row gap-[2rem] md:gap-[5rem] p-4  ">
+        <div className="w-full relative flex flex-col gap-[2rem] md:gap-[5rem]">
           <ResponsiveScrollSwipe>
             <div
-              className="self-stretch min-h-[20rem] rounded-2xl flex flex-col items-start justify-start p-5 box-border gap-4 md:gap-6 bg-cover relative
+              className="self-stretch h-[20rem] md:h-[650px] min-w-[18rem] md:w-[600px] rounded-2xl flex flex-col items-start justify-start p-5 box-border gap-4 md:gap-6 bg-cover relative
              bg-[#FF8533] hover:bg-orange-500 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
             >
               <p className="text-[2rem] md:text-[2.5rem] md:mb-4 self-stretch relative leading-[130%] font-semibold md:font-normal text-foundation-rust-accent-rust-accent-50 font-clash">
