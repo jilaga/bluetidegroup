@@ -15,10 +15,10 @@ export default function HeroSec() {
             Subsea Equipment Rental
           </p>
         </div>
-        <div className="w-full  flex flex-col items-start justify-start gap-[2.5rem] text-[2rem] sm:text-[4.5rem] text-foundation-grey-grey-400 font-satoshi">
+        <div className="w-full  flex flex-col items-start justify-start gap-[2.5rem] text-[2rem] sm:text-[3.5rem] text-foundation-grey-grey-400 font-satoshi">
           <b className="self-stretch relative leading-[140%] font-semibold font-clash whitespace-pre-wrap">
-            We provide rental services for a wide array of specialized subsea
-            equipment, including:
+            We have successfully and skillfully managed all operations and
+            services in line with the highest industry standards.
           </b>
         </div>
       </ScrollFade>
