@@ -2,10 +2,11 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { Button } from 'antd';
+import { motion } from 'framer-motion';
+// import { Button } from 'antd';
 import { HiOutlineArrowDownCircle } from 'react-icons/hi2';
-import HeroImg from './../../public/hero.png';
-import ScrollFade from '@/utils/SlideFade.jsx';
+// import HeroImg from './../../public/hero.png';
+// import ScrollFade from '@/utils/SlideFade.jsx';
 
 export default function Newsec() {
   return (
@@ -20,10 +21,19 @@ export default function Newsec() {
         />
       </div>
       <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0 md:px-[80px] md:mx-auto w-full">
-        <p className="font-clash font-semibold text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] text-white">
+        <motion.p
+          initial={{ y: '25px', opacity: 0 }}
+          whileInView={{ y: '0px', opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="font-clash font-semibold text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] text-white"
+        >
           Expertise You Can Trust, Excellence You Can See.
-        </p>
-        <div>
+        </motion.p>
+        <motion.div
+          initial={{ y: '25px', opacity: 0 }}
+          whileInView={{ y: '0px', opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
           <p className="text-white font-bold mt-6 sm:max-w-[315px] ml-auto">
             Delivering superior solutions for{' '}
             <span className="text-[#FF8533]">
@@ -38,7 +48,7 @@ export default function Newsec() {
           <button className="bg-[#FF6700] border-none outline-none cursor-pointer text-white px-5 py-4 w-full rounded-full mt-4 sm:hidden">
             Let&apos;s talk
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
