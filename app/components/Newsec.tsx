@@ -10,14 +10,14 @@ import ScrollFade from '@/utils/SlideFade.jsx';
 export default function Newsec() {
   return (
     <section className="w-full relative h-[100dvh] flex flex-col items-center justify-center px-[1rem] md:px-[3rem] sm:px-[5rem] pb-[20dvh] sm:pb-[5rem]">
-      <div className="absolute inset-[0_auto_auto_0] w-full h-full -z-[1]">
+      <div className="absolute inset-[0_auto_auto_0] w-full h-full -z-[1] bg-[#0050AA]">
         <Image
           src={HeroImg}
           alt="Hero background"
           width={1280}
           height={960}
           object-fit="cover"
-          className="h-screen w-full z-1 "
+          className="h-screen w-full z-1 opacity-[63%]"
         />
       </div>
       <div className="w-full h-full flex flex-col max-w-[1100px] pt-8">

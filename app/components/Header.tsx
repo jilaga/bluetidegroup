@@ -1,14 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FiMenu, FiX } from 'react-icons/fi';
 import MobileNav from './MobileNav';
+import { twMerge } from 'tailwind-merge';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -32,25 +34,45 @@ export default function Navbar() {
           <div className="hidden md:flex space-x-6">
             <Link
               href="/about"
-              className="hover:text-foundation-rust-accent-rust-accent-500  no-underline"
+              className={twMerge(
+                'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
+                pathname === '/about'
+                  ? 'font-semibold text-foundation-rust-accent-rust-accent-500'
+                  : ''
+              )}
             >
               About us
             </Link>
             <Link
               href="/Services"
-              className="hover:text-foundation-rust-accent-rust-accent-500 no-underline"
+              className={twMerge(
+                'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
+                pathname === '/Services'
+                  ? 'font-semibold text-foundation-rust-accent-rust-accent-500'
+                  : ''
+              )}
             >
               Our services
             </Link>
             <Link
               href="/stories"
-              className="hover:text-foundation-rust-accent-rust-accent-500 no-underline"
+              className={twMerge(
+                'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
+                pathname === '/stories'
+                  ? 'font-semibold text-foundation-rust-accent-rust-accent-500'
+                  : ''
+              )}
             >
               Stories
             </Link>
             <Link
               href="/gallery"
-              className="hover:text-foundation-rust-accent-rust-accent-500 no-underline"
+              className={twMerge(
+                'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
+                pathname === '/gallery'
+                  ? 'font-semibold text-foundation-rust-accent-rust-accent-500'
+                  : ''
+              )}
             >
               Gallery
             </Link>
