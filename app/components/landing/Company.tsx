@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
+import * as motion from 'framer-motion/client';
 import CustomButton from '../Button';
 import ScrollFade from '@/utils/SlideFade';
 function Company() {
   return (
-    <section className="w-full flex justify-center items-center py-20 px-4 sm:px-20 ">
-      <ScrollFade className="w-full flex flex-col sm:flex-row gap-10 sm:gap-8 max-w-[1100px]">
+    <section className="w-full flex justify-center items-center py-20 px-4 md:px-20 ">
+      <ScrollFade className="w-full flex flex-col md:flex-row gap-10 sm:gap-8">
         <div className="">
           <p className="w-40 text-nowrap text-[0.875rem] uppercase font-medium font-clash text-foundation-grey-grey-100 text-left ">
             Our Company
@@ -32,20 +32,27 @@ function Company() {
                   integrity, efficiency, and competence.
                 </span>
               </p>
-              <CustomButton
-                bgColor=""
-                borderColor="border-accent"
-                textColor="text-accent"
-                iconColor="text-accent"
-                buttonText="Read more"
-              />
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-max"
+              >
+                <CustomButton
+                  bgColor=""
+                  borderColor="border-accent"
+                  textColor="text-accent"
+                  iconColor="text-accent"
+                  buttonText="Read more"
+                />
+              </motion.div>
             </div>
             <Image
               src="/company.png"
               alt="Hero background"
               width={360}
               height={300}
-              className="object-cover rounded-xl w-full max-w-[380px] max-h-[310px]"
+              className="object-cover rounded-xl w-full max-h-[310px] md:hidden lg:block"
             />
           </div>
         </div>
