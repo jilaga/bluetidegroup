@@ -5,7 +5,7 @@ import ScrollFade from '@/utils/SlideFade';
 export default function Choose() {
   return (
     <ScrollFade
-      className="w-full relative overflow-hidden flex flex-col items-center justify-center py-10 px-5 md:px-20 box-border
+      className="w-full relative overflow-hidden flex flex-col items-center justify-center py-20 sm:pt-60 px-5 md:px-20 box-border
         animate-fade-in-up"
     >
       <div className="self-stretch flex flex-col items-start justify-start gap-8">

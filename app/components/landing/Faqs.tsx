@@ -26,9 +26,9 @@ const FAQItem: React.FC<FAQItemProps> = ({
   >
     <button
       onClick={onClick}
-      className="w-full flex justify-between sm:items-center items-start sm:p-6 p-4 text-left gap-2"
+      className="w-full flex justify-between sm:items-center items-start sm:p-5 p-3 text-left gap-2"
     >
-      <span className="w-full text-[1rem] sm:text-[1.25rem] text-foundation-grey-grey-400 tracking-[0.03em] leading-[150%] uppercase font-medium flex">
+      <span className="w-full text-[1rem] sm:text-[1.25rem] text-foundation-grey-grey-400 tracking-[0.03em] leading-[150%] font-medium flex">
         {question}
       </span>
       {isOpen ? (
@@ -77,18 +77,18 @@ const FAQ: NextPage = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="w-full relative overflow-hidden flex flex-col items-start justify-start py-8 md:py-20 px-5 md:px-20 box-border text-left text-xl text-foundation-grey-grey-100 font-title-1-semibold"
+      className="w-full relative overflow-hidden flex flex-col items-start justify-start py-8 md:py-20 px-5 md:px-10 lg:px-20 box-border text-left text-xl text-foundation-grey-grey-100 font-title-1-semibold"
     >
-      <div className="w-full flex flex-col md:flex-row items-start justify-end gap-10">
-        <div className="w-full md:w-1/3 flex flex-col items-start justify-start gap-4 ">
-          <p className="tracking-[0.03em] leading-[140%] uppercase font-medium">
+      <div className="w-full flex flex-col lg:flex-row items-start  gap-10">
+        <div className="w-full flex flex-col items-start justify-start gap-4 ">
+          <p className="w-full tracking-[0.03em] leading-[140%] uppercase font-medium">
             FAQ
           </p>
-          <p className=" text-2xl sm:text-4xl leading-[140%] font-semibold font-clash text-foundation-grey-grey-400">
+          <p className="w-full text-2xl sm:text-4xl leading-[140%] font-semibold font-clash text-foundation-grey-grey-400">
             Find answers to common questions about us
           </p>
         </div>
-        <div className="w-full md:w-2/3 flex flex-col items-end justify-start gap-4">
+        <div className="w-full flex flex-col items-start justify-start gap-4">
           {faqData.map((item, index) => (
             <FAQItem
               key={index}

@@ -27,7 +27,7 @@ export default function Newsec() {
           delay={0.1}
           className="flex flex-col w-full h-full justify-end gap-10 "
         >
-          <h1 className="flex items-end w-full max-w-[344px] sm:max-w-[855px] text-[2.5rem] sm:text-[4.5rem] leading-[120%] tracking-wide font-semibold text-foundation-rust-accent-rust-accent-50">
+          <h1 className="flex items-end w-full max-w-[344px] sm:max-w-[855px] text-[2.5rem] sm:text-[4.5rem] leading-[140%] font-semibold font-h1-semibold text-foundation-rust-accent-rust-accent-50">
             Expertise You Can Trust, Excellence You Can See
           </h1>
           <div className="w-full flex justify-start sm:justify-end items-center pb-[40px] ">

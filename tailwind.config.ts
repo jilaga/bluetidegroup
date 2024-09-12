@@ -69,6 +69,7 @@ const config: Config = {
         'h4-semibold': 'Montserrat',
         'body-2': 'Montserrat',
         'caption-1-semibold': 'Clash Display',
+        'Clash Display': 'Clash Display',
         'text-medium-normal': 'Roboto',
         // satoshi: 'Satoshi',
         'cute-font': "'Cute Font'",
