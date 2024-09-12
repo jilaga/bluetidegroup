@@ -19,7 +19,7 @@ export default function Newsec() {
           height={960}
         />
       </div>
-      <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0 md:max-w-[1100px] md:mx-auto w-full">
+      <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0 md:px-[80px] md:mx-auto w-full">
         <p className="font-clash font-semibold text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] text-white">
           Expertise You Can Trust, Excellence You Can See.
         </p>
