@@ -1,13 +1,10 @@
-import { HiOutlineArrowRightCircle } from 'react-icons/hi2';
+import * as motion from 'framer-motion/client';
 import CustomButton from '../Button';
 import ScrollFade from '@/utils/SlideFade';
 
 export default function Choose() {
   return (
-    <ScrollFade
-      className="w-full relative overflow-hidden flex flex-col items-center justify-center py-20 sm:pt-60 px-5 md:px-20 box-border
-        animate-fade-in-up"
-    >
+    <ScrollFade className="w-full relative overflow-hidden flex flex-col items-center justify-center py-20 sm:pt-60 px-5 md:px-20 box-border animate-fade-in-up max-w-[1440px] mx-auto">
       <div className="self-stretch flex flex-col items-start justify-start gap-8">
         <div className="relative flex flex-col gap-2 sm:gap-5 lg:gap-7 font-semibold text-left text-gray">
           <ScrollFade className="m-0 font-clash leading-[2] text-xl sm:text-5xl lg:text-7xl">
@@ -15,13 +12,19 @@ export default function Choose() {
           </ScrollFade>
         </div>
         <ScrollFade>
-          <CustomButton
-            bgColor=""
-            borderColor="border-accent"
-            textColor="text-accent"
-            iconColor="text-accent"
-            buttonText="Let's Talk"
-          />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-max"
+          >
+            <CustomButton
+              bgColor=""
+              borderColor="border-accent"
+              textColor="text-accent"
+              iconColor="text-accent"
+              buttonText="Let's Talk"
+            />
+          </motion.div>
         </ScrollFade>
       </div>
     </ScrollFade>
