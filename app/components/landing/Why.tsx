@@ -105,9 +105,7 @@ const StatCard = function ({
       return;
     }
     if (isInView) {
-      const controls = animate(count, stat, { duration: 3 });
-
-      return () => controls.stop();
+      animate(count, stat, { duration: 3 });
     }
   }, [isPInView, isInView]);
 
@@ -134,10 +132,10 @@ const QuoteCard = function ({
   position: string;
 }) {
   return (
-    <div className="bg-[#B0D3FA] p-4 md:p-8 w-full min-h-80 grid grid-rows-[1fr_auto_auto] rounded-3xl text-5xl font-clash mt-4 ">
-      <p className="font-normal">&quot;{children}&quot;</p>
-      <p className="uppercase font-medium">{author},</p>
-      <p className="uppercase font-medium">{position}.</p>
+    <div className="bg-[#B0D3FA] p-4 md:p-8 w-full min-h-80 grid grid-rows-[1fr_auto_auto] rounded-3xl text-5xl mt-4 ">
+      <p className="font-normal text-[1.35rem]">&quot;{children}&quot;</p>
+      <p className="uppercase font-medium font-clash">{author},</p>
+      <p className="uppercase font-medium font-clash">{position}.</p>
     </div>
   );
 };

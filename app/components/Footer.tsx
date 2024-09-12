@@ -1,3 +1,5 @@
+'use client';
+import { motion } from 'framer-motion';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { HiOutlineArrowUpCircle } from 'react-icons/hi2';
@@ -74,7 +76,18 @@ const Footer: NextPage = () => {
                 className="size-4 sm:size-6"
                 style={{ strokeWidth: 0.5 }}
               />
-              <p className="w-full leading-[140%]">Back to top</p>
+              <motion.p
+                whileTap={{ scale: 0.95 }}
+                className="w-full leading-[140%] cursor-pointer"
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth', // Adds smooth scrolling effect
+                  });
+                }}
+              >
+                Back to top
+              </motion.p>
             </div>
             <p className="sm:w-1/3 leading-[140%] items-center justify-center flex">
               copyright © Bluetidegroup 2024.
