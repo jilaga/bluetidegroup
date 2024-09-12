@@ -13,28 +13,23 @@ export default function Innovation() {
 
   return (
     <div ref={containerRef} className="grid w-full h-[300vh] ">
-      <div className="sticky top-0 flex items-center h-screen overflow-hidden">
-        <motion.div className="flex w-full font-clash" style={{ x }}>
-          <div className="p-4 grid min-h-80 place-content-center text-center font-medium w-full shrink-0">
-            <p className="text-[#FFB98A] text-xl md:text-2xl font-normal">
-              To our clients and partners
-            </p>
+      <div className="sticky top-0 flex flex-col h-screen overflow-hidden">
+        <p className="text-[#FFB98A] text-xl md:text-2xl font-normal mt-auto text-center">
+          To our clients and partners
+        </p>
+        <motion.div className="flex w-full font-clash mb-auto" style={{ x }}>
+          <div className="p-4 grid place-content-center text-center font-medium w-full shrink-0">
             <p className="text-[#FF6700] text-2xl md:text-4xl font-semibold">
               we offer COMPETENCE & INTEGRITY
             </p>
           </div>
-          <div className="p-4 grid min-h-80 place-content-center text-center font-medium w-full shrink-0">
-            <p className="text-[#FFB98A] text-xl md:text-2xl font-normal">
-              To our clients and partners
-            </p>
+          <div className="p-4 grid place-content-center text-center font-medium w-full shrink-0">
             <p className="text-[#FF6700] text-2xl md:text-4xl font-semibold">
-              we offer COMPETENCE & INTEGRITY
+              we offer INNOVATION and EFFICIENCY to deliver a superior level of
+              excellence.
             </p>
           </div>
-          <div className="p-4 grid min-h-80 place-content-center text-center font-medium w-full shrink-0">
-            <p className="text-[#FFB98A] text-xl md:text-2xl font-normal">
-              To our clients and partners
-            </p>
+          <div className="p-4 grid place-content-center text-center font-medium w-full shrink-0">
             <p className="text-[#FF6700] text-2xl md:text-4xl font-semibold">
               we offer COMPETENCE & INTEGRITY
             </p>
