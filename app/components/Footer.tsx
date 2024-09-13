@@ -6,11 +6,14 @@ import { HiOutlineArrowUpCircle } from 'react-icons/hi2';
 
 const Footer: NextPage = () => {
   return (
-    <footer className=" mx-auto w-full relative bg-[#E6F1FD] overflow-hidden flex flex-col items-start justify-end py-[2rem] sm:py-[7.5rem] px-[1rem] sm:px-[5rem] box-border text-left text-[1rem] text-foundation-grey-grey-700">
+    <footer
+      className=" mx-auto w-full relative bg-[#E6F1FD] overflow-hidden flex flex-col items-start justify-end
+       py-[2rem] sm:py-[7.5rem] px-[1rem] sm:px-[2.5rem] lg:px-[5rem] box-border text-left text-[0.75rem] sm:text-[1rem] text-foundation-grey-grey-700"
+    >
       <div className="max-w-[1440px] mx-auto">
-        <div className=" w-full flex flex-col sm:flex-row items-start justify-end gap-[2.5rem]">
+        <div className=" w-full min-h-[12.5rem] flex flex-col sm:flex-row items-start justify-end gap-[2.5rem]">
           <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
-            <p className="relative font-clash text-[1.5rem] leading-[150%] font-semibold">
+            <p className="relative font-clash text-[1rem] lg:text-[1.5rem] leading-[150%] font-semibold">
               Call
             </p>
             <div className="flex flex-col gap-[0.5rem] sm:gap-[0.8rem]">
@@ -23,7 +26,7 @@ const Footer: NextPage = () => {
             </div>
           </div>
           <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
-            <p className="relative font-clash text-[1.5rem] leading-[150%] font-semibold">
+            <p className="relative font-clash text-[1rem] lg:text-[1.5rem] leading-[150%] font-semibold">
               PH OFFICE
             </p>
             <div className="w-[11.313rem] relative leading-[150%] inline-block">
@@ -37,7 +40,7 @@ const Footer: NextPage = () => {
             </div>
           </div>
           <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem] ">
-            <p className="relative font-clash text-[1.5rem] leading-[150%] font-semibold">
+            <p className="relative font-clash text-[1rem] lg:text-[1.5rem] leading-[150%] font-semibold">
               LAGOS OFFICE
             </p>
             <div className="relative text-[1rem] leading-[150%]">
@@ -48,7 +51,7 @@ const Footer: NextPage = () => {
             </div>
           </div>
           <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
-            <p className="relative font-clash text-[1.5rem] leading-[150%] font-semibold">
+            <p className="relative font-clash text-[1rem] lg:text-[1.5rem] leading-[150%] font-semibold">
               UK OFFICE
             </p>
             <div className=" relative leading-[150%] ">
@@ -70,7 +73,11 @@ const Footer: NextPage = () => {
             height={206}
             className="w-full mt-8 mb-4"
           />
-          <div className=" border-foundation-white-white-900 border-t-[1px] border-solid flex flex-col-reverse sm:flex-row items-center justify-between w-full gap-5 pt-[3rem] sm:pt-[2rem] px-[2rem] text-[1rem] text-foundation-grey-grey-500">
+          <div
+            className="border-foundation-white-white-900 border-t-[1px] border-solid flex flex-col-reverse
+             sm:flex-row items-center justify-between w-full gap-5 pt-[3rem] sm:pt-[2rem] lg:px-[2rem]  
+             text-nowrap text-[1rem] text-foundation-grey-grey-500 "
+          >
             <div className="sm:w-1/3 flex flex-row font items-center justify-start gap-[0.5rem] ">
               <HiOutlineArrowUpCircle
                 className="size-4 sm:size-6"
