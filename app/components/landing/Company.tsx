@@ -6,14 +6,14 @@ import ScrollFade from '@/utils/SlideFade';
 function Company() {
   return (
     <section className="w-full flex justify-center items-center py-20 px-4 md:px-20 ">
-      <ScrollFade className="w-full flex flex-col md:flex-row gap-10 sm:gap-8">
+      <ScrollFade className="w-full flex flex-col sm:flex-row gap-10 sm:gap-8">
         <div className="">
           <p className="w-40 text-nowrap text-[0.875rem] uppercase font-medium font-clash text-foundation-grey-grey-100 text-left ">
             Our Company
           </p>
         </div>
         <div className="w-full flex justify-center items-center gap-10 sm:gap-[7.75rem] ">
-          <div className="w-full flex flex-col-reverse md:flex-row relative text-gray gap-10">
+          <div className="w-full flex flex-col-reverse min-[1140px]:flex-row relative text-gray gap-10">
             <div className="w-full max-w-[600px] flex flex-col gap-10 ">
               <ScrollFade className="text-[1.125rem] sm:text-[1.5rem] text-h4-semibold leading-[140%] font-semibold text-gray text-left inline-block">
                 We excel in managing every aspect of our operations with
@@ -52,7 +52,7 @@ function Company() {
               alt="Hero background"
               width={360}
               height={300}
-              className="object-cover rounded-xl w-full max-h-[310px] md:hidden lg:block"
+              className="object-cover rounded-xl w-full max-h-[310px] lg:block"
             />
           </div>
         </div>

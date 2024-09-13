@@ -1,20 +1,27 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { PropsWithoutRef, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import Image from 'next/image';
 import ResponsiveScrollSwipe from '@/utils/ResponsiveScrollSwipe';
+import { twMerge } from 'tailwind-merge';
 
 const ServiceCard: React.FC<{
   title: string;
   description: string;
   imageSrc: string;
   delay: number;
-}> = ({ title, description, imageSrc, delay }) => {
+  bgColor: string;
+}> = ({ title, description, imageSrc, delay, bgColor }) => {
   return (
     <ResponsiveScrollSwipe delay={delay / 1000}>
-      <motion.div className="rounded-2xl  flex flex-col items-end justify-end p-4 md:pt-[2.5rem] sm:pb-[3rem] sm:pl-[3rem] sm:pr-[2.5rem] box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative isolate overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl aspect-[600/650] group cursor-pointer">
-        <div className="absolute inset-0">
+      <motion.div
+        className={twMerge(
+          'rounded-2xl  flex flex-col items-end justify-end p-4 md:pt-[2.5rem] sm:pb-[3rem] sm:pl-[3rem] sm:pr-[2.5rem] box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative isolate overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl aspect-[600/650] group cursor-pointer',
+          `bg-[${bgColor}]`
+        )}
+      >
+        {/* <div className="absolute inset-0">
           <Image
             src={imageSrc}
             className="w-full h-full object-cover"
@@ -23,17 +30,17 @@ const ServiceCard: React.FC<{
             height={650}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black to-[#011123] opacity-60" />
-        </div>
+        </div> */}
         <div className="relative flex justify-end z-10">
-          <div className="relative cursor-pointer p-2 rounded-full z-10 border-white border group-hover:bg-[#FF6700] group-hover:border-none animate-[200ms_linear_background-color]">
-            <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-white" />
+          <div className="relative cursor-pointer p-2 rounded-full z-10 border-black border group-hover:bg-[#FF6700] group-hover:border-none animate-[200ms_linear_background-color]">
+            <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-black group-hover:fill-white" />
           </div>
         </div>
         <div className="self-stretch flex-1 flex flex-col items-center justify-end gap-[1rem] relative z-10">
-          <div className="self-stretch relative leading-[130%] font-semibold text-[1.5rem] sm:text-[2.25rem] text-foundation-rust-accent-rust-accent-50">
+          <div className="self-stretch relative leading-[130%] font-semibold text-[1.5rem] sm:text-[2.25rem] md:text-[1.5rem] lg:text-[2.25rem] text-[#1E1E1E]">
             {title}
           </div>
-          <div className="self-stretch relative text-[1rem] sm:text-[1.25rem] leading-[140%] font-body-1 text-foundation-rust-accent-rust-accent-50">
+          <div className="self-stretch relative text-[1rem] sm:text-[1.25rem] lg:text-[1.5rem] leading-[140%] font-body-1 text-[#1E1E1E]">
             {description}
           </div>
         </div>
@@ -50,8 +57,6 @@ export default function OurServicesPage() {
   });
   const size = useTransform(() => `${scrollYProgress.get() * 100}%`);
   const y = useTransform(() => `-${(1 - scrollYProgress.get()) * 40}%`);
-
-  y.on('change', console.log);
 
   return (
     <div
@@ -82,7 +87,7 @@ export default function OurServicesPage() {
               <p className="text-[2rem] md:text-[2.5rem] md:mb-4 self-stretch relative leading-[130%] font-semibold md:font-normal text-foundation-rust-accent-rust-accent-50 font-clash">
                 Our services
               </p>
-              <div className="h-full flex flex-col justify-between text-[1.25rem] md:text-[1.5rem]">
+              <div className="h-full flex flex-col justify-between text-[1.25rem]">
                 <p className="leading-[140%] text-foundation-rust-accent-rust-accent-50">
                   Our services are highly exclusive but not limited to
                   procurement, marine transportation, logistics and general
@@ -100,9 +105,11 @@ export default function OurServicesPage() {
             title="Remotely Operated Vehicle (ROV)"
             description="High quality underwater repair and underwater maintenance of ship hulls"
             imageSrc="/service/serv1.png"
+            bgColor="#FFF0E6"
             delay={0}
           />
           <ServiceCard
+            bgColor="#E6F1FD"
             title="Electrical Installation"
             description="Expert electrical installation services for marine vessels"
             imageSrc="/service/serv3.png"
@@ -111,18 +118,21 @@ export default function OurServicesPage() {
         </div>
         <div className="w-full relative flex flex-col pt-[0] md:pt-[10rem] gap-[2rem] md:gap-[5rem]">
           <ServiceCard
+            bgColor="#FFF0E6"
             title="Remotely Operated Vehicle (ROV)"
             description="High quality underwater repair and underwater maintenance of ship hulls"
             imageSrc="/service/serv1.png"
             delay={0}
           />
           <ServiceCard
+            bgColor="#B0D3FA"
             title="Hull Cleaning"
             description="Professional hull cleaning services to improve vessel performance"
             imageSrc="/service/serv1.png"
             delay={600}
           />
           <ServiceCard
+            bgColor="#FFF0E6"
             title="Equipment Procurement"
             description="Sourcing of high-quality marine equipment for various operations"
             imageSrc="/service/serv2.png"

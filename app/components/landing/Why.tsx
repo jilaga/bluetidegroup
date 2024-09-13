@@ -51,9 +51,9 @@ const boxes = [
 ];
 function Why() {
   return (
-    <div className="w-full p-4 text-[#1E1E1E] max-w-[500px] mx-auto md:flex md:max-w-[unset] gap-4 md:px-[80px]">
+    <div className="w-full p-4 text-[#1E1E1E] max-w-[500px] mx-auto md:flex md:max-w-[unset] gap-4 md:px-[40px] lg:px-[80px]">
       <div className="md:w-1/3">
-        <div className="bg-[#FF6700] p-4 w-full text-white min-h-80 grid place-content-center rounded-3xl text-5xl text-center">
+        <div className="bg-[#FF6700] p-4 w-full text-white min-h-80 md:min-h-60 lg:min-h-80 grid place-content-center rounded-3xl text-5xl text-center">
           <p>Why</p>
           <p>us?</p>
         </div>
@@ -112,9 +112,12 @@ const StatCard = function ({
   return (
     <div
       ref={ref}
-      className="bg-[#E6F1FD] p-4 md:p-8 w-full font-clash min-h-80 grid place-content-center rounded-3xl text-5xl text-center mt-4"
+      className="bg-[#E6F1FD] p-4 sm:p-8 w-full font-clash min-h-80 md:min-h-60 lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-lg lg:text-5xl text-center mt-4"
     >
-      <motion.p ref={pRef} className="text-[#FF6700] text-7xl font-semibold">
+      <motion.p
+        ref={pRef}
+        className="text-[#FF6700] text-7xl md:text-6xl lg:text-7xl font-semibold"
+      >
         {rounded}
       </motion.p>
       <p className="uppercase mt-3">{description}</p>
@@ -132,8 +135,10 @@ const QuoteCard = function ({
   position: string;
 }) {
   return (
-    <div className="bg-[#B0D3FA] p-4 md:p-8 w-full min-h-80 grid grid-rows-[1fr_auto_auto] rounded-3xl text-5xl mt-4 ">
-      <p className="font-normal text-[1.35rem]">&quot;{children}&quot;</p>
+    <div className="bg-[#B0D3FA] p-4 sm:p-8 md:p-5 lg:p-8 w-full min-h-80 md:min-h-60 lg:min-h-80 grid grid-rows-[1fr_auto_auto] rounded-3xl text-5xl md:text-lg lg:text-5xl mt-4 ">
+      <p className="font-normal text-[1.35rem] md:text-[1rem] lg:text-[1.35rem]">
+        &quot;{children}&quot;
+      </p>
       <p className="uppercase font-medium font-clash">{author},</p>
       <p className="uppercase font-medium font-clash">{position}.</p>
     </div>
