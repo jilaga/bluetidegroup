@@ -18,7 +18,7 @@ const Partners: React.FC = () => {
       <p className="text-[0.875rem] sm:text-[1rem] tracking-[0.03em] sm:tracking-[0.05em] leading-[140%] uppercase font-medium font-clash text-foundation-grey-grey-100 text-center">
         our partners trust us
       </p>
-      <motion.div className="overflow-hidden flex items-center gap-4">
+      <motion.div className="overflow-hidden flex items-center gap-8">
         <motion.div
           initial={{ x: '0' }}
           animate={{ x: '-100%' }}
@@ -29,7 +29,7 @@ const Partners: React.FC = () => {
             repeatType: 'loop',
             ease: 'linear',
           }}
-          className="flex shrink-0 items-center gap-4"
+          className="flex shrink-0 items-center gap-8"
         >
           {list.map((src) => (
             <ScrollItem key={src} src={src} className="shrink-0" />
@@ -45,7 +45,7 @@ const Partners: React.FC = () => {
             repeatType: 'loop',
             ease: 'linear',
           }}
-          className="flex shrink-0 items-center gap-4"
+          className="flex shrink-0 items-center gap-8"
         >
           {list.map((src) => (
             <ScrollItem key={src + 1} src={src} className="shrink-0" />
@@ -69,7 +69,7 @@ const ScrollItem = function ({
         alt="Brand image"
         width={400}
         height={148}
-        className="w-full md:min-w-[250px]"
+        className="w-full"
       />
     </div>
   );

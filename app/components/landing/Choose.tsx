@@ -7,7 +7,7 @@ export default function Choose() {
     <ScrollFade className="w-full relative overflow-hidden flex flex-col items-center justify-center py-20 sm:pt-60 px-5 md:px-20 box-border animate-fade-in-up max-w-[1440px] mx-auto">
       <div className="self-stretch flex flex-col items-start justify-start gap-8">
         <div className="relative flex flex-col gap-2 sm:gap-5 lg:gap-7 font-semibold text-left text-gray">
-          <ScrollFade className="m-0 font-clash text-3xl sm:text-7xl lg:text-8xl">
+          <ScrollFade className="m-0 font-clash text-3xl sm:leading-[140%] sm:text-[3.2rem] lg:text-7xl">
             Let&apos;s support your operations with expert care and precision.
           </ScrollFade>
         </div>
