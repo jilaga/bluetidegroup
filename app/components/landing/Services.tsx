@@ -14,10 +14,10 @@ const ServiceCard: React.FC<{
   bgColor: string;
 }> = ({ title, description, imageSrc, delay, bgColor }) => {
   return (
-    <ResponsiveScrollSwipe delay={delay / 1000}>
+    <ResponsiveScrollSwipe className="mb-0" delay={delay / 1000}>
       <motion.div
         className={twMerge(
-          'rounded-2xl  flex flex-col items-end justify-end p-4 md:pt-[2.5rem] sm:pb-[3rem] sm:pl-[3rem] sm:pr-[2.5rem] box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative isolate overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl aspect-[600/650] group cursor-pointer',
+          'rounded-2xl flex flex-col items-end justify-end p-6 lg:p-10 box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative isolate overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl aspect-[600/650] group cursor-pointer',
           `bg-[${bgColor}]`
         )}
       >
@@ -37,10 +37,10 @@ const ServiceCard: React.FC<{
           </div>
         </div>
         <div className="self-stretch flex-1 flex flex-col items-center justify-end gap-[1rem] relative z-10">
-          <div className="self-stretch relative leading-[130%] font-semibold text-[1.5rem] sm:text-[2.25rem] md:text-[1.5rem] lg:text-[2.25rem] text-[#1E1E1E]">
+          <div className="self-stretch relative leading-[130%] font-semibold text-[1.5rem] font-clash md:text-[1.75rem] lg:text-[2.25rem] text-[#1E1E1E]">
             {title}
           </div>
-          <div className="self-stretch relative text-[1rem] sm:text-[1.25rem] lg:text-[1.5rem] leading-[140%] font-body-1 text-[#1E1E1E]">
+          <div className="self-stretch relative text-[1rem] leading-[140%] font-body-1 text-[#1E1E1E]">
             {description}
           </div>
         </div>
@@ -77,17 +77,17 @@ export default function OurServicesPage() {
           />
         </motion.div>
       </div>
-      <div className="w-full relative flex flex-col md:flex-row gap-[2rem] md:gap-[5rem] p-4 lg:px-[80px]">
-        <div className="w-full relative flex flex-col gap-[2rem] md:gap-[5rem]">
+      <div className="w-full relative flex flex-col md:flex-row gap-[2rem] md:gap-12 min-[1320px]:gap-16 p-6 md:px-[40px] lg:px-[80px]">
+        <div className="w-full relative flex flex-col gap-[2rem] md:gap-12 min-[1320px]:gap-16">
           <ResponsiveScrollSwipe>
             <div
-              className="self-stretch aspect-[600/650] rounded-2xl flex flex-col items-start justify-start p-5 box-border gap-4 md:gap-6 bg-cover relative
+              className="self-stretch aspect-[600/650] rounded-2xl flex flex-col items-start justify-between lg:justify-start p-6 lg:p-10 box-border gap-4 md:gap-6 lg:gap-0 bg-cover relative
              bg-[#FF8533] hover:bg-orange-500 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
             >
-              <p className="text-[2rem] md:text-[2.5rem] md:mb-4 self-stretch relative leading-[130%] font-semibold md:font-normal text-foundation-rust-accent-rust-accent-50 font-clash">
+              <p className="text-[1.25rem] md:mb-4 self-stretch relative leading-[130%] font-semibold md:font-medium text-[#FFD0B0] font-clash">
                 Our services
               </p>
-              <div className="h-full flex flex-col justify-between text-[1.25rem]">
+              <div className="text-[1rem] flex flex-col justify-end lg:text-[22px] min-[1320px]:text-[2rem]">
                 <p className="leading-[140%] text-foundation-rust-accent-rust-accent-50">
                   Our services are highly exclusive but not limited to
                   procurement, marine transportation, logistics and general
@@ -116,7 +116,7 @@ export default function OurServicesPage() {
             delay={400}
           />
         </div>
-        <div className="w-full relative flex flex-col pt-[0] md:pt-[10rem] gap-[2rem] md:gap-[5rem]">
+        <div className="w-full relative flex flex-col pt-[0] md:pt-[10rem] gap-[2rem] md:gap-12 min-[1320px]:gap-16">
           <ServiceCard
             bgColor="#FFF0E6"
             title="Remotely Operated Vehicle (ROV)"
