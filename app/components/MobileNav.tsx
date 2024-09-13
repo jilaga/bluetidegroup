@@ -14,18 +14,20 @@ export default function MobileNav() {
 
   return (
     <div
-      className={`p-4  top-0 left-0 fixed flex flex-col items-center h-max jutify-between lg:hidden w-full z-[10000] ${isMenuOpen ? 'bg-foundation-primary-blue-primary-blue-50 h-full' : ''}`}
+      className={`p-4 md:max-w-[684px] mx-auto inset-[0_0_auto_0] fixed flex flex-col items-center lg:hidden w-full z-[10000] ${isMenuOpen ? 'bg-foundation-primary-blue-primary-blue-50 h-full' : ''}`}
     >
       <div
-        className={`flex w-full justify-between items-center  p-5   ${!isMenuOpen ? '[backdrop-filter:blur(320px)] rounded-full shadow border border-white' : ''}`}
+        className={`flex w-full justify-between items-center py-4 px-5 ${!isMenuOpen ? '[backdrop-filter:blur(320px)] rounded-full shadow border border-white' : ''}`}
       >
-        <Image
-          src="/logo 6.svg"
-          alt="Logo"
-          width={112}
-          height={18}
-          className="w-28 h-[1.125rem]"
-        />
+        <Link href="/">
+          <Image
+            src="/logo 6.svg"
+            alt="Logo"
+            width={112}
+            height={18}
+            className="w-20 md:w-28 h-[1.125rem]"
+          />
+        </Link>
         <button onClick={toggleMenu}>
           {!isMenuOpen ? (
             <FiMenu className="w-6 h-6" />
