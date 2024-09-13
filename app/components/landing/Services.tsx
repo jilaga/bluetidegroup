@@ -44,11 +44,14 @@ const ServiceCard: React.FC<{
 
 export default function OurServicesPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: containerRef,
-  //   offset: ['end end', 'start start'],
-  // });
-  // const size = useTransform(() => `${scrollYProgress.get() * 100}%`);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['end end', 'start start'],
+  });
+  const size = useTransform(() => `${scrollYProgress.get() * 100}%`);
+  const y = useTransform(() => `-${(1 - scrollYProgress.get()) * 40}%`);
+
+  y.on('change', console.log);
 
   return (
     <div
@@ -56,7 +59,10 @@ export default function OurServicesPage() {
       className="relative w-full flex top-4 flex-col justify-start items-center text-left text-[2.25rem] m-4 md:m-20 gap-4 md:gap-10"
     >
       <div className="sticky top-0 w-full h-[100vh] min-h-screen">
-        <motion.div className="absolute inset-0">
+        <motion.div
+          style={{ width: size, height: size, opacity: size, y }}
+          className="absolute inset-0 mx-auto"
+        >
           <Image
             src="/service/bg.png"
             width={1440}
