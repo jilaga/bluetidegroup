@@ -112,7 +112,7 @@ const StatCard = function ({
   return (
     <div
       ref={ref}
-      className="bg-[#E6F1FD] p-6 sm:p-8 md:p-4 lg:p-8 w-full font-clash min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-sm lg:text-5xl text-center mt-4"
+      className="bg-[#E6F1FD] p-6 sm:p-8 md:p-4 lg:p-8 w-full font-clash min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-sm lg:text-5xl tracking-[0.03em] leading-[140%] text-center mt-4"
     >
       <motion.p
         ref={pRef}
@@ -136,7 +136,7 @@ const QuoteCard = function ({
 }) {
   return (
     <div className="bg-[#B0D3FA] p-6 sm:p-8 md:p-5 lg:p-8 w-full min-h-80 md:min-h-[220px] lg:min-h-80 grid grid-rows-[1fr_auto_auto] rounded-3xl text-5xl md:text-sm lg:text-5xl mt-4 ">
-      <p className="font-normal text-[1.35rem] md:text-[1rem] lg:text-[1.35rem]">
+      <p className="font-normal text-[1.25rem] md:text-[1rem] lg:text-[1.25rem] tracking-[0.03em] leading-[140%]">
         &quot;{children}&quot;
       </p>
       <p className="uppercase font-medium font-clash">{author},</p>

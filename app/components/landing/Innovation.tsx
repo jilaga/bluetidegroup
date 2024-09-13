@@ -18,20 +18,10 @@ export default function Innovation() {
           To our clients and partners
         </p>
         <motion.div className="flex w-full font-clash mb-auto" style={{ x }}>
-          <div className="p-4 grid place-content-center text-center font-medium w-full shrink-0">
-            <p className="text-[#FF6700] text-2xl md:text-4xl font-semibold">
-              we offer COMPETENCE & INTEGRITY
-            </p>
-          </div>
-          <div className="p-4 grid place-content-center text-center font-medium w-full shrink-0">
+          <div className="text-nowrap px-[20rem] p-4 flex place-content-center text-center font-medium w-full shrink-0">
             <p className="text-[#FF6700] text-2xl md:text-4xl font-semibold">
               we offer INNOVATION and EFFICIENCY to deliver a superior level of
               excellence.
-            </p>
-          </div>
-          <div className="p-4 grid place-content-center text-center font-medium w-full shrink-0">
-            <p className="text-[#FF6700] text-2xl md:text-4xl font-semibold">
-              we offer COMPETENCE & INTEGRITY
             </p>
           </div>
         </motion.div>

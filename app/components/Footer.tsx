@@ -8,23 +8,23 @@ const Footer: NextPage = () => {
   return (
     <footer
       className=" mx-auto w-full relative bg-[#E6F1FD] overflow-hidden flex flex-col items-start justify-end
-       py-[2rem] sm:py-[7.5rem] px-[1rem] sm:px-[2.5rem] lg:px-[5rem] box-border text-left text-[0.75rem] sm:text-[1rem] text-foundation-grey-grey-700"
+       py-[2rem] sm:py-[7.5rem] px-[1rem] sm:px-[2.5rem] lg:px-[5rem] box-border text-left sm:text-[0.625rem] text-[1rem] md:text-[1rem] text-foundation-grey-grey-700"
     >
       <div className="max-w-[1440px] mx-auto">
-        <div className=" w-full min-h-[12.5rem] flex flex-col sm:flex-row items-start justify-end gap-[2.5rem]">
+        <div className=" w-full  sm:h-[18.125rem] min-h-[16rem] flex flex-col sm:flex-row items-start justify-end gap-[1.5rem]">
           <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
             <p className="relative font-clash text-[1rem] lg:text-[1.5rem] leading-[150%] font-semibold">
               Call
             </p>
             <div className="flex flex-col gap-[0.5rem] sm:gap-[0.8rem]">
-              <div className="relative leading-[150%] inline-block">
+              <div className="relative leading-[150%] i">
                 (NG) +234 906 376 6251
               </div>
               <div className="relative leading-[150%]">
                 (UK) +44 738 0341 592
               </div>
             </div>
-          </div>
+          </div> 
           <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
             <p className="relative font-clash text-[1rem] lg:text-[1.5rem] leading-[150%] font-semibold">
               PH OFFICE
@@ -89,7 +89,7 @@ const Footer: NextPage = () => {
                 onClick={() => {
                   window.scrollTo({
                     top: 0,
-                    behavior: 'smooth', // Adds smooth scrolling effect
+                    behavior: 'smooth',
                   });
                 }}
               >
