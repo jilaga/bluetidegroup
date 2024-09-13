@@ -8,7 +8,7 @@ export default function Leading() {
       threshold={0.1}
       duration={0.2}
       delay={0.2}
-      className="w-full relative flex flex-col items-center justify-start px-4 sm:px-20 pb-20 pt-[3rem] sm:py-30 text-left font-body-1"
+      className="w-full relative flex flex-col items-center justify-start px-4 sm:px-10 md:px-10 pb-20 pt-[3rem] sm:py-30 text-left font-body-1"
     >
       <div className="w-full max-w-7xl">
         <Image
@@ -16,16 +16,16 @@ export default function Leading() {
           alt="About image"
           width={1280}
           height={780}
-          className="w-full rounded-xl sm:rounded-3xl object-cover h-[280px] sm:h-[780px]"
+          className="w-full rounded-xl sm:rounded-3xl object-cover h-[17.5rem] sm:h-auto"
         />
 
         <ScrollFade
           threshold={0.1}
           duration={0.2}
           delay={0.2}
-          className="mt-10 sm:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 sm:gap-40"
+          className="mt-10 lg:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 "
         >
-          <h2 className="text-[1.25rem] sm:text-4xl body-2 font-semibold leading-tight sm:w-1/2 text-[#1E1E1E]">
+          <h2 className="text-[1.25rem] lg:text-[2rem] body-2 font-semibold  leading-[140%]  text-foundation-grey-grey-500 sm:w-1/2 ">
             we are a leading subsea support company committed to providing
             unique top-tier solutions and equipment rentals for the offshore
             industry.
@@ -35,7 +35,7 @@ export default function Leading() {
             threshold={0.1}
             duration={0.2}
             delay={0.2}
-            className="text-[1.25rem] sm:text-xl leading-relaxed text-[#1E1E1E] sm:w-1/2"
+            className="text-[1rem] leading-[140%]  sm:text-xl text-[#1E1E1E] sm:w-1/2"
           >
             <p className="mb-4">
               With a strong foothold in Nigeria and a strategic focus on West
