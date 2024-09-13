@@ -16,9 +16,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   reverse = false,
 }) => (
   <div
-    className={`flex w-full flex-col sm:flex-row items-start justify-end  p-2  ${reverse ? 'sm:flex-row-reverse' : ''} mb-10 sm:mb-0`}
+    className={`flex w-full flex-col lg:flex-row items-start justify-end  p-2  ${reverse ? 'lg:flex-row-reverse' : ''} mb-10 sm:mb-0`}
   >
-    <div className="image w-full sm:w-1/2">
+    <div className="image w-full ">
       <Image
         src={imageSrc}
         alt={name}
@@ -27,8 +27,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         className="w-full rounded-3xl object-cover h-[600px]"
       />
     </div>
-    <div className="txt w-full sm:w-1/2 h-auto sm:h-[600px] no-wrap p-1 sm:p-10 flex flex-col items-start justify-end">
-      <div className={`text-left ${reverse ? 'sm:text-right' : ''} w-full`}>
+    <div className="txt w-full sm:w-full h-auto lg:h-[600px] no-wrap p-1 sm:p-10 flex flex-col items-start justify-end">
+      <div className={`text-left ${reverse ? 'lg:text-right' : ''} w-full`}>
         <ScrollFade className="text-3xl font-semibold text-foundation-grey-grey-500 mb-2">
           {name}
         </ScrollFade>
@@ -46,9 +46,11 @@ export function Team() {
       threshold={0.2}
       duration={0.2}
       delay={0.2}
-      className="w-full relative flex gap-4 flex-col items-center justify-center  py-10 lg:py-30 px-6 text-foundation-grey-grey-100 font-title-1-semibold"
+      className="w-full relative sm:flex gap-4 lg:gap-[7.75rem] items-start justify-start 
+        py-[2.5rem] px-[1.5rem] sm:px-[2.5rem] sm:py-[5rem] lg:py-[7.5rem] lg:px-[5rem] 
+      text-foundation-grey-grey-100 font-title-1-semibold"
     >
-      <div className="w-full flex text-center py-2 flex-col mb-10 sm:mb-0">
+      <div className="sm:w-[232px] text-nowrap flex text-start py-2 flex-col mb-10 sm:mb-0">
         <h2 className="text-sm sm:text-xl tracking-wider uppercase font-medium">
           our core team
         </h2>

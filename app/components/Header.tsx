@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <>
       <MobileNav />
-      <nav className="w-full hidden mx-auto lg:flex justify-center items-center p-4 top-0 fixed z-50  text-nowrap">
+      <nav className="w-full hidden mx-auto max-w-[1440px] lg:flex justify-center items-center p-4 top-0 fixed z-50  text-nowrap">
         <div
           className="w-full max-w-[80rem] [backdrop-filter:blur(320px)] rounded-full shadow border border-white 
        bg-white/50 overflow-hidden flex flex-row items-center justify-between py-3 px-4 pl-6  box-border text-center text-xl text-foundation-grey-grey-500 h-max"
