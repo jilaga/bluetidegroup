@@ -8,13 +8,13 @@ export default function HeroSec() {
         threshold={0.1}
         duration={0.2}
         delay={0.2}
-        className="w-full relative flex sm:flex-row flex-col items-start justify-center 
+        className="w-full relative flex sm:flex-row flex-col items-start justify-between 
           pt-[20rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2.5rem]
-          gap-[2.5rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash"
+          gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash"
       >
-        <div className="w-auto relative tracking-[0.03em] leading-[140%] uppercase font-medium ">
-          <p className="mt-5 md:text-[1.25rem] text-[0.875rem] text-nowrap font-medium font-title-1-semibold">
-            Subsea Equipment Rental
+        <div className="pr-5 md:pr-8 lg:pr-8 relative tracking-[0.03em] leading-[140%] uppercase font-medium ">
+          <p className="mt-2 lg:mt-5 text-[0.875rem] md:text-[1rem] lg:text-[1.5rem]  text-nowrap font-medium font-title-1-semibold">
+            company history
           </p>
         </div>
         <ScrollFade className="w-full  flex flex-col items-start justify-start gap-[2.5rem] text-foundation-grey-grey-400 font-satoshi">
