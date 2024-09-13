@@ -1,4 +1,3 @@
-'use client';
 import React, { ComponentPropsWithoutRef } from 'react';
 import Image from 'next/image';
 import * as motion from 'framer-motion/client';
@@ -15,8 +14,8 @@ const Partners: React.FC = () => {
   ];
 
   return (
-    <section className="mx-auto w-full flex flex-col gap-6 sm:gap-10 pb-10 sm:pb-20">
-      <p className="text-[0.875rem] sm:text-[1rem] tracking-[0.03em] sm:tracking-[0.05em] leading-[140%] uppercase font-medium font-clash-display text-foundation-grey-grey-100 text-center">
+    <section className="mx-auto w-full flex flex-col gap-6 sm:gap-10 pb-10">
+      <p className="text-[0.875rem] sm:text-[1rem] tracking-[0.03em] sm:tracking-[0.05em] leading-[140%] uppercase font-medium font-clash text-foundation-grey-grey-100 text-center">
         our partners trust us
       </p>
       <motion.div className="overflow-hidden flex items-center gap-4">
@@ -70,7 +69,7 @@ const ScrollItem = function ({
         alt="Brand image"
         width={400}
         height={148}
-        className="w-full"
+        className="w-full md:min-w-[250px]"
       />
     </div>
   );
