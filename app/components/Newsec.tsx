@@ -7,7 +7,7 @@ import { HiOutlineArrowDownCircle } from 'react-icons/hi2';
 
 export default function Newsec() {
   return (
-    <section className="h-[100dvh] w-full p-4 grid relative isolate pb-[5rem]">
+    <section className=" h-[100dvh] w-full p-4 grid relative isolate pb-[5rem]">
       <div className="absolute inset-0 bg-[#0050AA] -z-[1]">
         <Image
           src="/hero.png"
@@ -17,12 +17,12 @@ export default function Newsec() {
           height={960}
         />
       </div>
-      <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0 md:px-[80px] md:mx-auto w-full">
+      <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0  md:mx-auto w-full">
         <motion.p
           initial={{ y: '25px', opacity: 0 }}
           whileInView={{ y: '0px', opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="font-clash font-semibold text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] text-white"
+          className="font-clash font-semibold sm:mx-[40px] text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] tracking-wide text-white"
         >
           Expertise You Can Trust, Excellence You Can See.
         </motion.p>

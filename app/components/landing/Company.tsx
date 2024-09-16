@@ -52,7 +52,7 @@ function Company() {
               alt="Hero background"
               width={360}
               height={300}
-              className="object-cover rounded-xl w-full max-h-[310px] lg:block"
+              className="object-cover rounded-xl sm:w-full md:w-auto max-h-[310px] lg:block"
             />
           </div>
         </div>
