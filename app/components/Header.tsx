@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useRef, MouseEventHandler } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -8,7 +8,7 @@ import { motion, animate, motionValue } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 import MobileNav from './MobileNav';
 import { twMerge } from 'tailwind-merge';
-import { HiMiniArrowUpRight } from 'react-icons/hi2';
+import ServiceLink from './ServiceLink';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -140,16 +140,3 @@ export default function Navbar() {
     </>
   );
 }
-
-const ServiceLink = function ({ to }: { to: string }) {
-  return (
-    <div className="grid items-center grid-cols-[1fr_auto] grid-rows-[1fr] bg-white gap-2 p-6 rounded-2xl text-[#1E1E1E] font-clash font-medium w-[313px] justify-between">
-      <p className="row-start-1 col-start-1 col-end-2 break-words whitespace-normal text-lg">
-        {to}
-      </p>
-      <div className="w-[35px] h-[35px] row-start-1 col-start-2 col-end-3 rounded-full border border-[#1E1E1E] grid place-content-center">
-        <HiMiniArrowUpRight className="text-[#1E1E1E] text-2xl" />
-      </div>
-    </div>
-  );
-};
