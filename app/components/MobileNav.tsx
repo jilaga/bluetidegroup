@@ -91,7 +91,7 @@ export default function MobileNav() {
               href="/contact"
               className="no-underline rounded-81xl px-6 py-4 my-4 bg-foundation-rust-accent-rust-accent-500 block text-base text-linen"
             >
-              Let's talk
+              Let&apos;s talk
             </Link>
           </div>
         </div>
