@@ -51,8 +51,8 @@ const boxes = [
 ];
 function Why() {
   return (
-    <div className="w-full p-6 text-[#1E1E1E] max-w-[500px] mx-auto md:flex md:max-w-[unset] gap-4 md:px-[40px] lg:px-[80px]">
-      <div className="md:w-1/3">
+    <div className="w-full p-6 text-[#1E1E1E] max-w-[500px] mx-auto md:flex md:justify-center md:items-center md:max-w-[unset] gap-4 lg:gap-10 md:px-[40px] lg:px-[80px]">
+      <div className="md:w-1/3 lg:gap-10 flex flex-col">
         <div className="bg-[#FF6700] p-6 w-full text-white min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-[2.25rem] text-center">
           <p>Why</p>
           <p>us?</p>
@@ -63,14 +63,14 @@ function Why() {
         </QuoteCard>
         <StatCard description="years of experience" stat={8} />
       </div>
-      <div className="md:w-1/3 md:mt-60">
+      <div className="md:w-1/3 md:mt-62  lg:gap-10 flex flex-col">
         <StatCard description="projects completed" stat={34} />
         <QuoteCard author="john doe" position="CEO of Marine  Ltd">
           They&apos;re a reliable partner, delivering exceptional results every
           time.
         </QuoteCard>
       </div>
-      <div className="md:w-1/3 md:mt-40">
+      <div className="md:w-1/3 md:mt-40 lg:gap-10 flex flex-col">
         <QuoteCard author="john doe" position="CEO of Marine  Ltd">
           They&apos;re a reliable partner, delivering exceptional results every
           time.
@@ -139,8 +139,8 @@ const QuoteCard = function ({
       <p className="font-normal text-[1.25rem] md:text-[1rem] lg:text-[1.25rem] tracking-[0.03em] leading-[140%]">
         &quot;{children}&quot;
       </p>
-      <p className="uppercase font-medium font-clash">{author},</p>
-      <p className="uppercase font-medium font-clash">{position}.</p>
+      <p className="uppercase font-medium font-clash leading-[140%]">{author},</p>
+      <p className="uppercase font-medium font-clash leading-[140%]">{position}.</p>
     </div>
   );
 };
