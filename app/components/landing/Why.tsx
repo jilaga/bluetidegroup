@@ -139,8 +139,12 @@ const QuoteCard = function ({
       <p className="font-normal text-[1.25rem] md:text-[1rem] lg:text-[1.25rem] tracking-[0.03em] leading-[140%]">
         &quot;{children}&quot;
       </p>
-      <p className="uppercase font-medium font-clash leading-[140%]">{author},</p>
-      <p className="uppercase font-medium font-clash leading-[140%]">{position}.</p>
+      <p className="uppercase font-medium font-clash leading-[140%]">
+        {author},
+      </p>
+      <p className="uppercase font-medium font-clash leading-[140%]">
+        {position}.
+      </p>
     </div>
   );
 };
