@@ -73,9 +73,9 @@ const config: Config = {
         'text-medium-normal': 'Roboto',
         // satoshi: 'Satoshi',
         'cute-font': "'Cute Font'",
-        "satoshi": ['var(--font-satoshi)'],
-        "clash": ['var(--font-clash)'],
-        "h3": 'Montserrat',
+        satoshi: ['var(--font-satoshi)'],
+        clash: ['var(--font-clash)'],
+        h3: 'Montserrat',
       },
       borderRadius: {
         '80xl': '99px',
