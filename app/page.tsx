@@ -10,7 +10,7 @@ import Innovation from './components/landing/Innovation';
 
 export default function Home() {
   return (
-    <main className="antialiased w-full sm:max-w-[1440px] mx-auto flex flex-col justify-center items-center gap-4 ">
+    <main className=" antialiased w-full sm:max-w-[1440px] mx-auto flex flex-col justify-center items-center gap-4 ">
       <Newsec />
       <Company />
       <Partners />
