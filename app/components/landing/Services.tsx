@@ -35,8 +35,8 @@ const ServiceCard: React.FC<{
           <div className="absolute inset-0 bg-gradient-to-b from-black to-[#011123] opacity-60" />
         </div> */}
           <div className="relative flex justify-end z-10">
-            <div className="relative cursor-pointer p-2 rounded-full z-10 border-black border group-hover:bg-[#FF6700] group-hover:border-none animate-[200ms_linear_background-color]">
-              <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-black group-hover:fill-white" />
+            <div className="relative cursor-pointer p-2 rounded-full z-10 border-black border group-hover:bg-[#FF6700] group-hover:border-none transition-[background-color]">
+              <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-black group-hover:fill-white group-hover:rotate-45 transition-[transform,_fill]" />
             </div>
           </div>
           <div className="self-stretch flex-1 flex flex-col items-center justify-end gap-[1rem] relative z-10">
