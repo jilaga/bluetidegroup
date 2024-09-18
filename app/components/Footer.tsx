@@ -24,7 +24,7 @@ const Footer: NextPage = () => {
                 (UK) +44 738 0341 592
               </div>
             </div>
-          </div>
+          </div> 
           <div className="overflow-hidden flex flex-col items-start justify-start gap-[1rem] sm:gap-[1.5rem]">
             <p className="relative font-clash text-[1rem] lg:text-[1.5rem] leading-[150%] font-semibold">
               PH OFFICE
