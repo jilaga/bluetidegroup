@@ -5,6 +5,10 @@ import Markdown from 'react-markdown';
 import { ArticleCardProps, getRandomHexColor } from '../articleCard';
 import './markdown.css';
 
+export function generateStaticParams() {
+  return [{ id: '1' }, { id: '2' }, { id: '3' }];
+}
+
 async function page({ params }: { params: { id: string } }) {
   const url = path.join('./', 'app/stories/articles.json');
   const file = await fs.readFile(url, 'utf-8');
