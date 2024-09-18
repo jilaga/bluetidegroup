@@ -3,10 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
-// import { Button } from 'antd';
 import { HiOutlineArrowDownCircle } from 'react-icons/hi2';
-// import HeroImg from './../../public/hero.png';
-// import ScrollFade from '@/utils/SlideFade.jsx';
 
 export default function Newsec() {
   return (
