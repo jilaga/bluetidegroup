@@ -3,6 +3,7 @@ import React, { PropsWithoutRef, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import Image from 'next/image';
+import Link from 'next/link';
 import ResponsiveScrollSwipe from '@/utils/ResponsiveScrollSwipe';
 import { twMerge } from 'tailwind-merge';
 
@@ -12,16 +13,18 @@ const ServiceCard: React.FC<{
   imageSrc: string;
   delay: number;
   bgColor: string;
-}> = ({ title, description, imageSrc, delay, bgColor }) => {
+  href: string;
+}> = ({ title, description, imageSrc, href, delay, bgColor }) => {
   return (
     <ResponsiveScrollSwipe className="mb-0" delay={delay / 1000}>
-      <motion.div
-        className={twMerge(
-          'rounded-2xl flex flex-col items-end justify-end p-6 lg:p-10 box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative isolate overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl aspect-[600/650] group cursor-pointer',
-          `bg-[${bgColor}]`
-        )}
-      >
-        {/* <div className="absolute inset-0">
+      <Link href={href}>
+        <motion.div
+          className={twMerge(
+            'rounded-2xl flex flex-col items-end justify-end p-6 lg:p-10 box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative isolate overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl aspect-[600/650] group cursor-pointer',
+            `bg-[${bgColor}]`
+          )}
+        >
+          {/* <div className="absolute inset-0">
           <Image
             src={imageSrc}
             className="w-full h-full object-cover"
@@ -31,20 +34,21 @@ const ServiceCard: React.FC<{
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black to-[#011123] opacity-60" />
         </div> */}
-        <div className="relative flex justify-end z-10">
-          <div className="relative cursor-pointer p-2 rounded-full z-10 border-black border group-hover:bg-[#FF6700] group-hover:border-none animate-[200ms_linear_background-color]">
-            <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-black group-hover:fill-white" />
+          <div className="relative flex justify-end z-10">
+            <div className="relative cursor-pointer p-2 rounded-full z-10 border-black border group-hover:bg-[#FF6700] group-hover:border-none animate-[200ms_linear_background-color]">
+              <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-black group-hover:fill-white" />
+            </div>
           </div>
-        </div>
-        <div className="self-stretch flex-1 flex flex-col items-center justify-end gap-[1rem] relative z-10">
-          <div className="self-stretch relative leading-[130%] font-semibold text-[1.5rem] font-clash md:text-[1.75rem] lg:text-[2.25rem] text-[#1E1E1E]">
-            {title}
+          <div className="self-stretch flex-1 flex flex-col items-center justify-end gap-[1rem] relative z-10">
+            <div className="self-stretch relative leading-[130%] font-semibold text-[1.5rem] font-clash md:text-[1.75rem] lg:text-[2.25rem] text-[#1E1E1E]">
+              {title}
+            </div>
+            <div className="self-stretch relative text-[1rem] leading-[140%] font-body-1 text-[#1E1E1E]">
+              {description}
+            </div>
           </div>
-          <div className="self-stretch relative text-[1rem] leading-[140%] font-body-1 text-[#1E1E1E]">
-            {description}
-          </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </Link>
     </ResponsiveScrollSwipe>
   );
 };
@@ -106,6 +110,7 @@ export default function OurServicesPage() {
             description="High quality underwater repair and underwater maintenance of ship hulls"
             imageSrc="/service/serv1.png"
             bgColor="#FFF0E6"
+            href="/Services/1"
             delay={0}
           />
           <ServiceCard
@@ -113,6 +118,7 @@ export default function OurServicesPage() {
             title="Electrical Installation"
             description="Expert electrical installation services for marine vessels"
             imageSrc="/service/serv3.png"
+            href="/Services/2"
             delay={400}
           />
         </div>
@@ -120,6 +126,7 @@ export default function OurServicesPage() {
           <ServiceCard
             bgColor="#FFF0E6"
             title="Remotely Operated Vehicle (ROV)"
+            href="/Services/3"
             description="High quality underwater repair and underwater maintenance of ship hulls"
             imageSrc="/service/serv1.png"
             delay={0}
@@ -129,6 +136,7 @@ export default function OurServicesPage() {
             title="Hull Cleaning"
             description="Professional hull cleaning services to improve vessel performance"
             imageSrc="/service/serv1.png"
+            href="/Services/4"
             delay={600}
           />
           <ServiceCard
@@ -136,6 +144,7 @@ export default function OurServicesPage() {
             title="Equipment Procurement"
             description="Sourcing of high-quality marine equipment for various operations"
             imageSrc="/service/serv2.png"
+            href="/Services/5"
             delay={800}
           />
         </div>
