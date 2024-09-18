@@ -64,11 +64,17 @@ export default function MobileNav() {
                   marginTop: isServiceMenuOpen ? '1em' : 0,
                 }}
               >
-                <ServiceLink to="Hull Cleaning" />
-                <ServiceLink to="Remotely Operated Vehicle (ROV)" />
-                <ServiceLink to="Procurement and equipment rental" />
-                <ServiceLink to="Offshore support" />
-                <ServiceLink to="Offshore support" />
+                <ServiceLink href="/Services/1" to="Hull Cleaning" />
+                <ServiceLink
+                  href="/Services/2"
+                  to="Remotely Operated Vehicle (ROV)"
+                />
+                <ServiceLink
+                  href="/Services/3"
+                  to="Procurement and equipment rental"
+                />
+                <ServiceLink href="/Services/4" to="Offshore support" />
+                <ServiceLink href="/Services/5" to="Offshore support" />
               </motion.div>
             </div>
             <Link

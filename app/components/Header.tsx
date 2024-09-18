@@ -45,11 +45,17 @@ export default function Navbar() {
               ref={serviceMenuRef}
               className="flex flex-wrap items-stretch p-4 max-w-[1040px] mx-auto justify-center gap-4 absolute inset-[auto_0_0_0] translate-y-full bg-[#FFFFFFCC] rounded-xl backdrop-blur-md"
             >
-              <ServiceLink to="Hull Cleaning" />
-              <ServiceLink to="Remotely Operated Vehicle (ROV)" />
-              <ServiceLink to="Procurement and equipment rental" />
-              <ServiceLink to="Offshore support" />
-              <ServiceLink to="Offshore support" />
+              <ServiceLink href="/Services/1" to="Hull Cleaning" />
+              <ServiceLink
+                href="/Services/2"
+                to="Remotely Operated Vehicle (ROV)"
+              />
+              <ServiceLink
+                href="/Services/3"
+                to="Procurement and equipment rental"
+              />
+              <ServiceLink href="/Services/4" to="Offshore support" />
+              <ServiceLink href="/Services/5" to="Offshore support" />
             </motion.div>
           )}
         </AnimatePresence>
