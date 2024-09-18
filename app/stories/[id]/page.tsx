@@ -1,6 +1,5 @@
 import fs from 'fs/promises';
 import path from 'path';
-import Image from 'next/image';
 import Markdown from 'react-markdown';
 
 import { ArticleCardProps, getRandomHexColor } from '../articleCard';
