@@ -13,8 +13,13 @@ const ImageReveal = function ({
   return (
     <motion.div
       ref={ref}
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: isInView ? 1 : 0.8, opacity: isInView ? 1 : 0 }}
+      layout
+      initial={{ scale: 0.8, opacity: 0, borderRadius: '0px' }}
+      animate={{
+        scale: isInView ? 1 : 0.8,
+        opacity: isInView ? 1 : 0,
+        borderRadius: isInView ? '16px' : '0px',
+      }}
       transition={{ duration: 0.6 }}
       className={twMerge('origin-center overflow-hidden', className)}
       {...props}
@@ -23,6 +28,7 @@ const ImageReveal = function ({
         initial={{ scale: 1.3 }}
         animate={{ scale: isInView ? 1 : 1.3 }}
         transition={{ duration: 0.6 }}
+        className="origin-center"
       >
         {children}
       </motion.div>
