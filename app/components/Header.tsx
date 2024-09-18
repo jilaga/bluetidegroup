@@ -26,6 +26,8 @@ export default function Navbar() {
 
   useEffect(() => {
     document.addEventListener('click', handleOuterClick, true);
+
+    document.addEventListener('scroll', () => setAreServicesOpen(false));
   }, []);
 
   const pathname = usePathname();
