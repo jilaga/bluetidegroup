@@ -19,7 +19,7 @@ export default function Navbar() {
   const handleOuterClick: (this: Document, ev: MouseEvent) => any = function (
     e
   ) {
-    if (!serviceMenuRef.current!.contains(e.target as Node)) {
+    if (!serviceMenuRef.current?.contains(e.target as Node)) {
       setAreServicesOpen(false);
     }
   };
