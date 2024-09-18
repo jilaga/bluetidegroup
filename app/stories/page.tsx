@@ -40,7 +40,7 @@ async function page() {
               type="text"
               name="search"
               placeholder="Discover a topic..."
-              className="pr-5 py-5 border-b bg-[#FAFAFA] border-[#686868] w-full"
+              className="pr-5 py-5 outline-none border-b bg-[#FAFAFA] border-[#686868] w-full"
             />
             <div className="w-11 h-11 grid place-items-center bg-[#FF6700] rounded-full absolute inset-[50%_1em_auto_auto] translate-y-[-50%]">
               <Image
