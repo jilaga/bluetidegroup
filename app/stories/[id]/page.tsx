@@ -23,7 +23,7 @@ async function page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="p-4 pt-36 max-w-[1100px] mx-auto">
+    <div className="p-4 pt-60 max-w-[1200px] mx-auto">
       <header className="text-start flex flex-wrap items-center justify-between gap-4 mb-4">
         <p>stories that touch</p>
         <div className="flex flex-wrap items-center gap-3 mt-4">

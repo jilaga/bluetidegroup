@@ -24,7 +24,7 @@ function Page() {
     .reverse();
 
   return (
-    <div className="w-full p-4 pt-36 max-w-[1100px] mx-auto">
+    <div className="w-full p-4 pt-60 max-w-[1200px] mx-auto">
       <div className="text-start flex flex-wrap items-center justify-between gap-4">
         <p className="text-[#B9B9B9] uppercase">stories that touch</p>
         <div className="flex items-center flex-wrap gap-3 w-max text-sm">
