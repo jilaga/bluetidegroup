@@ -8,7 +8,10 @@ export default function Leading() {
       threshold={0.1}
       duration={0.2}
       delay={0.2}
-      className="w-full relative flex flex-col items-center justify-start px-4 sm:px-10 md:px-10 pb-20 pt-[3rem] sm:py-30 text-left font-body-1"
+      className="w-full relative flex flex-col items-center justify-start 
+      pt-[20rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2.5rem]
+      gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash
+      font-body-1"
     >
       <div className="w-full max-w-7xl">
         <Image

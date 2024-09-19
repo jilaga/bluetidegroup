@@ -29,14 +29,4 @@ export const faqData = [
     answer:
       'Yes, Bluetide offers top-notch electrical installation services, backed by our team’s expertise and commitment to safety and quality.',
   },
-  {
-    question: 'What makes Bluetide a reliable partner?',
-    answer:
-      'Bluetide is recognized for its integrity, competence, and efficiency. We have successfully completed over 300 projects and have more than 08 years of experience, making us a trusted partner in the industry.',
-  },
-  {
-    question: "Where are Bluetide's offices located?",
-    answer:
-      'Bluetide has offices in Port Harcourt and Lagos, Nigeria, and Sheffield, United Kingdom. We are strategically positioned to serve our clients both locally and internationally.',
-  },
 ];

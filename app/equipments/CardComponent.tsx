@@ -25,8 +25,8 @@ export const CardComponent: React.FC<CardProps> = ({
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section className="w-full overflow-hidden flex flex-col items-start justify-center gap-0rem]">
-      <div className="w-full h-full flex overflow-hidden">
+    <section className="w-full overflow-hidden flex flex-col items-start justify-start h-full md:h-[664px] gap-[0rem]">
+      <div className="w-full flex overflow-hidden">
         <motion.div
           style={{
             scale,
@@ -40,7 +40,7 @@ export const CardComponent: React.FC<CardProps> = ({
             width={600}
             height={600}
             alt={title}
-          />  
+          />
           <motion.div
             className="absolute inset-0 bg-neutral-950/70"
             style={{
