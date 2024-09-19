@@ -17,7 +17,7 @@ function Page() {
 
   const filteredArticles = articles.filter((article) => {
     if (selectedTags[0] === 'all') return true;
-    return selectedTags.every((tag) => article.tags.includes(tag));
+    return selectedTags.some((tag) => article.tags.includes(tag));
   });
 
   return (
@@ -40,6 +40,7 @@ function Page() {
               onClick={() => {
                 setSelectedTags((prev) => {
                   if (prev.includes(tag)) {
+                    if (prev.length === 1) return ['all'];
                     return prev.filter((selected) => selected !== tag);
                   }
                   return [
@@ -67,6 +68,20 @@ function Page() {
             <input
               type="text"
               name="search"
+              onInput={(e) => {
+                const input = (e.target as HTMLInputElement).value
+                  .toLowerCase()
+                  .trim();
+                let value: string[] = [];
+                if (input === '') {
+                  value = ['all'];
+                } else {
+                  value = tags.filter((tag) =>
+                    tag.toLowerCase().trim().includes(input)
+                  );
+                }
+                setSelectedTags(value);
+              }}
               placeholder="Discover a topic..."
               className="pr-5 py-5 outline-none border-b bg-[#FAFAFA] border-[#686868] w-full"
             />
@@ -85,8 +100,9 @@ function Page() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            disabled={filteredArticles.length <= articleLimit}
             onClick={() => setArticleLimit((prev) => prev + 4)}
-            className="bg-[#FF9954] block capitalize mx-auto mt-4 text-white border-none outline-none px-12 py-4 rounded-full"
+            className="bg-[#FF9954] disabled:bg-[#d3d3d3] disabled:cursor-not-allowed block capitalize mx-auto mt-4 text-white border-none outline-none px-12 py-4 rounded-full"
           >
             read more
           </motion.button>
