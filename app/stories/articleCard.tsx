@@ -6,7 +6,7 @@ export interface ArticleCardProps {
   tags: string[];
   readDuration: string;
   preview: string;
-  id: string;
+  id: number;
 }
 
 const ArticleCard = function ({
