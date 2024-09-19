@@ -1,16 +1,24 @@
 'use client';
 
 import Image from 'next/image';
-import ArticleCard from './articleCard';
-import * as articles from './articles.json';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { motion } from 'framer-motion';
+
+import ArticleCard from './articleCard';
+import * as articles from './articles.json';
 
 const tags = [...new Set([...articles.map((article) => article.tags).flat()])];
 const tagStart = Math.round(Math.random() * (tags.length - 4));
 
 function Page() {
   const [selectedTags, setSelectedTags] = useState(['all']);
+  const [articleLimit, setArticleLimit] = useState(4);
+
+  const filteredArticles = articles.filter((article) => {
+    if (selectedTags[0] === 'all') return true;
+    return selectedTags.every((tag) => article.tags.includes(tag));
+  });
 
   return (
     <div className="w-full p-4 pt-36 max-w-[1100px] mx-auto">
@@ -71,14 +79,17 @@ function Page() {
               />
             </div>
           </label>
-          {articles
-            .filter((article) => {
-              if (selectedTags[0] === 'all') return true;
-              return selectedTags.every((tag) => article.tags.includes(tag));
-            })
-            .map((article) => (
-              <ArticleCard key={article.id} {...article} />
-            ))}
+          {filteredArticles.slice(0, articleLimit).map((article) => (
+            <ArticleCard key={article.id} {...article} />
+          ))}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setArticleLimit((prev) => prev + 4)}
+            className="bg-[#FF9954] block capitalize mx-auto mt-4 text-white border-none outline-none px-12 py-4 rounded-full"
+          >
+            read more
+          </motion.button>
         </div>
         <div className="w-fit max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-1">
           <p className="uppercase font-semibold text-lg mb-2">
