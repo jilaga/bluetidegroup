@@ -1,33 +1,49 @@
 'use client';
 
 import Image from 'next/image';
-// import fs from 'fs/promises';
-// import path from 'path';
 import ArticleCard from './articleCard';
 import * as articles from './articles.json';
+import { useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-function page() {
-  // const url = path.join('./', 'app/stories/articles.json');
-  // const file = await fs.readFile(url, 'utf-8');
-  // const articles: ArticleCardProps[] = JSON.parse(file);
+const tags = [...new Set([...articles.map((article) => article.tags).flat()])];
+const tagStart = Math.round(Math.random() * (tags.length - 4));
 
-  const tags = [
-    ...new Set([...articles.map((article) => article.tags).flat()]),
-  ];
+function Page() {
+  const [selectedTags, setSelectedTags] = useState(['all']);
 
-  const tagStart = Math.round(Math.random() * (tags.length - 4));
   return (
     <div className="w-full p-4 pt-36 max-w-[1100px] mx-auto">
       <div className="text-start flex flex-wrap items-center justify-between gap-4">
         <p className="text-[#B9B9B9] uppercase">stories that touch</p>
         <div className="flex items-center flex-wrap gap-3 w-max text-sm">
-          <p className="px-6 py-2 bg-[#FFF0E6] rounded-[100vh] w-max text-[#151515] font-medium">
+          <p
+            onClick={() => setSelectedTags(['all'])}
+            className={twMerge(
+              'px-6 py-2 rounded-[100vh] w-max cursor-pointer text-[#151515] font-medium',
+              selectedTags.includes('all') ? 'bg-[#FFF0E6]' : 'bg-[#E6F1FD]'
+            )}
+          >
             all
           </p>
           {tags.slice(tagStart, tagStart + 4).map((tag) => (
             <p
               key={tag}
-              className="px-6 py-2 bg-[#E6F1FD] rounded-[100vh] w-max text-[#151515] font-medium"
+              onClick={() => {
+                setSelectedTags((prev) => {
+                  if (prev.includes(tag)) {
+                    return prev.filter((selected) => selected !== tag);
+                  }
+                  return [
+                    ...prev.filter((selected) => selected !== 'all'),
+                    tag,
+                  ];
+                });
+              }}
+              className={twMerge(
+                'px-6 py-2 rounded-[100vh] cursor-pointer w-max text-[#151515] font-medium',
+                selectedTags.includes(tag) ? 'bg-[#FFF0E6]' : 'bg-[#E6F1FD]'
+              )}
             >
               {tag}
             </p>
@@ -55,9 +71,14 @@ function page() {
               />
             </div>
           </label>
-          {articles.map((article) => (
-            <ArticleCard key={article.id} {...article} />
-          ))}
+          {articles
+            .filter((article) => {
+              if (selectedTags[0] === 'all') return true;
+              return selectedTags.every((tag) => article.tags.includes(tag));
+            })
+            .map((article) => (
+              <ArticleCard key={article.id} {...article} />
+            ))}
         </div>
         <div className="w-fit max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-1">
           <p className="uppercase font-semibold text-lg mb-2">
@@ -79,4 +100,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
