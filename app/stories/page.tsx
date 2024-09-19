@@ -1,33 +1,37 @@
+'use client';
+
 import Image from 'next/image';
-import fs from 'fs/promises';
-import path from 'path';
-import ArticleCard, { ArticleCardProps } from './articleCard';
+// import fs from 'fs/promises';
+// import path from 'path';
+import ArticleCard from './articleCard';
+import * as articles from './articles.json';
 
-async function page() {
-  const url = path.join('./', 'app/stories/articles.json');
-  const file = await fs.readFile(url, 'utf-8');
-  const articles: ArticleCardProps[] = JSON.parse(file);
+function page() {
+  // const url = path.join('./', 'app/stories/articles.json');
+  // const file = await fs.readFile(url, 'utf-8');
+  // const articles: ArticleCardProps[] = JSON.parse(file);
 
+  const tags = [
+    ...new Set([...articles.map((article) => article.tags).flat()]),
+  ];
+
+  const tagStart = Math.round(Math.random() * (tags.length - 4));
   return (
     <div className="w-full p-4 pt-36 max-w-[1100px] mx-auto">
       <div className="text-start flex flex-wrap items-center justify-between gap-4">
         <p className="text-[#B9B9B9] uppercase">stories that touch</p>
-        <div className="flex items-center flex-wrap gap-3 w-max">
+        <div className="flex items-center flex-wrap gap-3 w-max text-sm">
           <p className="px-6 py-2 bg-[#FFF0E6] rounded-[100vh] w-max text-[#151515] font-medium">
             all
           </p>
-          <p className="px-6 py-2 bg-[#E6F1FD] rounded-[100vh] w-max text-[#151515] font-medium">
-            ROV
-          </p>
-          <p className="px-6 py-2 bg-[#E8EAF9] rounded-[100vh] w-max text-[#151515] font-medium">
-            underwater hull cleaning
-          </p>
-          <p className="px-6 py-2 bg-[#E6F1FD] rounded-[100vh] w-max text-[#151515] font-medium">
-            marine operations
-          </p>
-          <p className="px-6 py-2 bg-[#FFF0E6] rounded-[100vh] w-max text-[#151515] font-medium">
-            oil and gas
-          </p>
+          {tags.slice(tagStart, tagStart + 4).map((tag) => (
+            <p
+              key={tag}
+              className="px-6 py-2 bg-[#E6F1FD] rounded-[100vh] w-max text-[#151515] font-medium"
+            >
+              {tag}
+            </p>
+          ))}
         </div>
       </div>
       <div className="min-[720px]:grid min-[720px]:mt-16 grid-cols-[max-content_1fr] grid-rows-[1fr] gap-6 min-[1000px]:gap-16">
