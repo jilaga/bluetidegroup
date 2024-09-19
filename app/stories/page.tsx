@@ -8,17 +8,20 @@ import { motion } from 'framer-motion';
 import ArticleCard from './articleCard';
 import * as articles from './articles.json';
 
-const tags = [...new Set([...articles.map((article) => article.tags).flat()])];
-const tagStart = Math.round(Math.random() * (tags.length - 4));
+const tags = [
+  ...new Set([...articles.map((article) => article.tags).flat()]),
+].reverse();
 
 function Page() {
   const [selectedTags, setSelectedTags] = useState(['all']);
   const [articleLimit, setArticleLimit] = useState(4);
 
-  const filteredArticles = articles.filter((article) => {
-    if (selectedTags[0] === 'all') return true;
-    return selectedTags.some((tag) => article.tags.includes(tag));
-  });
+  const filteredArticles = articles
+    .filter((article) => {
+      if (selectedTags[0] === 'all') return true;
+      return selectedTags.some((tag) => article.tags.includes(tag));
+    })
+    .reverse();
 
   return (
     <div className="w-full p-4 pt-36 max-w-[1100px] mx-auto">
@@ -34,7 +37,7 @@ function Page() {
           >
             all
           </p>
-          {tags.slice(tagStart, tagStart + 4).map((tag) => (
+          {tags.slice(0, 4).map((tag) => (
             <p
               key={tag}
               onClick={() => {
