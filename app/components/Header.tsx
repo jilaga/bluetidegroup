@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -59,7 +58,7 @@ export default function Navbar() {
         </motion.div>
         <div
           className="w-full max-w-[1040px] [backdrop-filter:blur(320px)] rounded-full shadow border border-white 
-       bg-white/50 overflow-hidden flex flex-row items-center justify-between py-3 px-4 pl-6  box-border text-center text-xl text-foundation-grey-grey-500 h-max"
+       bg-white/50 overflow-hidden flex flex-row items-center justify-between py-3 px-4 pl-6  box-border text-center text-base text-foundation-grey-grey-500 h-max"
         >
           <Link href="/" className="flex items-center ">
             <Image
@@ -76,7 +75,7 @@ export default function Navbar() {
               className={twMerge(
                 'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
                 pathname === '/about'
-                  ? 'font-semibold text-foundation-rust-accent-rust-accent-500'
+                  ? ' text-foundation-rust-accent-rust-accent-500'
                   : ''
               )}
             >
@@ -87,7 +86,7 @@ export default function Navbar() {
               className={twMerge(
                 'hover:text-foundation-rust-accent-rust-accent-500 relative no-underline cursor-pointer',
                 areServicesOpen
-                  ? 'font-semibold text-foundation-rust-accent-rust-accent-500'
+                  ? ' text-foundation-rust-accent-rust-accent-500'
                   : ''
               )}
             >
@@ -98,7 +97,7 @@ export default function Navbar() {
               className={twMerge(
                 'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
                 pathname === '/stories'
-                  ? 'font-semibold text-foundation-rust-accent-rust-accent-500'
+                  ? ' text-foundation-rust-accent-rust-accent-500'
                   : ''
               )}
             >
@@ -109,7 +108,7 @@ export default function Navbar() {
               className={twMerge(
                 'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
                 pathname === '/gallery'
-                  ? 'font-semibold text-foundation-rust-accent-rust-accent-500'
+                  ? ' text-foundation-rust-accent-rust-accent-500'
                   : ''
               )}
             >
