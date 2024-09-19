@@ -80,11 +80,11 @@ const FAQ: NextPage = () => {
       className="w-full relative overflow-hidden flex flex-col items-start justify-start py-8 md:py-20 px-5 md:px-10 lg:px-20 box-border text-left text-xl text-foundation-grey-grey-100 font-title-1-semibold"
     >
       <div className="w-full flex flex-col lg:flex-row items-start  gap-10">
-        <div className="w-full flex flex-col items-start justify-start gap-4 ">
+        <div className=" w-full flex flex-col items-start justify-start gap-4 ">
           <p className="w-full tracking-[0.03em] leading-[140%] uppercase font-medium">
             FAQ
           </p>
-          <p className="w-full text-2xl sm:text-4xl leading-[140%] font-semibold font-clash text-foundation-grey-grey-400">
+          <p className="max-w-[500px] text-[1.125rem] md:text-[1.5rem] lg:text-[2rem] text-h4-semibold leading-[140%] font-semibold text-gray text-left">
             Find answers to common questions about us
           </p>
         </div>
