@@ -9,7 +9,7 @@ export default function Innovation() {
     target: containerRef,
     offset: ['end end', 'start start'],
   });
-  const x = useTransform(() => `-${scrollYProgress.get() * 200}%`);
+  const x = useTransform(() => `${scrollYProgress.get() * 100}%`);
 
   return (
     <div ref={containerRef} className="grid w-full h-[300vh] ">
@@ -17,8 +17,8 @@ export default function Innovation() {
         <p className="text-[#FFB98A] text-xl md:text-2xl font-normal mt-auto text-center">
           To our clients and partners
         </p>
-        <motion.div className="flex w-full font-clash mb-auto" style={{ x }}>
-          <div className="text-nowrap px-[20rem] p-4 flex place-content-center text-center font-medium w-full shrink-0">
+        <motion.div className="w-full font-clash mb-auto" style={{ x }}>
+          <div className="p-4 text-center font-medium">
             <p className="text-[#FF6700] text-2xl md:text-4xl font-semibold">
               we offer INNOVATION and EFFICIENCY to deliver a superior level of
               excellence.
