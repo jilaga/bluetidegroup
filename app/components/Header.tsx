@@ -39,25 +39,33 @@ export default function Navbar() {
       <nav className="w-full hidden mx-auto lg:flex justify-center items-center p-4 top-0 fixed z-50  text-nowrap">
         <AnimatePresence>
           {areServicesOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              ref={serviceMenuRef}
-              className="flex flex-wrap items-stretch p-4 max-w-[1040px] mx-auto justify-center gap-4 absolute inset-[auto_0_0_0] translate-y-full bg-[#FFFFFFCC] rounded-xl backdrop-blur-md"
-            >
-              <ServiceLink href="/Services/1" to="Hull Cleaning" />
-              <ServiceLink
-                href="/Services/2"
-                to="Remotely Operated Vehicle (ROV)"
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                ref={serviceMenuRef}
+                className="flex flex-wrap items-stretch p-4 max-w-[1040px] mx-auto justify-center gap-4 absolute inset-[auto_0_0_0] translate-y-full bg-[#FFFFFFCC] z-[70] rounded-xl backdrop-blur-md"
+              >
+                <ServiceLink href="/Services/1" to="Hull Cleaning" />
+                <ServiceLink
+                  href="/Services/2"
+                  to="Remotely Operated Vehicle (ROV)"
+                />
+                <ServiceLink
+                  href="/Services/3"
+                  to="Procurement and equipment rental"
+                />
+                <ServiceLink href="/Services/4" to="Offshore support" />
+                <ServiceLink href="/Services/5" to="Offshore support" />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/50 z-[60]"
               />
-              <ServiceLink
-                href="/Services/3"
-                to="Procurement and equipment rental"
-              />
-              <ServiceLink href="/Services/4" to="Offshore support" />
-              <ServiceLink href="/Services/5" to="Offshore support" />
-            </motion.div>
+            </>
           )}
         </AnimatePresence>
         <div
