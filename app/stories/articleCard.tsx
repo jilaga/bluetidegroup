@@ -47,7 +47,7 @@ const ArticleCard = function ({
           {readDuration} read
         </p>
       </div>
-      <p className="text-lg font-semibold mt-4">{title}</p>
+      <p className="text-2xl font-semibold mt-4">{title}</p>
       <div>
         <p className="whitespace-pre-line text-[#1E1E1E] mt-4">{preview}</p>
         <Link
