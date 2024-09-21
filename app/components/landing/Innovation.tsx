@@ -17,12 +17,15 @@ export default function Innovation() {
         <p className="text-[#FFB98A] text-xl md:text-2xl font-normal mt-auto text-center">
           To our clients and partners
         </p>
-        <motion.div className="w-full font-clash mb-auto" style={{ x }}>
-          <div className="p-4 text-center font-medium">
-            <p className="text-[#FF6700] text-2xl md:text-4xl font-semibold">
+        <motion.div className="w-full font-clash mb-auto flex">
+          <div className="p-4 text-center font-medium shrink-0">
+            <motion.p
+              style={{ x }}
+              className="text-nowrap w-max text-[#FF6700] text-2xl md:text-4xl font-semibold"
+            >
               we offer INNOVATION and EFFICIENCY to deliver a superior level of
               excellence.
-            </p>
+            </motion.p>
           </div>
         </motion.div>
       </div>

@@ -6,9 +6,9 @@ import { ArticleCardProps, getRandomHexColor } from '../articleCard';
 import './markdown.css';
 
 export function generateStaticParams() {
-  const articleCount = 15; //NOTE this should always be the same length as the articles array
+  const articleCount = 30; //NOTE this should always be the same length as the articles array
   const ids = Array(articleCount).map((_, idx) => ({ id: `${idx + 1}` }));
-  return [{ id: '1' }, { id: '2' }, { id: '3' }];
+  return ids;
 }
 
 async function page({ params }: { params: { id: string } }) {
