@@ -9,7 +9,7 @@ export default function Leading() {
       duration={0.2}
       delay={0.2}
       className="w-full relative flex flex-col items-center justify-start 
-      pt-[20rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2.5rem]
+      pt-[2rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2rem] sm:pb-[2.5rem] md:pb-[4rem] 
       gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash
       font-body-1"
     >
@@ -28,7 +28,8 @@ export default function Leading() {
           delay={0.2}
           className="mt-10 lg:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-7 "
         >
-          <h2 className="text-[1.25rem] sm:text-[1rem] lg:text-[2rem] body-2 font-semibold  leading-[140%]  text-foundation-grey-grey-500 sm:w-1/2 ">
+          <h2 className="text-[1.25rem] sm:text-[1rem] lg:text-[2rem] body-2 font-semibold  leading-[140%]
+            text-foundation-grey-grey-500 sm:w-1/2 ">
             We are a leading subsea support company committed to providing
             unique top-tier solutions and equipment rentals for the offshore
             industry.
