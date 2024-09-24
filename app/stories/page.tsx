@@ -25,9 +25,11 @@ function Page() {
   const filteredArticles = articles
     .filter((article) => {
       if (selectedTags[0] === 'all') return true;
+      if (searchQuery.trim() === '')
+        return selectedTags.some((tag) => article.tags.includes(tag));
       return (
         selectedTags.some((tag) => article.tags.includes(tag)) ||
-        article.title.toLowerCase().includes(searchQuery.toLowerCase())
+        article.title.toLowerCase().includes(searchQuery.trim().toLowerCase())
       );
     })
     .reverse();
