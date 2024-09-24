@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { motion } from 'framer-motion';
 
@@ -15,13 +15,28 @@ const tags = [
 function Page() {
   const [selectedTags, setSelectedTags] = useState(['all']);
   const [articleLimit, setArticleLimit] = useState(4);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const filteredArticles = articles
     .filter((article) => {
       if (selectedTags[0] === 'all') return true;
-      return selectedTags.some((tag) => article.tags.includes(tag));
+      return (
+        selectedTags.some((tag) => article.tags.includes(tag)) ||
+        article.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
     })
     .reverse();
+
+  useEffect(() => {
+    const input = searchQuery.toLowerCase().trim();
+    let value: string[] = [];
+    if (input === '') {
+      value = ['all'];
+    } else {
+      value = tags.filter((tag) => tag.toLowerCase().trim().includes(input));
+    }
+    setSelectedTags(value);
+  }, [searchQuery]);
 
   return (
     <div className="w-full p-4 pt-60 max-w-[1200px] mx-auto">
@@ -71,19 +86,9 @@ function Page() {
             <input
               type="text"
               name="search"
-              onInput={(e) => {
-                const input = (e.target as HTMLInputElement).value
-                  .toLowerCase()
-                  .trim();
-                let value: string[] = [];
-                if (input === '') {
-                  value = ['all'];
-                } else {
-                  value = tags.filter((tag) =>
-                    tag.toLowerCase().trim().includes(input)
-                  );
-                }
-                setSelectedTags(value);
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery((e.target as HTMLInputElement).value);
               }}
               placeholder="Discover a topic..."
               className="pr-5 py-5 outline-none border-b bg-[#FAFAFA] border-[#686868] w-full"
