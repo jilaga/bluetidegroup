@@ -25,19 +25,27 @@ const Page = ({ params }: ServicePageProps) => {
       threshold={0.1}
       duration={0.2}
       delay={0.2}
-      className="w-full flex flex-col items-center justify-start px-4 sm:px-20 pb-20 pt-[3rem] sm:py-30 text-left font-body-1 gap-10 sm:gap-20"
+      className="w-full relative flex flex-col items-center justify-start 
+      pt-[10rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2rem] 
+      gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash
+      font-body-1"
     >
-      <div className="w-full max-w-7xl ">
+      <div className="w-full h-auto">
         <h1 className="w-full pt-32 pb-10 text-center text-[1.25rem] tracking-[0.03em] leading-[140%] uppercase font-medium font-title-1-semibold text-foundation-grey-grey-100 ">
           {service.title}
         </h1>
-        <ScrollFade threshold={0.1} duration={0.2} delay={0.2}>
+        <ScrollFade
+          threshold={0.1}
+          duration={0.2}
+          delay={0.2}
+          className="w-full max-w-7xl"
+        >
           <Image
             src={service.imgUrl}
-            alt="About image"
+            alt="First service related Image"
             width={1280}
             height={780}
-            className="w-full rounded-xl sm:rounded-3xl object-cover h-[280px] sm:h-[780px]"
+            className="w-full rounded-xl sm:rounded-3xl object-cover h-auto lg:h-[48.75rem] sm:h-[28.806rem] "
           />
         </ScrollFade>
 
@@ -45,56 +53,59 @@ const Page = ({ params }: ServicePageProps) => {
           threshold={0.1}
           duration={0.2}
           delay={0.2}
-          className="mt-10 sm:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 sm:gap-40"
+          className="mt-10 lg:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-10"
         >
-          <h2 className="text-[1.25rem] sm:text-4xl body-2 font-semibold leading-tight sm:w-1/2 text-foundation-grey-grey-500">
-            {service.paragraph && <p>{service.paragraph}</p>}
+          <h2
+            className="text-[1.25rem] sm:text-[1rem] lg:text-[2rem] body-2 font-semibold  leading-[140%]
+            text-foundation-grey-grey-500 sm:w-1/2"
+          >
+            {service.paragraph && <div>{service.paragraph}</div>}
           </h2>
 
           <ScrollFade
             threshold={0.1}
             duration={0.2}
             delay={0.2}
-            className="text-[1.25rem] sm:text-xl leading-relaxed text-foundation-grey-grey-500 sm:w-1/2"
+            className="text-[1rem] leading-[140%]  lg:text-xl text-[#1E1E1E] sm:w-1/2"
           >
-            <p className="mb-4">
-              {service.paragraph2 && <p>{service.paragraph2}</p>}
-            </p>
-            <p className="mb-4">
-              {service.paragraph3 && <p>{service.paragraph3}</p>}
-            </p>
-            <p>{service.paragraph && <p>{service.paragraph}</p>}</p>
+            <div className="mb-4">
+              {service.paragraph2 && <div>{service.paragraph2}</div>}
+            </div>
+            <div className="mb-4">
+              {service.paragraph3 && <div>{service.paragraph3}</div>}
+            </div>
+            <div>{service.paragraph && <div>{service.paragraph}</div>}</div>
           </ScrollFade>
         </ScrollFade>
       </div>
-      <div className="w-full flex flex-col sm:flex-row gap-10 sm:gap-20 justify-center items-center">
+      <div className=" w-full mt-10 lg:mt-20 flex flex-col-reverse sm:flex-row items-start justify-between gap-10 sm:gap-12 ">
         <ScrollFade
           threshold={0.1}
           duration={0.2}
           delay={0.2}
-          className="w-1/2"
+          className="text-[1rem] leading-[140%]  lg:text-xl text-[#1E1E1E] sm:w-1/2"
+        >
+          <div className="mb-4">
+            {service.paragraph2 && <div>{service.paragraph2}</div>}
+          </div>
+          <div className="mb-4">
+            {service.paragraph3 && <div>{service.paragraph3}</div>}
+          </div>
+          <div>{service.paragraph && <div>{service.paragraph}</div>}</div>
+        </ScrollFade>
+        <ScrollFade
+          threshold={0.1}
+          duration={0.2}
+          delay={0.2}
+          className="w-full sm:w-1/2"
         >
           <Image
             src={service.imgUrl}
             alt="About image"
             width={1280}
             height={780}
-            className=" h-[35rem] rounded-xl sm:rounded-3xl object-cover "
+            className=" w-full sm:h- shrink-0 rounded-2xl sm:rounded-3xl object-cover overflow-hidden"
           />
-        </ScrollFade>
-        <ScrollFade
-          threshold={0.1}
-          duration={0.2}
-          delay={0.2}
-          className="text-[1.25rem] sm:text-xl leading-relaxed text-foundation-grey-grey-500 w-1/2"
-        >
-          <p className="mb-4">
-            {service.paragraph2 && <p>{service.paragraph2}</p>}
-          </p>
-          <p className="mb-4">
-            {service.paragraph3 && <p>{service.paragraph3}</p>}
-          </p>
-          <p>{service.paragraph && <p>{service.paragraph}</p>}</p>
         </ScrollFade>
       </div>
     </ScrollFade>

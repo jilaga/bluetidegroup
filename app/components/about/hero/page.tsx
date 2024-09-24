@@ -17,7 +17,7 @@ export default function HeroSec() {
             company history
           </p>
         </div>
-        <ScrollFade className="w-full  flex flex-col items-start justify-start gap-[2.5rem] text-foundation-grey-grey-400 font-satoshi">
+        <ScrollFade className="w-full flex flex-col items-start justify-start gap-[2.5rem] text-foundation-grey-grey-400 font-satoshi">
           <b className="relative text-[2.25rem] lg:text-[4.5rem] leading-[130%] lg:leading-[140%] font-semibold font-clash whitespace-pre-wrap">
             We have successfully and skillfully managed all operations and
             services in line with the highest industry standards.
