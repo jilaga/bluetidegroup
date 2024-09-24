@@ -12,6 +12,11 @@ const tags = [
   ...new Set([...articles.map((article) => article.tags).flat()]),
 ].reverse();
 
+const genRandNum = function () {
+  return Math.floor(Math.random() * (articles.length - 1));
+};
+const relatedStories = [genRandNum(), genRandNum(), genRandNum()];
+
 function Page() {
   const [selectedTags, setSelectedTags] = useState(['all']);
   const [articleLimit, setArticleLimit] = useState(4);
@@ -119,16 +124,15 @@ function Page() {
           <p className="uppercase font-semibold text-lg mb-2">
             related stories:
           </p>
-          <a className="block text-[#0070EF] mt-4" href="#">
-            Comprehensive Guide to Underwater Inspection and Maintenance for
-            Offshore Structures
-          </a>
-          <a className="block text-[#0070EF] mt-4" href="#">
-            Advancements in Underwater Hull Cleaning Techniques
-          </a>
-          <a className="block text-[#0070EF] mt-4" href="#">
-            Importance of ROV Services in Modern Marine Operations
-          </a>
+          {relatedStories.map((num) => (
+            <a
+              key={num}
+              className="block text-[#0070EF] mt-4"
+              href={`stories/${num}`}
+            >
+              {articles[num].title}
+            </a>
+          ))}
         </div>
       </div>
     </div>
