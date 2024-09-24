@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 import ArticleCard from './articleCard';
 import * as articles from './articles.json';
@@ -127,13 +128,13 @@ function Page() {
             related stories:
           </p>
           {relatedStories.map((num) => (
-            <a
+            <Link
               key={num}
               className="block text-[#0070EF] mt-4"
               href={`stories/${num}`}
             >
               {articles[num].title}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
