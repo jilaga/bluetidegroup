@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
 import { twMerge } from 'tailwind-merge';
+import Image from 'next/image';
+
 import Navbar from './components/Header';
 import Footer from './components/Footer';
 import Choose from './components/landing/Choose';
@@ -86,6 +88,12 @@ export default function RootLayout({
         {children}
         <Choose />
         <Footer />
+        <a
+          className="fixed inset-[auto_1em_1em_auto]"
+          href="https://wa.me/+2348097140374"
+        >
+          <Image src="/whatsapp.svg" alt="whatsapp" width={35} height={35} />
+        </a>
       </body>
     </html>
   );
