@@ -25,7 +25,7 @@ const Page = ({ params }: ServicePageProps) => {
       threshold={0.1}
       duration={0.2}
       delay={0.2}
-      className="w-full relative flex flex-col items-center justify-start 
+      className="w-full max-w-[1230px] relative flex flex-col items-center justify-start 
       pt-[10rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2rem] 
       gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash
       font-body-1"
