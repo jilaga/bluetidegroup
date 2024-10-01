@@ -89,15 +89,15 @@ export default function RootLayout({
         <Choose />
         <Footer />
         <a
-          className="fixed inset-[auto_1em_1em_auto]"
+          className="fixed inset-[auto_2em_2em_auto] "
           href="https://wa.me/+2347065382326"
           target='blank'
         >
           <Image
             src="/whatsapp.svg"
             alt="whatsapp"
-            width={40}
-            height={40}
+            width={48}
+            height={48}
             className="rounded"
           />
         </a>
