@@ -17,10 +17,10 @@ export default function MobileNav() {
 
   return (
     <div
-      className={`p-4 md:max-w-[684px] mx-auto h-screen overflow-auto inset-[0_0_auto_0] fixed flex flex-col items-center lg:hidden w-full z-[10000] ${isMenuOpen ? ' h-full' : ''}`}
+      className={`p-4 md:max-w-[684px] mx-auto h-screen sm:h-auto rounded-2xl overflow-auto inset-[0_0_auto_0] fixed flex flex-col items-center lg:hidden w-full z-[10000] ${isMenuOpen ? 'bg-foundation-primary-blue-primary-blue-50 h-full' : ''}`}
     >
       <div
-        className={`flex w-full justify-between items-center py-4 px-5 ${!isMenuOpen ? '[backdrop-filter:blur(320px)] rounded-full shadow border  border-white' : ''}`}
+        className={`flex w-full justify-between items-center py-4 px-5 ${!isMenuOpen ? '[backdrop-filter:blur(320px)] rounded-full shadow border border-white bg-white/50' : ''}`}
       >
         <Link href="/">
           <Image
@@ -40,7 +40,7 @@ export default function MobileNav() {
         </button>
       </div>
       {isMenuOpen && (
-        <div className="md:h-auto h-full w-full py-10 flex flex-col justify-between">
+        <div className=" w-full py-10 flex flex-col justify-between">
           <div className="flex sticky top-0 flex-col items-center justify-center gap-6 md:h-auto text-[2rem] text-foundation-grey-grey-500 font-body-2">
             <Link
               href="/about"
@@ -56,7 +56,7 @@ export default function MobileNav() {
               Our services
               <motion.div
                 layout
-                className="text-start grid gap-4 origin-top"
+                className="flex flex-wrap items-stretch p-4 bg-[#FFFFFFCC] rounded-xl backdrop-blur-md mx-auto justify-center gap-4 origin-top"
                 initial={{ height: 0, opacity: 1, marginTop: 0 }}
                 animate={{
                   height: isServiceMenuOpen ? 'auto' : 0,
@@ -64,17 +64,25 @@ export default function MobileNav() {
                   marginTop: isServiceMenuOpen ? '1em' : 0,
                 }}
               >
-                <ServiceLink href="/Services/1" to="Hull Cleaning" />
-                <ServiceLink
-                  href="/Services/2"
-                  to="Remotely Operated Vehicle (ROV)"
-                />
+                <ServiceLink href="/Services/1" to="ROV Inspection" />
+                <ServiceLink href="/Services/2" to="Air diving" />
                 <ServiceLink
                   href="/Services/3"
+                  to="Subsea survey and Positioning"
+                />
+                <ServiceLink href="/Services/4" to="Hull Cleaning" />
+                <ServiceLink
+                  href="/Services/5"
+                  to="3rd party IMCA ROV and Diving System audits"
+                />
+                <ServiceLink
+                  href="/Services/6"
+                  to="Electrical Instrumentation"
+                />
+                <ServiceLink
+                  href="/equipments"
                   to="Procurement and equipment rental"
                 />
-                <ServiceLink href="/Services/4" to="Offshore support" />
-                <ServiceLink href="/Services/5" to="Offshore support" />
               </motion.div>
             </div>
             <Link
@@ -92,10 +100,11 @@ export default function MobileNav() {
               Gallery
             </Link>
           </div>
-          <div className="">
+          <div className="flex w-full justify-center pt-4">
             <Link
-              href="/contact"
-              className="no-underline rounded-81xl px-6 py-4 my-4 text-center bg-foundation-rust-accent-rust-accent-500 block text-base text-linen"
+              href="https://wa.me/+2347065382326"
+              target="_blank"
+              className="no-underline self-stretch rounded-full md:flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 hidden text-base w-full sm:w-[320px] text-linen"
             >
               Let&apos;s talk
             </Link>

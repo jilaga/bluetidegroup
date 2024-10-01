@@ -48,13 +48,13 @@ export default function Navbar() {
                 ref={serviceMenuRef}
                 className="flex flex-wrap items-stretch p-4 max-w-[1040px] mx-auto justify-center gap-4 absolute inset-[auto_0_0_0] translate-y-full bg-[#FFFFFFCC] z-[70] rounded-xl backdrop-blur-md"
               >
-                <ServiceLink href="/Services/2" to="ROV Inspection" />
-                <ServiceLink href="/Services/6" to="Air diving" />
+                <ServiceLink href="/Services/1" to="ROV Inspection" />
+                <ServiceLink href="/Services/2" to="Air diving" />
                 <ServiceLink
-                  href="/Services/1"
+                  href="/Services/3"
                   to="Subsea survey and Positioning"
                 />
-                <ServiceLink href="/Services/1" to="Hull Cleaning" />
+                <ServiceLink href="/Services/4" to="Hull Cleaning" />
                 <ServiceLink
                   href="/Services/5"
                   to="3rd party IMCA ROV and Diving System audits"
@@ -142,7 +142,8 @@ export default function Navbar() {
             className="w-max"
           >
             <Link
-              href="/contact"
+              href="https://wa.me/+2347065382326"
+              target="_blank"
               className="no-underline self-stretch rounded-full md:flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 hidden text-base  text-linen"
             >
               Let&apos;s talk

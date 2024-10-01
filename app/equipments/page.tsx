@@ -6,7 +6,7 @@ import HeroSec from '../components/about/hero/page';
 
 const Service: React.FC = () => {
   return (
-    <div className="w-full flex flex-row justify-center items-center flex-wrap  py-[2.5rem] px-[1.5rem] box-border gap-[0.5rem] text-left text-[1rem] text-foundation-grey-grey-500 font-caption-semibold">
+    <div className=" w-full flex flex-row justify-center items-center flex-wrap  py-[2.5rem] px-[1.5rem] box-border gap-[0.5rem] text-left text-[1rem] text-foundation-grey-grey-500 font-caption-semibold">
       {servicesData.map((service, index) => (
         <div
           key={index}
@@ -25,7 +25,7 @@ const Service: React.FC = () => {
 
 export default function Services() {
   return (
-    <section className="antialiased w-full mx-auto flex flex-col justify-center items-center gap-4">
+    <section className="antialiased w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center gap-4">
       <HeroSec />
       <Service />
     </section>

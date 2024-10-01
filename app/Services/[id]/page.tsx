@@ -26,21 +26,26 @@ const Page = ({ params }: ServicePageProps) => {
       threshold={0.1}
       duration={0.2}
       delay={0.2}
-      className="w-full max-w-[1230px] relative flex flex-col items-center justify-start 
+      className="w-full max-w-[1440px] relative flex flex-col items-center justify-start 
       pt-[10rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2rem] 
       gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash
       font-body-1"
     >
-      <div className="w-full h-auto">
-        <div className="w-full gap-3 sm:gap-10 pt-32 pb-10 flex flex-col sm:flex-row ">
+      <div className=" ">
+        <ScrollFade
+          threshold={0.1}
+          duration={0.2}
+          delay={0.2}
+          className="w-full gap-3 sm:gap-10 pt-32 pb-10 flex flex-col sm:flex-row "
+        >
           <Smallie text={service.title} />
           <h2
-            className="w-full text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] font-semibold  leading-[140%]
+            className="w-full text-[1.25rem] sm:text-[2rem] lg:text-[3.25rem] font-semibold  leading-[140%]
             text-foundation-grey-grey-500 "
           >
-            {service.paragraph && <div>{service.paragraph}</div>}
+            {service.paragraph && <div>{service.intro}</div>}
           </h2>
-        </div>
+        </ScrollFade>
         <ScrollFade
           threshold={0.1}
           duration={0.2}
@@ -62,12 +67,7 @@ const Page = ({ params }: ServicePageProps) => {
           delay={0.2}
           className="mt-10 lg:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-10"
         >
-          <h2
-            className="text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] font-semibold  leading-[140%]
-            text-foundation-grey-grey-500 sm:w-1/2"
-          >
-            {service.paragraph && <div>{service.paragraph}</div>}
-          </h2>
+          <Smallie text={service.title} />
 
           <ScrollFade
             threshold={0.1}
@@ -86,6 +86,7 @@ const Page = ({ params }: ServicePageProps) => {
         </ScrollFade>
       </div>
       <div className=" w-full mt-10 lg:mt-20 flex flex-col-reverse sm:flex-row items-start justify-between gap-10 sm:gap-12 ">
+        <Smallie text={service.title} />
         <ScrollFade
           threshold={0.1}
           duration={0.2}
@@ -93,26 +94,13 @@ const Page = ({ params }: ServicePageProps) => {
           className="text-[1rem] leading-[140%]  lg:text-xl text-[#1E1E1E] sm:w-1/2 font-montserrat "
         >
           <div className="mb-4">
-            {service.paragraph2 && <div>{service.paragraph2}</div>}
+            {service.services && <div>{service.services}</div>}
           </div>
           <div className="mb-4">
-            {service.paragraph3 && <div>{service.paragraph3}</div>}
+            {service.benefits && <div>{service.benefits}</div>}
           </div>
-          <div>{service.paragraph && <div>{service.paragraph}</div>}</div>
-        </ScrollFade>
-        <ScrollFade
-          threshold={0.1}
-          duration={0.2}
-          delay={0.2}
-          className="w-full sm:w-1/2"
-        >
-          <Image
-            src={service.imgUrl}
-            alt="About image"
-            width={1280}
-            height={780}
-            className=" w-full sm:h- shrink-0 rounded-2xl sm:rounded-3xl object-cover overflow-hidden"
-          />
+          <div>{service.equipment && <div>{service.equipment}</div>}
+          </div>
         </ScrollFade>
       </div>
     </ScrollFade>

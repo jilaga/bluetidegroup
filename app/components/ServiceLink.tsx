@@ -5,13 +5,13 @@ const ServiceLink = function ({ to, href }: { to: string; href: string }) {
   return (
     <Link
       href={href}
-      className="grid items-center grid-cols-[1fr_auto] grid-rows-[1fr] bg-white gap-2 p-6 rounded-2xl text-[#1E1E1E] font-clash font-medium w-[313px] justify-between group hover:scale-105 transition-[transform]"
+      className="flex text-start items-center bg-white gap-2 p-4 rounded-2xl text-foundation-grey-grey-400  w-[300px] justify-between group  hover:scale-105 hover:text-accent transition-[transform]"
     >
-      <p className="row-start-1 col-start-1 col-end-2 break-words whitespace-normal text-lg">
+      <p className="text-[1rem] break-words leading-[140%] capitalize font-medium font-montserrat whitespace-pre-wrap text-left ">
         {to}
       </p>
-      <div className="w-[35px] h-[35px] row-start-1 col-start-2 col-end-3 rounded-full border border-[#1E1E1E] grid place-content-center">
-        <HiMiniArrowUpRight className="text-[#1E1E1E] text-2xl group-hover:rotate-45 transition-[transform]" />
+      <div className="w-[35px] h-[35px] rounded-full border  flex justify-center items-center">
+        <HiMiniArrowUpRight className=" text-2xl group-hover:rotate-45 transition-[transform]" />
       </div>
     </Link>
   );
