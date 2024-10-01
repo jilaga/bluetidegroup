@@ -56,12 +56,13 @@ export default function MobileNav() {
               Our services
               <motion.div
                 layout
-                className="flex flex-wrap items-stretch p-4 bg-[#FFFFFFCC] rounded-xl backdrop-blur-md mx-auto justify-center gap-4 origin-top"
-                initial={{ height: 0, opacity: 1, marginTop: 0 }}
+                className="flex flex-wrap items-stretch p-4 bg-[#FFFFFFCC] rounded-xl backdrop-blur-md mx-auto justify-center gap-4 origin-top overflow-hidden"
+                initial={{ height: 0, opacity: 1, marginTop: 0, padding: 0 }}
                 animate={{
                   height: isServiceMenuOpen ? 'auto' : 0,
                   opacity: isServiceMenuOpen ? 1 : 0,
                   marginTop: isServiceMenuOpen ? '1em' : 0,
+                  padding: isServiceMenuOpen ? '1em' : 0,
                 }}
               >
                 <ServiceLink href="/Services/1" to="ROV Inspection" />
