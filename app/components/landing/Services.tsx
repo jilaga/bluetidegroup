@@ -24,16 +24,6 @@ const ServiceCard: React.FC<{
             `bg-[${bgColor}]`
           )}
         >
-          {/* <div className="absolute inset-0">
-          <Image
-            src={imageSrc}
-            className="w-full h-full object-cover"
-            alt="background"
-            width={600}
-            height={650}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black to-[#011123] opacity-60" />
-        </div> */}
           <div className="relative flex justify-end z-10">
             <div className="relative cursor-pointer p-2 rounded-full z-10 border-black border group-hover:bg-[#FF6700] group-hover:border-none transition-[background-color]">
               <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-black group-hover:fill-white group-hover:rotate-45 transition-[transform,_fill]" />
@@ -85,22 +75,17 @@ export default function OurServicesPage() {
         <div className="w-full relative flex flex-col gap-[2rem] md:gap-12 min-[1320px]:gap-16">
           <ResponsiveScrollSwipe>
             <div
-              className="self-stretch aspect-[600/650] rounded-2xl flex flex-col items-start justify-between lg:justify-start p-6 lg:p-10 box-border gap-4 md:gap-6 lg:gap-0 bg-cover relative
+              className="self-stretch h-[26.25rem] aspect-[600/650] rounded-2xl flex flex-col items-start justify-between lg:justify-start p-6 lg:p-10 box-border gap-4 md:gap-6 lg:gap-0 bg-cover relative
              bg-[#FF8533] hover:bg-orange-500 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
             >
               <p className="text-[1.25rem] md:mb-4 self-stretch relative leading-[130%] font-semibold md:font-medium text-[#FFD0B0] font-clash">
                 Our services
               </p>
-              <div className="text-[1rem] flex flex-col justify-end lg:text-[22px] min-[1320px]:text-[2rem]">
+              <div className="text-[1rem] flex flex-col justify-end md:text-[2rem]">
                 <p className="leading-[140%] text-foundation-rust-accent-rust-accent-50">
-                  Our services are highly exclusive but not limited to
-                  procurement, marine transportation, logistics and general
-                  offshore/onshore support services in the industry.
-                </p>
-                <br />
-                <p className="leading-[140%] text-foundation-rust-accent-rust-accent-50">
-                  Our specialization places us in advantageous position to
-                  render the following services.
+                  we are highly exclusive but not limited to Hydrographic
+                  surveys, ROV/Diving services, offshore services, procurement
+                  amongst others.
                 </p>
               </div>
             </div>

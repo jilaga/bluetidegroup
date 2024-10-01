@@ -17,10 +17,10 @@ export default function MobileNav() {
 
   return (
     <div
-      className={`p-4 md:max-w-[684px] mx-auto h-screen overflow-auto inset-[0_0_auto_0] fixed flex flex-col items-center lg:hidden w-full z-[10000] ${isMenuOpen ? 'bg-foundation-primary-blue-primary-blue-50 h-full' : ''}`}
+      className={`p-4 md:max-w-[684px] mx-auto h-screen overflow-auto inset-[0_0_auto_0] fixed flex flex-col items-center lg:hidden w-full z-[10000] ${isMenuOpen ? ' h-full' : ''}`}
     >
       <div
-        className={`flex w-full justify-between items-center py-4 px-5 ${!isMenuOpen ? '[backdrop-filter:blur(320px)] rounded-full shadow border border-white' : ''}`}
+        className={`flex w-full justify-between items-center py-4 px-5 ${!isMenuOpen ? '[backdrop-filter:blur(320px)] rounded-full shadow border  border-white' : ''}`}
       >
         <Link href="/">
           <Image

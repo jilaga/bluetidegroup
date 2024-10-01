@@ -90,9 +90,9 @@ export default function RootLayout({
         <Footer />
         <a
           className="fixed inset-[auto_1em_1em_auto]"
-          href="https://wa.me/+2348097140374"
+          href="https://wa.me/+2348170458819"
         >
-          <Image src="/whatsapp.svg" alt="whatsapp" width={35} height={35} />
+          <Image src="/whatsapp.svg" alt="whatsapp" width={40} height={40} className='rounded'/>
         </a>
       </body>
     </html>

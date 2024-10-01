@@ -4,6 +4,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import { ServiceData, servicesData } from '../data';
 import { notFound } from 'next/navigation';
 import ScrollFade from '@/utils/SlideFade';
+import Smallie from '@/app/components/Smallie';
 
 type ServicePageProps = {
   params: {
@@ -31,9 +32,15 @@ const Page = ({ params }: ServicePageProps) => {
       font-body-1"
     >
       <div className="w-full h-auto">
-        <h1 className="w-full pt-32 pb-10 text-center text-[1.25rem] tracking-[0.03em] leading-[140%] uppercase font-medium font-title-1-semibold text-foundation-grey-grey-100 ">
-          {service.title}
-        </h1>
+        <div className="w-full gap-3 sm:gap-10 pt-32 pb-10 flex flex-col sm:flex-row ">
+          <Smallie text={service.title} />
+          <h2
+            className="w-full text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] font-semibold  leading-[140%]
+            text-foundation-grey-grey-500 "
+          >
+            {service.paragraph && <div>{service.paragraph}</div>}
+          </h2>
+        </div>
         <ScrollFade
           threshold={0.1}
           duration={0.2}
@@ -56,7 +63,7 @@ const Page = ({ params }: ServicePageProps) => {
           className="mt-10 lg:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-10"
         >
           <h2
-            className="text-[1.25rem] sm:text-[1rem] lg:text-[2rem] body-2 font-semibold  leading-[140%]
+            className="text-[1.25rem] sm:text-[1.5rem] lg:text-[2rem] font-semibold  leading-[140%]
             text-foundation-grey-grey-500 sm:w-1/2"
           >
             {service.paragraph && <div>{service.paragraph}</div>}
@@ -66,7 +73,7 @@ const Page = ({ params }: ServicePageProps) => {
             threshold={0.1}
             duration={0.2}
             delay={0.2}
-            className="text-[1rem] leading-[140%]  lg:text-xl text-[#1E1E1E] sm:w-1/2"
+            className="text-[1rem] leading-[140%] lg:text-xl text-[#1E1E1E] sm:w-1/2 font-montserrat"
           >
             <div className="mb-4">
               {service.paragraph2 && <div>{service.paragraph2}</div>}
@@ -83,7 +90,7 @@ const Page = ({ params }: ServicePageProps) => {
           threshold={0.1}
           duration={0.2}
           delay={0.2}
-          className="text-[1rem] leading-[140%]  lg:text-xl text-[#1E1E1E] sm:w-1/2"
+          className="text-[1rem] leading-[140%]  lg:text-xl text-[#1E1E1E] sm:w-1/2 font-montserrat "
         >
           <div className="mb-4">
             {service.paragraph2 && <div>{service.paragraph2}</div>}

@@ -25,7 +25,7 @@ export function Text() {
        py-[2.5rem] px-[1.5rem] sm:px-[2.5rem] sm:py-[5rem] lg:py-[7.5rem]  lg:px-[5rem] font-semibold font-clash"
       ref={containerRef}
     >
-      <div className="w-full relative text-[1.5rem] sm:text-[2.25rem] lg:text-[4.25rem] font-semibold font-clash text-left text-orangered flex flex-wrap text-[#1C1C1C59]">
+      <div className="w-full relative text-[1.5rem] sm:text-[2rem] lg:text-[3rem] font-semibold font-clash text-left text-orangered flex flex-wrap text-[#1C1C1C59]">
         {texts
           .map((arr) =>
             arr.map((el) => {

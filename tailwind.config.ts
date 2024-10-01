@@ -73,9 +73,24 @@ const config: Config = {
         'text-medium-normal': 'Roboto',
         // satoshi: 'Satoshi',
         'cute-font': "'Cute Font'",
-        "satoshi": ['var(--font-satoshi)'],
-        "clash": ['var(--font-clash)'],
-        "h3": 'Montserrat',
+        satoshi: ['var(--font-satoshi)'],
+        clash: ['var(--font-clash)'],
+        h3: 'Montserrat',
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
+      fontWeight: {
+        thin: '100',
+        extralight: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
+      },
+      letterSpacing: {
+        wider: '0.05em', // Custom tracking value
       },
       borderRadius: {
         '80xl': '99px',
@@ -113,3 +128,4 @@ const config: Config = {
   ],
 };
 export default config;
+

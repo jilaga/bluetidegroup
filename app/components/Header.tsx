@@ -48,17 +48,25 @@ export default function Navbar() {
                 ref={serviceMenuRef}
                 className="flex flex-wrap items-stretch p-4 max-w-[1040px] mx-auto justify-center gap-4 absolute inset-[auto_0_0_0] translate-y-full bg-[#FFFFFFCC] z-[70] rounded-xl backdrop-blur-md"
               >
+                <ServiceLink href="/Services/2" to="ROV Inspection" />
+                <ServiceLink href="/Services/6" to="Air diving" />
+                <ServiceLink
+                  href="/Services/1"
+                  to="Subsea survey and Positioning"
+                />
                 <ServiceLink href="/Services/1" to="Hull Cleaning" />
                 <ServiceLink
-                  href="/Services/2"
-                  to="Remotely Operated Vehicle (ROV)"
+                  href="/Services/5"
+                  to="3rd party IMCA ROV and Diving System audits"
                 />
                 <ServiceLink
-                  href="/Services/3"
+                  href="/Services/6"
+                  to="Electrical Instrumentation"
+                />
+                <ServiceLink
+                  href="/equipments"
                   to="Procurement and equipment rental"
                 />
-                <ServiceLink href="/Services/4" to="Offshore support" />
-                <ServiceLink href="/Services/5" to="Offshore support" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -70,7 +78,7 @@ export default function Navbar() {
           )}
         </AnimatePresence>
         <div
-          className="w-full max-w-[1040px] [backdrop-filter:blur(320px)] rounded-full shadow border border-white 
+          className="w-full max-w-[1040px] [backdrop-filter:blur(320px)] bg-foundation-primary-blue-primary-blue-50 rounded-full shadow border border-white 
        bg-white/50 overflow-hidden flex flex-row items-center justify-between py-3 px-4 pl-6  box-border text-center text-base text-foundation-grey-grey-500 h-max"
         >
           <Link href="/" className="flex items-center ">

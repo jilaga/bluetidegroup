@@ -62,15 +62,32 @@ export function Team() {
           imageSrc="/about/image.png"
         />
         <TeamMember
-          name="Nwamaka Ndukwe"
-          position="Operations Manager"
-          imageSrc="/about/image-1.png"
+          name="Chris Davis"
+          position="survey operations director"
+          imageSrc="/about/Chris.png"
           reverse
         />
         <TeamMember
           name="Udoka Okuofu"
           position="Business Development Manager"
           imageSrc="/about/image-2.png"
+        />
+        <TeamMember
+          name="Nwamaka Ndukwe"
+          position="Operations Manager"
+          imageSrc="/about/image-1.png"
+          reverse
+        />
+        <TeamMember
+          name="Ibiwari Jack"
+          position="finance Manager"
+          imageSrc="/about/ibiwari.png"
+        />
+        <TeamMember
+          name="Wodo-Charles Lifefest Edna"
+          position="Corporate affairs officer"
+          imageSrc="/about/Wodo.png"
+          reverse
         />
       </div>
     </ScrollFade>
