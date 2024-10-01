@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "tag": "ROV Inspection",
+      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+    },
+    "img": "/service/serv1.png",
+    "sections": [
+      {
+        "tag": "Benefits",
+        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+      },
+      {
+        "tag": "Inspection Capabilities",
+        "content": "**Underwater Visual Inspections -** High-definition video and photography for detailed asset assessment.\n\n **Leak Detection -** Identifying potential leaks or damage to pipelines, tanks, or other infrastructure. \n\n **Cathodic Protection -** Monitoring CP systems to ensure corrosion protection. \n\n **Pipeline Surveys -** Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n **Platform and Jacket Inspections -** Evaluating structural integrity and identifying potential issues."
+      },
+      {
+        "tag": "Equipment we use",
+        "content": "High-definition cameras \n\n Sonar and acoustic sensors \n\n Manipulator arms \n\n Water samplers \n\n Cavitation Cleaning Technique"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": {
+      "tag": "ROV Inspection",
+      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+    },
+    "img": "/service/serv1.png",
+    "sections": [
+      {
+        "tag": "Benefits",
+        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": {
+      "tag": "ROV Inspection",
+      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+    },
+    "img": "/service/serv1.png",
+    "sections": [
+      {
+        "tag": "Benefits",
+        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": {
+      "tag": "ROV Inspection",
+      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+    },
+    "img": "/service/serv1.png",
+    "sections": [
+      {
+        "tag": "Benefits",
+        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": {
+      "tag": "ROV Inspection",
+      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+    },
+    "img": "/service/serv1.png",
+    "sections": [
+      {
+        "tag": "Benefits",
+        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": {
+      "tag": "ROV Inspection",
+      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+    },
+    "img": "/service/serv1.png",
+    "sections": [
+      {
+        "tag": "Benefits",
+        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+      }
+    ]
+  }
+]
