@@ -76,29 +76,6 @@ const Page = async ({ params }: ServicePageProps) => {
             className="w-full rounded-xl sm:rounded-3xl object-cover h-auto lg:h-[48.75rem] sm:h-[28.806rem] "
           />
         </ScrollFade>
-        {/* <ScrollFade
-          threshold={0.1}
-          duration={0.2}
-          delay={0.2}
-          className="mt-10 lg:mt-20 flex flex-col sm:flex-row items-start justify-between gap-10 md:gap-10"
-        >
-          <Smallie text={service.sections} />
-
-          <ScrollFade
-            threshold={0.1}
-            duration={0.2}
-            delay={0.2}
-            className="text-[1rem] leading-[140%] lg:text-xl text-[#1E1E1E] sm:w-1/2 font-montserrat"
-          >
-            <div className="mb-4">
-              {service.paragraph2 && <div>{service.paragraph2}</div>}
-            </div>
-            <div className="mb-4">
-              {service.paragraph3 && <div>{service.paragraph3}</div>}
-            </div>
-            <div>{service.paragraph && <div>{service.paragraph}</div>}</div>
-          </ScrollFade>
-        </ScrollFade> */}
       </div>
       <div>
         {service.sections.map((section, idx) => (

@@ -5,7 +5,7 @@
       "tag": "ROV Inspection",
       "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
     },
-    "img": "/service/serv1.png",
+    "img": "/service/hero-one.png",
     "sections": [
       {
         "tag": "Benefits",
@@ -27,7 +27,7 @@
       "tag": "AIR DIVING",
       "title": "we offer comprehensive air diving services tailored to meet the unique needs of our clients."
     },
-    "img": "/service/serv1.png",
+    "img": "/service/hero-two.png",
     "sections": [
       {
         "tag": "SOLUTIONS",
@@ -45,7 +45,7 @@
       "tag": "SUBSEA SURVERY AND POSITIONING",
       "title": "we specialize in delivering expert subsea positioning and survey solutions to empower our clients to achieve accurate and efficient underwater operations."
     },
-    "img": "/service/serv1.png",
+    "img": "/service/hero-three.png",
     "sections": [
       {
         "tag": "SERVICES",
@@ -67,7 +67,7 @@
       "tag": "SUBSEA SURVERY AND POSITIONING",
       "title": "we specialize in delivering expert subsea positioning and survey solutions to empower our clients to achieve accurate and efficient underwater operations."
     },
-    "img": "/service/serv1.png",
+    "img": "/service/hero-four.png",
     "sections": [
       {
         "tag": "HULL CLEANING",
@@ -93,7 +93,7 @@
       "tag": "3rd party IMCA  ROV System and Diving System audits",
       "title": "we offer 3rd party IMCA ROV System and Diving System audits to ensure compliance, enhance safety, and optimize operational efficiency."
     },
-    "img": "/service/serv1.png",
+    "img": "/service/hero-five.png",
     "sections": [
       {
         "tag": "HULL CLEANING",
@@ -115,7 +115,7 @@
       "tag": "Electrical Instrumentation",
       "title": "our expert technicians provide comprehensive electrical instrumentation services to ensure your marine and offshore operations run efficiently."
     },
-    "img": "/service/serv1.png",
+    "img": "/service/hero-six.png",
     "sections": [
       {
         "tag": "SERVICES",
