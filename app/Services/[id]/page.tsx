@@ -105,7 +105,7 @@ const Page = async ({ params }: ServicePageProps) => {
           <div
             key={idx}
             className={twMerge(
-              'w-full flex flex-col gap-8 sm:flex-row sm:gap-10 pt-18 pb-14',
+              'w-full flex flex-col gap-8 sm:flex-row sm:gap-10 pt-16 pb-12',
               idx !== 0 ? 'border-t border-[#B2B2B2]' : ''
             )}
           >
