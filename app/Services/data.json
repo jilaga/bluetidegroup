@@ -24,70 +24,110 @@
   {
     "id": 2,
     "title": {
-      "tag": "ROV Inspection",
-      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+      "tag": "AIR DIVING",
+      "title": "we offer comprehensive air diving services tailored to meet the unique needs of our clients."
     },
     "img": "/service/serv1.png",
     "sections": [
       {
-        "tag": "Benefits",
-        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+        "tag": "SOLUTIONS",
+        "content": "Salvage Operations - Efficient recovery of submerged assets, cargo, and equipment \n\n Jetty Inspections - Detailed examinations to ensure structural integrity and safety.\n\n Underwater Maintenance- Routine maintenance, repairs, and replacements for submerged infrastructure. \n\n Pipeline Inspections - Precise assessment of pipeline condition and integrity. \n\n Construction Support - Professional diving services for marine construction projects."
+      },
+      {
+        "tag": "BENEFITS",
+        "content": "Cost-Effective - Minimize downtime and reduce operational costs. \n\n Enhanced Safety - Identify potential hazards and prevent accidents. \n\n Increased Efficiency - Streamline maintenance and repair operations. \n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues."
       }
     ]
   },
   {
     "id": 3,
     "title": {
-      "tag": "ROV Inspection",
-      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+      "tag": "SUBSEA SURVERY AND POSITIONING",
+      "title": "we specialize in delivering expert subsea positioning and survey solutions to empower our clients to achieve accurate and efficient underwater operations."
     },
     "img": "/service/serv1.png",
     "sections": [
       {
-        "tag": "Benefits",
-        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+        "tag": "SERVICES",
+        "content": "Subsea Positioning - Utilizing acoustic and inertial navigation systems, we provide accurate positioning for underwater vehicles, equipment, and infrastructure.\n\n Geophysical Surveys - Conducting bathymetric, side-scan sonar, and magnetometer surveys to map seafloor topography and identify potential hazards.\n\n Hydrographic Surveys - Collecting and analyzing data for water depth, tide, and current measurements.\n\n Underwater Mapping - Creating detailed, 3D models of subsea environments for infrastructure planning and monitoring.\n\n ROV and AUV Support - Providing positioning and navigation expertise for Remotely Operated Vehicle (ROV) and Autonomous Underwater Vehicle (AUV) operations."
+      },
+      {
+        "tag": "BENEFITS",
+        "content": "Cost-Effective - Minimize downtime and reduce operational costs. \n\n Enhanced Safety - Identify potential hazards and prevent accidents. \n\n Increased Efficiency - Streamline maintenance and repair operations. \n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues."
+      },
+      {
+        "tag": "INDUSTRIES SERVED",
+        "content": "Offshore Oil and Gas\n\n Renewable Energy\n\n Construction and Infrastructure\n\n Environmental Monitoring\n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition.\n\n Research and Scientific Exploration\n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues."
       }
     ]
   },
   {
     "id": 4,
     "title": {
-      "tag": "ROV Inspection",
-      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+      "tag": "SUBSEA SURVERY AND POSITIONING",
+      "title": "we specialize in delivering expert subsea positioning and survey solutions to empower our clients to achieve accurate and efficient underwater operations."
     },
     "img": "/service/serv1.png",
     "sections": [
       {
-        "tag": "Benefits",
-        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+        "tag": "HULL CLEANING",
+        "content": "we provide expert hull cleaning services for vessels, ensuring optimal performance, efficiency, and environmental compliance."
+      },
+      {
+        "tag": "SERVICES",
+        "content": "Professional Divers - Experienced, certified, and insured \n\n Advanced Equipment - State-of-the-art cleaning technology \n\n Customized Solutions - Tailored to vessel size, type, and operational needs \n\n Environmentally Friendly - Eco-friendly cleaning methods and materials"
+      },
+      {
+        "tag": "BENEFITS",
+        "content": "Improved Fuel Efficiency - Reduce fuel consumption by up to 15% \n\n Enhanced Speed - Increase vessel speed by up to 5% \n\n Extended Coating Life - Protect expensive hull coatings from damage \n\n Reduced Emissions - Minimize environmental impact \n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n Compliance - Meet regulatory requirements for hull cleanliness \n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues."
+      },
+      {
+        "tag": "METHODS",
+        "content": "Brush-cleaning \n\n Cavitation Cleaning \n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues."
       }
     ]
   },
   {
     "id": 5,
     "title": {
-      "tag": "ROV Inspection",
-      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+      "tag": "3rd party IMCA  ROV System and Diving System audits",
+      "title": "we offer 3rd party IMCA ROV System and Diving System audits to ensure compliance, enhance safety, and optimize operational efficiency."
     },
     "img": "/service/serv1.png",
     "sections": [
       {
-        "tag": "Benefits",
-        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+        "tag": "HULL CLEANING",
+        "content": "we provide expert hull cleaning services for vessels, ensuring optimal performance, efficiency, and environmental compliance."
+      },
+      {
+        "tag": "SERVICES",
+        "content": "Professional Divers - Experienced, certified, and insured \n\n Advanced Equipment - State-of-the-art cleaning technology \n\n Customized Solutions - Tailored to vessel size, type, and operational needs \n\n Environmentally Friendly - Eco-friendly cleaning methods and materials"
+      },
+      {
+        "tag": "BENEFITS",
+        "content": "IMCA R003/R006 (ROV System Certification) \n\n IMCA D039 (Diving System Certification) \n\n Gap analysis and compliance review \n\n Pre-audit consultations and support \n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n Customized audit reports and recommendations \n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues. \n\n"
       }
     ]
   },
   {
     "id": 6,
     "title": {
-      "tag": "ROV Inspection",
-      "title": "we provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+      "tag": "Electrical Instrumentation",
+      "title": "our expert technicians provide comprehensive electrical instrumentation services to ensure your marine and offshore operations run efficiently."
     },
     "img": "/service/serv1.png",
     "sections": [
       {
-        "tag": "Benefits",
-        "content": "Reduced risk to personnel\n\n Increased efficiency and cost-effectiveness \n\n Enhanced accuracy and reliability \n\n Real-time data and video feedback \n\n Minimized environmental impact"
+        "tag": "SERVICES",
+        "content": "installation, calibration, and maintenance of electrical instruments \n\n Troubleshooting and repair of existing systems \n\n Upgrade and retrofitting of outdated instrumentation \n\n Commissioning and startup services \n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n Training and support for operational personnel \n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues. \n\n"
+      },
+      {
+        "tag": "BENEFITS",
+        "content": "IMCA R003/R006 (ROV System Certification) \n\n IMCA D039 (Diving System Certification) \n\n Gap analysis and compliance review \n\n Pre-audit consultations and support \n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n Customized audit reports and recommendations \n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues. \n\n"
+      },
+      {
+        "tag": "INDUSTRY APPLIATIONS",
+        "content": "Offshore platforms \n\n FPSOs \n\n Tankers \n\n Cargo vessels \n\n Pipeline Surveys- Mapping pipeline routes, detecting anomalies, and assessing condition. \n\n Marine construction projects \n\n Customized audit reports and recommendations \n\n Platform and Jacket Inspections- Evaluating structural integrity and identifying potential issues. \n\n"
       }
     ]
   }
