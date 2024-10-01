@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-// import { GetStaticProps, GetStaticPaths } from 'next';
-import * as servicesData from '../data.json';
 import { notFound } from 'next/navigation';
 import ScrollFade from '@/utils/SlideFade';
 import Smallie from '@/app/components/Smallie';
 import Markdown from 'react-markdown';
+import fs from 'fs/promises';
+import path from 'path';
 
 import '../../stories/[id]/markdown.css';
 import { twMerge } from 'tailwind-merge';
@@ -16,10 +16,25 @@ type ServicePageProps = {
   };
 };
 
-const Page = ({ params }: ServicePageProps) => {
-  const { id } = params;
+interface Service {
+  id: number;
+  title: {
+    tag: string;
+    title: string;
+  };
+  img: string;
+  sections: {
+    tag: string;
+    content: string;
+  }[];
+}
 
-  const service = servicesData.find((service) => service.id === +id);
+const Page = async ({ params }: ServicePageProps) => {
+  const url = path.join('./', 'app/Services/data.json');
+  const file = await fs.readFile(url, 'utf-8');
+  const services: Service[] = JSON.parse(file);
+
+  const service = services.find((service) => `${service.id}` === params.id);
 
   if (!service) {
     return notFound();
