@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import ScrollFade from '@/utils/SlideFade';
+import Smallie from '../Smallie';
 
 interface TeamMemberProps {
   name: string;
@@ -18,7 +19,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   <div
     className={`flex w-full flex-col lg:flex-row items-start justify-end  p-2  ${reverse ? 'lg:flex-row-reverse' : ''} mb-10 sm:mb-0`}
   >
-    <div className="image w-full ">
+    <div className=" w-full ">
       <Image
         src={imageSrc}
         alt={name}
@@ -46,15 +47,11 @@ export function Team() {
       threshold={0.2}
       duration={0.2}
       delay={0.2}
-      className="w-full relative sm:flex gap-4 lg:gap-[7.75rem] items-start justify-start 
+      className="w-full  relative flex gap-4 lg:gap-[7.75rem] items-start justify-start 
         py-[2.5rem] px-[1.5rem] sm:px-[2.5rem] sm:py-[5rem] lg:py-[7.5rem] lg:px-[5rem] 
-      text-foundation-grey-grey-100 font-title-1-semibold"
+      text-foundation-grey-grey-100 font-title-1-semibold "
     >
-      <div className="sm:w-[232px] text-nowrap flex text-start py-2 flex-col mb-10 sm:mb-0">
-        <h2 className="text-sm sm:text-xl tracking-wider uppercase font-medium">
-          our core team
-        </h2>
-      </div>
+      <Smallie text="our core team" />
       <div className="w-full max-w-[1000px] mx-auto">
         <TeamMember
           name="Ifeanyi Enyia"
