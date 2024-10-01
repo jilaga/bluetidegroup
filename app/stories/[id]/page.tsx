@@ -7,7 +7,9 @@ import './markdown.css';
 
 export function generateStaticParams() {
   const articleCount = 30; //NOTE this should always be the same length as the articles array
-  const ids = Array(articleCount).map((_, idx) => ({ id: `${idx + 1}` }));
+  const ids = Array(articleCount)
+    .fill('')
+    .map((_, idx) => ({ id: `${idx + 1}` }));
   return ids;
 }
 
