@@ -33,7 +33,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       style={{ strokeWidth: 1 }}
     />
   );
-  
+
   if (link) {
     return (
       <a href={link} target={target}>

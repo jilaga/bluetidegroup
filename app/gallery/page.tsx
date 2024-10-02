@@ -2,8 +2,6 @@ import Image from 'next/image';
 import ImageReveal from './ImageReveal';
 import ScrollFade from '@/utils/SlideFade';
 
-
-
 function page() {
   return (
     <div

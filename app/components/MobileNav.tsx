@@ -112,7 +112,7 @@ export default function MobileNav() {
                 });
               }}
             >
-              Let's Talk
+              Let&apos;s talk
             </motion.div>
           </div>
         </div>

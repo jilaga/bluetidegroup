@@ -35,12 +35,12 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <>
+    <header>
       <MobileNav />
       <nav className="w-full hidden mx-auto lg:flex justify-center items-center p-4 top-0 fixed z-50  text-nowrap">
         <AnimatePresence>
           {areServicesOpen && (
-            <>
+            <div>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -74,7 +74,7 @@ export default function Navbar() {
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 bg-black/50 z-[60]"
               />
-            </>
+            </div>
           )}
         </AnimatePresence>
         <div
@@ -147,7 +147,7 @@ export default function Navbar() {
               });
             }}
           >
-            Let's Talk
+            Let&apos;s talk
           </motion.div>
           <button onClick={toggleMenu} className="md:hidden">
             {!isMenuOpen ? (
@@ -158,6 +158,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-    </>
+    </header>
   );
 }

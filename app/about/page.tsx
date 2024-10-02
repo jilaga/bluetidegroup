@@ -10,7 +10,7 @@ export default function page() {
       <HeroSec />
       <Leading />
       <Text />
-      <Team  />
+      <Team />
     </main>
   );
 }
