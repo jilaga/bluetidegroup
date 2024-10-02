@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import ArticleCard from './articleCard';
-import * as articles from './articles.json';
+import articles from './articles.json';
 
 const tags = [
   ...new Set([...articles.map((article) => article.tags).flat()]),

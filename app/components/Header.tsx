@@ -39,12 +39,12 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <>
+    <header>
       <MobileNav />
       <nav className="w-full hidden mx-auto lg:flex justify-center items-center p-4 top-0 fixed z-50  text-nowrap">
         <AnimatePresence>
           {areServicesOpen && (
-            <>
+            <div>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -78,7 +78,7 @@ export default function Navbar() {
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 bg-black/50 z-[60]"
               />
-            </>
+            </div>
           )}
         </AnimatePresence>
         <div
@@ -143,15 +143,15 @@ export default function Navbar() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="w-max"
+            className="w-max cursor-pointer no-underline self-stretch rounded-full md:flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 hidden text-base  text-linen"
+            onClick={() => {
+              window.scrollTo({
+                top: 9999999,
+                behavior: 'smooth',
+              });
+            }}
           >
-            <Link
-              href="https://wa.me/+2347065382326"
-              target="_blank"
-              className="no-underline self-stretch rounded-full md:flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 hidden text-base  text-linen"
-            >
-              Let&apos;s talk
-            </Link>
+            Let&apos;s talk
           </motion.div>
           <button onClick={toggleMenu} className="md:hidden">
             {!isMenuOpen ? (
@@ -162,6 +162,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-    </>
+    </header>
   );
 }

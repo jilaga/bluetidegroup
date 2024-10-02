@@ -102,13 +102,19 @@ export default function MobileNav() {
             </Link>
           </div>
           <div className="flex w-full justify-center pt-4">
-            <Link
-              href="https://wa.me/+2347065382326"
-              target="_blank"
-              className="no-underline self-stretch rounded-full md:flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 hidden text-base w-full sm:w-[320px] text-linen"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-max cursor-pointer no-underline self-stretch rounded-full md:flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 hidden text-base  text-linen"
+              onClick={() => {
+                window.scrollTo({
+                  top: 9999999,
+                  behavior: 'smooth',
+                });
+              }}
             >
               Let&apos;s talk
-            </Link>
+            </motion.div>
           </div>
         </div>
       )}

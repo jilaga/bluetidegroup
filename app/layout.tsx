@@ -81,7 +81,7 @@ export default function RootLayout({
           montserrat.className,
           clash.variable,
           satoshi.variable,
-          'flex flex-col w-full justify-center items-center  '
+          'flex flex-col w-full justify-center items-center'
         )}
       >
         <Navbar />
@@ -91,7 +91,7 @@ export default function RootLayout({
         <a
           className="fixed inset-[auto_2em_2em_auto] "
           href="https://wa.me/+2347065382326"
-          target='blank'
+          target="blank"
         >
           <Image
             src="/whatsapp.svg"
