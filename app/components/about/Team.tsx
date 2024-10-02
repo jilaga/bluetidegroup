@@ -44,10 +44,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 export function Team() {
   return (
     <ScrollFade
-      threshold={0.2}
-      duration={0.2}
-      delay={0.2}
-      className="w-full  relative flex gap-4 lg:gap-[7.75rem] items-start justify-start 
+      className="w-full flex-col sm:flex-row relative flex gap-4 lg:gap-[7.75rem] items-start justify-start 
         py-[2.5rem] px-[1.5rem] sm:px-[2.5rem] sm:py-[5rem] lg:py-[7.5rem] lg:px-[5rem] 
       text-foundation-grey-grey-100 font-title-1-semibold "
     >
@@ -64,6 +61,7 @@ export function Team() {
           imageSrc="/about/Chris.png"
           reverse
         />
+
         <TeamMember
           name="Udoka Okuofu"
           position="Business Development Manager"

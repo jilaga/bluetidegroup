@@ -14,26 +14,26 @@ const ServiceCard: React.FC<{
   delay: number;
   bgColor: string;
   href: string;
-}> = ({ title, description, imageSrc, href, delay, bgColor }) => {
+}> = ({ title, description, href, delay, bgColor }) => {
   return (
-    <ResponsiveScrollSwipe className="mb-0" delay={delay / 1000}>
+    <ResponsiveScrollSwipe className=" mb-0" delay={delay / 1000}>
       <Link href={href}>
         <motion.div
           className={twMerge(
-            'rounded-2xl flex flex-col items-end justify-end p-6 lg:p-10 box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative isolate overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl aspect-[600/650] group cursor-pointer',
+            'rounded-2xl flex flex-col items-end justify-end w-full h-[25rem] lg:w-[600px] lg:h-[26.25rem] aspect-[600/420] p-6 lg:p-10 box-border gap-[0.5rem] bg-cover object-fit bg-[top] relative isolate overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl group cursor-pointer',
             `bg-[${bgColor}]`
           )}
         >
           <div className="relative flex justify-end z-10">
             <div className="relative cursor-pointer p-2 rounded-full z-10 border-black border group-hover:bg-[#FF6700] group-hover:border-none transition-[background-color]">
-              <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-black group-hover:fill-white group-hover:rotate-45 transition-[transform,_fill]" />
+              <HiArrowUpRight className="size-6 sm:size-8 overflow-hidden shrink-0 fill-[#1E1E1E] group-hover:fill-white group-hover:rotate-45 transition-[transform,_fill]" />
             </div>
           </div>
           <div className="self-stretch flex-1 flex flex-col items-center justify-end gap-[1rem] relative z-10">
             <div className="self-stretch relative leading-[130%] font-semibold text-[1.5rem] font-clash md:text-[1.75rem] lg:text-[2.25rem] text-[#1E1E1E]">
               {title}
             </div>
-            <div className="self-stretch relative text-[1rem] leading-[140%] font-body-1 text-[#1E1E1E]">
+            <div className="self-stretch relative md:text-[1.25rem] text-[1.5rem] leading-[140%] font-body-1 text-[#1E1E1E]">
               {description}
             </div>
           </div>
@@ -62,6 +62,12 @@ export default function OurServicesPage() {
           style={{ width: size, height: size, opacity: size, y }}
           className="absolute inset-0 mx-auto"
         >
+          <div
+            className="w-full h-full absolute"
+            style={{
+              backgroundColor: 'rgba(0, 112, 239, 0.56)',
+            }}
+          ></div>
           <Image
             src="/service/bg.png"
             width={1440}
@@ -71,19 +77,19 @@ export default function OurServicesPage() {
           />
         </motion.div>
       </div>
-      <div className="w-full relative flex flex-col md:flex-row gap-[2rem] md:gap-12 min-[1320px]:gap-16 p-6 md:px-[40px] lg:px-[80px]">
-        <div className="w-full relative flex flex-col gap-[2rem] md:gap-12 min-[1320px]:gap-16">
+      <div className="w-full relative flex flex-col justify-center md:flex-row gap-[2rem] md:gap-12 min-[1320px]:gap-16 p-6 md:px-[40px] lg:px-[80px]">
+        <div className="w-full md:w-[300px] lg:w-full relative flex flex-col gap-[2rem] md:gap-12 min-[1320px]:gap-16 ">
           <ResponsiveScrollSwipe>
             <div
-              className="self-stretch h-[26.25rem] aspect-[600/650] rounded-2xl flex flex-col items-start justify-between lg:justify-start p-6 lg:p-10 box-border gap-4 md:gap-6 lg:gap-0 bg-cover relative
+              className="self-stretch w-full h-[25rem]  lg:h-[26.25rem] rounded-2xl flex flex-col items-start justify-between  p-6 lg:p-10 box-border bg-cover relative
              bg-[#FF8533] hover:bg-orange-500 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
             >
               <p className="text-[1.25rem] md:mb-4 self-stretch relative leading-[130%] font-semibold md:font-medium text-[#FFD0B0] font-clash">
                 Our services
               </p>
-              <div className="text-[1rem] flex flex-col justify-end md:text-[2rem]">
-                <p className="leading-[140%] text-foundation-rust-accent-rust-accent-50">
-                  we are highly exclusive but not limited to Hydrographic
+              <div className="w-full flex flex-col justify-end text-[1.5rem] lg:text-[2rem]">
+                <p className=" w-full leading-[140%] text-foundation-rust-accent-rust-accent-50">
+                  We are highly exclusive but not limited to Hydrographic
                   surveys, ROV/Diving services, offshore services, procurement
                   amongst others.
                 </p>
@@ -91,46 +97,49 @@ export default function OurServicesPage() {
             </div>
           </ResponsiveScrollSwipe>
           <ServiceCard
-            title="Remotely Operated Vehicle (ROV)"
-            description="High quality underwater repair and underwater maintenance of ship hulls"
-            imageSrc="/service/serv1.png"
-            bgColor="#FFF0E6"
-            href="/Services/1"
-            delay={0}
-          />
-          <ServiceCard
             bgColor="#E6F1FD"
-            title="Electrical Installation"
-            description="Expert electrical installation services for marine vessels"
-            imageSrc="/service/serv3.png"
+            title="Hull Cleaning"
+            description="We provide expert hull cleaning services for vessels, ensuring optimal performance, efficiency, and environmental compliance."
+            imageSrc="/service/serv1.png"
+            href="/Services/1"
+            delay={100}
+          />
+
+          <ServiceCard
+            bgColor="#FFF0E6"
+            title="Equipment procurement and hire"
+            description="We provide rental services for a wide array of specialized subsea equipment."
+            imageSrc="/service/serv2.png"
             href="/Services/2"
-            delay={400}
+            delay={300}
           />
         </div>
-        <div className="w-full relative flex flex-col pt-[0] md:pt-[10rem] gap-[2rem] md:gap-12 min-[1320px]:gap-16">
+        <div className="w-full md:w-[300px] lg:w-full relative flex flex-col pt-[0] md:pt-[10rem] gap-[2rem] md:gap-12 min-[1320px]:gap-16 ">
           <ServiceCard
-            bgColor="#FFF0E6"
-            title="Remotely Operated Vehicle (ROV)"
+            bgColor="#E6F1FD"
+            title="ROV Inspection"
+            description="We provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
+            imageSrc="/service/serv3.png"
             href="/Services/3"
-            description="High quality underwater repair and underwater maintenance of ship hulls"
-            imageSrc="/service/serv1.png"
-            delay={0}
+            delay={500}
           />
-          <ServiceCard
-            bgColor="#B0D3FA"
-            title="Hull Cleaning"
-            description="Professional hull cleaning services to improve vessel performance"
-            imageSrc="/service/serv1.png"
-            href="/Services/4"
-            delay={600}
-          />
+
           <ServiceCard
             bgColor="#FFF0E6"
-            title="Equipment Procurement"
-            description="Sourcing of high-quality marine equipment for various operations"
-            imageSrc="/service/serv2.png"
+            title="Air diving"
+            description="We offer comprehensive air diving services tailored to meet the unique needs of our clients."
+            imageSrc="/service/serv4.png"
+            href="/Services/4"
+            delay={700}
+          />
+
+          <ServiceCard
+            bgColor="#E6F1FD"
+            title="Subsea survey and Positioning"
+            description="We specialize in delivering expert subsea positioning and survey solutions to empower our clients to achieve accurate and efficient underwater operations."
+            imageSrc="/service/serv5.png"
             href="/Services/5"
-            delay={800}
+            delay={900}
           />
         </div>
       </div>

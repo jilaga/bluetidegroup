@@ -40,7 +40,6 @@ function Company() {
               >
                 <CustomButton
                   link="/about"
-                  target="_blank"
                   bgColor=""
                   borderColor="border-accent"
                   textColor="text-accent"
