@@ -20,7 +20,7 @@ export default function Innovation() {
         <motion.div className="w-full font-clash mb-auto flex">
           <div className="p-4 text-center font-medium shrink-0">
             <motion.p
-              style={{ x }}
+              style={{ x,  }}
               className="text-nowrap w-max text-[#FF6700] text-2xl md:text-4xl font-semibold"
             >
               we offer INNOVATION and EFFICIENCY to deliver a superior level of

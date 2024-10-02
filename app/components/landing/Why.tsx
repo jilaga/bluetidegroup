@@ -9,77 +9,25 @@ import {
 } from 'framer-motion';
 import { ReactNode, useEffect, useRef } from 'react';
 
-const boxes = [
-  {
-    type: 'quote',
-    quote:
-      "They're a reliable partner, delivering exceptional results every time.",
-    author: 'John Doe',
-    company: 'CEO of Marine Ltd.',
-  },
-  { type: 'stat', stat: '08+', description: 'years of experience' },
-  { type: 'stat', stat: '300+', description: 'Projects completed' },
-  {
-    type: 'quote',
-    quote:
-      "They're a reliable partner, delivering exceptional results every time.",
-    author: 'John Doe',
-    company: 'CEO of Marine Ltd.',
-  },
-  {
-    type: 'quote',
-    quote:
-      "They're a reliable partner, delivering exceptional results every time.",
-    author: 'John Doe',
-    company: 'CEO of Marine Ltd.',
-  },
-  {
-    type: 'quote',
-    quote:
-      "They're a reliable partner, delivering exceptional results every time.",
-    author: 'John Doe',
-    company: 'CEO of Marine Ltd.',
-  },
-  { type: 'stat', stat: '300+', description: 'Equipment leased' },
-  {
-    type: 'quote',
-    quote:
-      "They're a reliable partner, delivering exceptional results every time.",
-    author: 'John Doe',
-    company: 'CEO of Marine Ltd.',
-  },
-];
 function Why() {
   return (
     <div className="w-full p-6 text-[#1E1E1E] max-w-[500px] mx-auto md:flex md:justify-center md:items-center md:max-w-[unset] gap-4 lg:gap-10 md:px-[40px] lg:px-[80px]">
       <div className="md:w-1/3 lg:gap-10 flex flex-col">
-        <div className="bg-[#FF6700] p-6 w-full text-white min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-[2.25rem] text-center">
+        <div className="bg-[#FF6700] p-6 w-full font-thin text-white min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-[2.25rem] text-center">
           <p>Why</p>
           <p>us?</p>
         </div>
-        <QuoteCard author="john doe" position="CEO of Marine  Ltd">
-          They&apos;re a reliable partner, delivering exceptional results every
-          time.
-        </QuoteCard>
+        <QuoteCard>Unmatched safety record</QuoteCard>
         <StatCard description="years of experience" stat={8} />
       </div>
       <div className="md:w-1/3 md:mt-62  lg:gap-10 flex flex-col">
         <StatCard description="projects completed" stat={34} />
-        <QuoteCard author="john doe" position="CEO of Marine  Ltd">
-          They&apos;re a reliable partner, delivering exceptional results every
-          time.
-        </QuoteCard>
+        <QuoteCard>State-of-the-art ROV technology</QuoteCard>
       </div>
       <div className="md:w-1/3 md:mt-40 lg:gap-10 flex flex-col">
-        <QuoteCard author="john doe" position="CEO of Marine  Ltd">
-          They&apos;re a reliable partner, delivering exceptional results every
-          time.
-        </QuoteCard>
+        <QuoteCard>Customized inspection solutions</QuoteCard>
         <StatCard description="equipment leased" stat={300} />
-        <QuoteCard author="john doe" position="CEO of Marine  Ltd">
-          They&apos;re a reliable partner, delivering exceptional results every
-          time.
-        </QuoteCard>
+        <QuoteCard>Real-time data delivery</QuoteCard>
       </div>
     </div>
   );
@@ -125,25 +73,11 @@ const StatCard = function ({
   );
 };
 
-const QuoteCard = function ({
-  children,
-  author,
-  position,
-}: {
-  children: ReactNode;
-  author: string;
-  position: string;
-}) {
+const QuoteCard = function ({ children }: { children: ReactNode }) {
   return (
-    <div className="bg-[#B0D3FA] p-6 sm:p-8 md:p-5 lg:p-8 w-full min-h-80 md:min-h-[220px] lg:min-h-80 grid grid-rows-[1fr_auto_auto] rounded-3xl text-5xl md:text-sm lg:text-5xl mt-4 ">
-      <p className="font-normal text-[1.25rem] md:text-[1rem] lg:text-[1.25rem] tracking-[0.03em] leading-[140%]">
+    <div className="bg-[#B0D3FA] p-6 sm:p-8 md:p-5 lg:p-8 w-full min-h-80 md:min-h-[220px] lg:min-h-80 flex justify-center items-center text-center rounded-3xl text-5xl md:text-sm lg:text-5xl mt-4 ">
+      <p className="font-medium font-clash text-[1.3rem] md:text-[1.rem] lg:text-[2.38rem] tracking-[0.03em] leading-[140%]">
         &quot;{children}&quot;
-      </p>
-      <p className="uppercase font-medium font-clash leading-[140%]">
-        {author},
-      </p>
-      <p className="uppercase font-medium font-clash leading-[140%]">
-        {position}.
       </p>
     </div>
   );

@@ -1,6 +1,8 @@
+'use client';
+
 import * as motion from 'framer-motion/client';
-import CustomButton from '../Button';
 import ScrollFade from '@/utils/SlideFade';
+import { HiOutlineArrowRight } from 'react-icons/hi2';
 
 export default function Choose() {
   return (
@@ -17,13 +19,20 @@ export default function Choose() {
             whileTap={{ scale: 0.95 }}
             className="w-max"
           >
-            <CustomButton
-              bgColor=""
-              borderColor="border-accent"
-              textColor="text-accent"
-              iconColor="text-accent"
-              buttonText="Let's Talk"
-            />
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-max cursor-pointer no-underline gap-3 flex items-center relative px-4 sm:px-4 py-3 sm:py-4 text-center border rounded-full  justify-center  text-[1.25rem] leading-[140%] font-medium font-montserrat  text-accent border-accent"
+              onClick={() => {
+                window.scrollTo({
+                  top: 9999999,
+                  behavior: 'smooth',
+                });
+              }}
+            >
+              Let&apos;s talk
+              <HiOutlineArrowRight className="size-6 " />
+            </motion.div>
           </motion.div>
         </ScrollFade>
       </div>
