@@ -15,9 +15,12 @@ const Partners: React.FC = () => {
   ];
 
   return (
-    <section className="mx-auto w-full flex flex-col gap-6 sm:gap-10 pb-10">
-      <Smallie text="our partners trust us" className="text-center flex w-full justify-center" />
-      <motion.div className="overflow-hidden flex items-center gap-8">
+    <section className="mx-auto w-full pb-10 overflow-x-hidden">
+      <Smallie
+        text="our partners trust us"
+        className="text-center flex w-full justify-center mb-6 sm:mb-10"
+      />
+      <div className="w-full flex items-center gap-8">
         <motion.div
           initial={{ x: '0' }}
           animate={{ x: '-100%' }}
@@ -50,7 +53,7 @@ const Partners: React.FC = () => {
             <ScrollItem key={src + 1} src={src} className="shrink-0" />
           ))}
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };
