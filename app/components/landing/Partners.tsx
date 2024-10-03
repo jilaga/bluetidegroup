@@ -20,7 +20,7 @@ const Partners: React.FC = () => {
         text="our partners trust us"
         className="text-center flex w-full justify-center mb-6 sm:mb-10"
       />
-      <div className="w-full flex items-center gap-8">
+      <div className="w-full flex items-center">
         <motion.div
           initial={{ x: '0' }}
           animate={{ x: '-100%' }}
@@ -31,10 +31,10 @@ const Partners: React.FC = () => {
             repeatType: 'loop',
             ease: 'linear',
           }}
-          className="flex shrink-0 items-center gap-8"
+          className="flex shrink-0 items-center"
         >
           {list.map((src) => (
-            <ScrollItem key={src} src={src} className="shrink-0" />
+            <ScrollItem key={src} src={src} className="shrink-0 ml-8" />
           ))}
         </motion.div>
         <motion.div
@@ -47,10 +47,10 @@ const Partners: React.FC = () => {
             repeatType: 'loop',
             ease: 'linear',
           }}
-          className="flex shrink-0 items-center gap-8"
+          className="flex shrink-0 items-center"
         >
           {list.map((src) => (
-            <ScrollItem key={src + 1} src={src} className="shrink-0" />
+            <ScrollItem key={src + 1} src={src} className="shrink-0 ml-8" />
           ))}
         </motion.div>
       </div>
