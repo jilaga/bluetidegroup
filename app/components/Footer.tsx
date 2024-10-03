@@ -100,30 +100,42 @@ const Footer: NextPage = () => {
               copyright © Bluetidegroup 2024.
             </p>
             <div className="sm:w-1/3 flex sm:justify-end items-center space-x-4">
-              <Image
-                src="/socials/facebook.svg"
-                width={32}
-                height={32}
-                alt="social Logo"
-              />
-              <Image
-                src="/socials/instagram.svg"
-                width={32}
-                height={32}
-                alt="social Logo"
-              />
-              <Image
-                src="/socials/twitter.svg"
-                width={32}
-                height={32}
-                alt="social Logo"
-              />
-              <Image
-                src="/socials/linkedin.svg"
-                width={32}
-                height={32}
-                alt="social Logo"
-              />
+              <a href="https://web.facebook.com/BlueTideIntegratedServicesLtd">
+                <Image
+                  src="/socials/facebook.svg"
+                  width={32}
+                  height={32}
+                  alt="social Logo"
+                />
+              </a>
+              <a href="https://www.instagram.com/bluetidegroup">
+                <Image
+                  src="/socials/instagram.svg"
+                  width={32}
+                  height={32}
+                  alt="social Logo"
+                />
+              </a>
+              <a
+                href="https://x.com/bluetide_group"
+                className="bg-[#FF6700] w-8 h-8 rounded-full grid"
+              >
+                <Image
+                  className="m-auto"
+                  src="/socials/x.svg"
+                  width={18}
+                  height={18}
+                  alt="social Logo"
+                />
+              </a>
+              <a href="https://www.linkedin.com/company/bluetide-integrated-services-ltd">
+                <Image
+                  src="/socials/linkedin.svg"
+                  width={32}
+                  height={32}
+                  alt="social Logo"
+                />
+              </a>
             </div>
           </div>
         </div>
