@@ -6,12 +6,9 @@ import HeroSec from '../components/about/hero/page';
 
 const Service: React.FC = () => {
   return (
-    <div className=" w-full flex flex-row justify-center items-center flex-wrap  py-[2.5rem] px-[1.5rem] box-border gap-[0.5rem] text-left text-[1rem] text-foundation-grey-grey-500 font-caption-semibold">
+    <div className=" w-full grid grid-cols-2 lg:grid-cols-3 justify-center items-center pt-[2rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2rem] sm:pb-[2.5rem] md:pb-[4rem]  box-border gap-[0.5rem] text-left text-[1rem] text-foundation-grey-grey-500 font-caption-semibold">
       {servicesData.map((service, index) => (
-        <div
-          key={index}
-          className="max-w-[400px] flex flex-col items-start justify-center"
-        >
+        <div key={index} className="flex flex-col items-start justify-center">
           <CardComponent
             imgUrl={service.imgUrl}
             title={service.title}

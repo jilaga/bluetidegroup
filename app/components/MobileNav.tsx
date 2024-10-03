@@ -105,7 +105,7 @@ export default function MobileNav() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-max cursor-pointer no-underline self-stretch rounded-full md:flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 hidden text-base  text-linen"
+              className="w-max cursor-pointer no-underline self-stretch rounded-full flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 text-base  text-linen"
               onClick={() => {
                 window.scrollTo({
                   top: 9999999,

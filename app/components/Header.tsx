@@ -24,17 +24,13 @@ export default function Navbar() {
     }
   };
 
-  const pathname = usePathname();
-
   useEffect(() => {
     document.addEventListener('click', handleOuterClick, true);
 
     document.addEventListener('scroll', () => setAreServicesOpen(false));
   }, []);
 
-  useEffect(() => {
-    setAreServicesOpen(false)
-  }, [pathname])
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
