@@ -1,6 +1,5 @@
 // page.tsx
 import Company from './components/landing/Company';
-import Why from './components/landing/Why';
 import Partners from './components/landing/Partners';
 import Brands from './components/landing/Brands';
 import FAQ from './components/landing/Faqs';
@@ -16,7 +15,6 @@ export default function Home() {
       <Partners />
       <OurServicesPage />
       <Innovation />
-      <Why />
       <Brands />
       <FAQ />
     </main>

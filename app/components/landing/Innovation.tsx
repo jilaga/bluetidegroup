@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
+import Why from './Why';
 
 export default function Innovation() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -12,23 +13,25 @@ export default function Innovation() {
   const x = useTransform(() => `${scrollYProgress.get() * 100 - 100}%`);
 
   return (
-    <div ref={containerRef} className="grid w-full h-[300vh] ">
-      <div className="sticky top-0 flex flex-col h-screen overflow-hidden">
+    <div className="grid w-full">
+      <div className="sticky top-0 flex flex-col h-screen overflow-hidden mb-auto">
         <p className="text-[#FFB98A] text-xl md:text-2xl font-normal mt-auto text-center">
           To our clients and partners
         </p>
-        <motion.div className="w-full font-clash mb-auto flex p-4">
-          <div className=" text-center font-medium shrink-0 w-full mt-4 translate-x-full">
+        <div className="w-full font-clash mb-auto flex py-4">
+          <div className="text-center font-medium shrink-0 w-full mt-4 translate-x-full">
             <motion.p
               style={{ x }}
-              className="text-nowrap w-max min-w-full text-[#FF6700] text-2xl md:text-4xl font-semibold"
+              className="text-nowrap w-max min-w-full px-4 text-[#FF6700] text-2xl md:text-4xl font-semibold"
             >
               we offer INNOVATION and EFFICIENCY to deliver a superior level of
               excellence.
             </motion.p>
           </div>
-        </motion.div>
+        </div>
       </div>
+      <div ref={containerRef} className="min-h-[200vh]" />
+      <Why />
     </div>
   );
 }

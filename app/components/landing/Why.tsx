@@ -11,8 +11,8 @@ import { ReactNode, useEffect, useRef } from 'react';
 
 function Why() {
   return (
-    <div className="w-full p-6 text-[#1E1E1E] max-w-[500px] mx-auto md:flex md:justify-center md:items-center md:max-w-[unset] gap-4 lg:gap-10 md:px-[40px] lg:px-[80px]">
-      <div className="md:w-1/3 lg:gap-10 flex flex-col">
+    <div className="w-full p-6 text-[#1E1E1E] mx-auto md:flex md:justify-center gap-4 lg:gap-10 md:px-[40px] lg:px-[80px] bg-white relative">
+      <div className="md:w-1/3 lg:gap-10 flex flex-col max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
         <div className="bg-[#FF6700] p-6 w-full font-thin text-white min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-[2.25rem] text-center">
           <p>Why</p>
           <p>us?</p>
@@ -20,11 +20,11 @@ function Why() {
         <QuoteCard>Unmatched safety record</QuoteCard>
         <StatCard description="years of experience" stat={8} />
       </div>
-      <div className="md:w-1/3 md:mt-62  lg:gap-10 flex flex-col">
+      <div className="md:w-1/3 md:mt-62  lg:gap-10 flex flex-col self-center max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
         <StatCard description="projects completed" stat={34} />
         <QuoteCard>State-of-the-art ROV technology</QuoteCard>
       </div>
-      <div className="md:w-1/3 md:mt-40 lg:gap-10 flex flex-col">
+      <div className="md:w-1/3 md:mt-20 lg:gap-10 flex flex-col max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
         <QuoteCard>Customized inspection solutions</QuoteCard>
         <StatCard description="equipment leased" stat={300} />
         <QuoteCard>Real-time data delivery</QuoteCard>
