@@ -35,7 +35,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header>
+    <header className='w-full'>
       <MobileNav />
       <nav className="w-full hidden mx-auto lg:flex justify-center items-center p-4 top-0 fixed z-50  text-nowrap">
         <AnimatePresence>
@@ -79,7 +79,7 @@ export default function Navbar() {
         </AnimatePresence>
         <div
           className="w-full max-w-[1040px] [backdrop-filter:blur(320px)] bg-foundation-primary-blue-primary-blue-50 rounded-full shadow border border-white 
-       bg-white/50 overflow-hidden flex flex-row items-center justify-between py-3 px-4 pl-6  box-border text-center text-base text-foundation-grey-grey-500 h-max"
+       bg-white/50 overflow-hidden flex  items-center justify-between py-3 px-4 pl-6  box-border text-center text-base text-foundation-grey-grey-500 h-max"
         >
           <Link href="/" className="flex items-center ">
             <Image

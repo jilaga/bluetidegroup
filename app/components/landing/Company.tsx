@@ -3,15 +3,12 @@ import Image from 'next/image';
 import * as motion from 'framer-motion/client';
 import CustomButton from '../Button';
 import ScrollFade from '@/utils/SlideFade';
+import Smallie from '@/app/components/Smallie';
 function Company() {
   return (
     <section className="w-full flex justify-center items-center py-20 px-4 md:px-20 ">
       <ScrollFade className="w-full flex flex-col sm:flex-row gap-10 sm:gap-8">
-        <div className="">
-          <p className="w-40 text-nowrap text-[0.875rem] sm:text-[1rem] sm:tracking-[0.03em] uppercase font-medium font-clash text-foundation-grey-grey-100 text-left ">
-            Our Company
-          </p>
-        </div>
+          <Smallie text="Our Company" className="min-w-40"></Smallie>
         <div className="w-full flex justify-center items-center gap-10 sm:gap-[7.75rem] ">
           <div className="w-full flex flex-col-reverse min-[1140px]:flex-row relative text-gray gap-10">
             <div className="w-full max-w-[600px] flex flex-col gap-10 ">

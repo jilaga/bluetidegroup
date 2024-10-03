@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { NextPage } from 'next';
 import { faqData } from './index'; // Assuming you have this file with the FAQ data
 import { HiChevronUp, HiChevronDown } from 'react-icons/hi2';
+import Smallie from '../Smallie';
 
 interface FAQItemProps {
   question: string;
@@ -81,9 +82,7 @@ const FAQ: NextPage = () => {
     >
       <div className="w-full flex flex-col lg:flex-row items-start  gap-10">
         <div className=" w-full flex flex-col items-start justify-start gap-4 ">
-          <p className="w-full tracking-[0.03em] leading-[140%] uppercase font-medium">
-            FAQ
-          </p>
+          <Smallie text = 'FAQs'/>
           <p className="max-w-[500px] text-[1.125rem] md:text-[1.5rem] lg:text-[2rem] text-h4-semibold leading-[140%] font-semibold text-gray text-left">
             Find answers to common questions about us
           </p>

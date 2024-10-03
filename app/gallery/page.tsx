@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import ImageReveal from './ImageReveal';
 import ScrollFade from '@/utils/SlideFade';
+import Smallie from '../components/Smallie';
 
 function page() {
   return (
@@ -9,9 +10,11 @@ function page() {
        max-w-[1440px] w-full mx-auto gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left"
     >
       <div className="sm:grid grid-rows-[repeat(6,_auto)] grid-cols-[repeat(3,_auto)]">
-        <p className="col-start-1 col-end-2 row-start-1 row-end-2 uppercase font-medium text-[#B9B9B9]">
-          pictures would convince you
-        </p>
+
+        <Smallie
+          text="pictures would convince you"
+          className="col-start-1 col-end-2 row-start-1 row-end-2 "
+        />
         <ImageReveal className="col-start-2 col-end-4 row-start-1 row-end-2">
           <ScrollFade>
             <Image

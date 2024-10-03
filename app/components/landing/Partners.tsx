@@ -1,6 +1,7 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import Image from 'next/image';
 import * as motion from 'framer-motion/client';
+import Smallie from '../Smallie';
 
 const Partners: React.FC = () => {
   const list = [
@@ -15,9 +16,7 @@ const Partners: React.FC = () => {
 
   return (
     <section className="mx-auto w-full flex flex-col gap-6 sm:gap-10 pb-10">
-      <p className="text-[0.875rem] sm:text-[1rem] tracking-[0.03em] sm:tracking-[0.05em] leading-[140%] uppercase font-medium font-clash text-foundation-grey-grey-100 text-center">
-        our partners trust us
-      </p>
+      <Smallie text="our partners trust us" className="text-center flex w-full justify-center" />
       <motion.div className="overflow-hidden flex items-center gap-8">
         <motion.div
           initial={{ x: '0' }}

@@ -1,4 +1,4 @@
-export interface ServiceData {
+ export interface ServiceData {
   imgUrl: string;
   title: string;
   description: string;

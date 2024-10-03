@@ -1,5 +1,6 @@
 import ScrollFade from '@/utils/SlideFade';
 import React from 'react';
+import Smallie from '../../Smallie';
 
 export default function HeroSec() {
   return (
@@ -13,9 +14,10 @@ export default function HeroSec() {
           gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash"
       >
         <div className="pr-5 md:pr-8 lg:pr-8 relative tracking-[0.03em] leading-[140%] uppercase font-medium ">
-          <p className="mt-2 lg:mt-5 text-[0.875rem] md:text-[1rem] lg:text-[1.5rem]  text-nowrap font-medium font-title-1-semibold">
-            company history
-          </p>
+          <Smallie
+            text="Company history"
+            className="mt-2 lg:mt-5 "
+          />
         </div>
         <ScrollFade className="w-full flex flex-col items-start justify-start gap-[2.5rem] text-foundation-grey-grey-400 font-satoshi">
           <b className="relative text-[2.25rem] lg:text-[4.5rem] leading-[130%] lg:leading-[140%] font-semibold font-clash whitespace-pre-wrap">
