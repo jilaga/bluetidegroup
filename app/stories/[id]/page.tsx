@@ -4,6 +4,7 @@ import Markdown from 'react-markdown';
 
 import { ArticleCardProps, getRandomHexColor } from '../articleCard';
 import './markdown.css';
+import { estimateReadingTime } from '@/utils/articleReadTime';
 
 export function generateStaticParams() {
   const articleCount = 30; //NOTE this should always be the same length as the articles array
@@ -47,7 +48,8 @@ async function page({ params }: { params: { id: string } }) {
               );
             })}
           <p className="text-[#686868] uppercase grow text-end">
-            {article.readDuration} read
+            {`${estimateReadingTime(article.content.split(' ').length)} mins`}{' '}
+            read
           </p>
         </div>
       </header>

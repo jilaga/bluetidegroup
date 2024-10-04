@@ -8,6 +8,7 @@ import Link from 'next/link';
 
 import ArticleCard from './articleCard';
 import articles from './articles.json';
+import { estimateReadingTime } from '@/utils/articleReadTime';
 
 const tags = [
   ...new Set([...articles.map((article) => article.tags).flat()]),
@@ -111,7 +112,11 @@ function Page() {
             </div>
           </label>
           {filteredArticles.slice(0, articleLimit).map((article) => (
-            <ArticleCard key={article.id} {...article} />
+            <ArticleCard
+              key={article.id}
+              {...article}
+              readDuration={`${estimateReadingTime(article.content.split(' ').length)} mins`}
+            />
           ))}
           <motion.button
             whileHover={{ scale: 1.05 }}
