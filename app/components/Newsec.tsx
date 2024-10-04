@@ -9,10 +9,16 @@ export default function Newsec() {
   return (
     <section className=" h-[100dvh] w-full p-4 grid relative isolate pb-[5rem]">
       <div className="absolute inset-0 bg-[#0050AA] -z-[1]">
+        <div
+          className="w-full h-full absolute"
+          style={{
+            backgroundColor: 'rgba(0, 80, 170, 0.63)',
+          }}
+        ></div>
         <Image
           src="/hero.png"
           alt="Hero background"
-          className="h-full w-full object-cover opacity-[63%]"
+          className="h-full w-full object-cover "
           width={1280}
           height={960}
         />

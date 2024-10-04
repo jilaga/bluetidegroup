@@ -34,6 +34,8 @@ const Brands: React.FC = () => {
     '/brands/Kreuz.png',
     '/brands/petrostuff.png',
     '/brands/TElogo.png',
+    '/brands/geodetic.png',
+    
   ];
 
   const scrollRows = [

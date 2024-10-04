@@ -26,7 +26,7 @@ export const CardComponent: React.FC<CardProps> = ({
 
   return (
     <section className="w-full md:w-[320px] lg:w-[400px] overflow-hidden flex flex-col items-start justify-start h-[280px] sm:h-[600px] lg:h-[664px] pb-4">
-      <div className=" w-full  flex items-start justify-start overflow-hidden">
+      <div className=" w-full bg-red-500 flex items-start justify-start overflow-hidden">
         <motion.div
           style={{
             scale,
