@@ -48,9 +48,11 @@ function Page() {
 
   return (
     <div className="w-full p-4 pt-60 max-w-[1200px] mx-auto">
-      <div className="text-start flex flex-wrap items-center justify-between gap-4">
-        <p className="text-[#B9B9B9] uppercase">stories that touch</p>
-        <div className="flex items-center flex-wrap gap-3 w-max text-sm">
+      <div className="min-[720px]:grid min-[720px]:mt-16 grid-cols-[max-content_1fr] grid-rows-[auto_auto] gap-6 min-[1000px]:gap-16">
+        <p className="text-[#B9B9B9] uppercase col-start-1 col-end-2 row-start-1">
+          stories that touch
+        </p>
+        <div className="flex flex-wrap items-center gap-3 mt-4 mb-8 min-[720px]:mt-0 min-[720px]:mb-0 col-start-2 col-end-3 row-start-1">
           <p
             onClick={() => setSelectedTags(['all'])}
             className={twMerge(
@@ -84,9 +86,7 @@ function Page() {
             </p>
           ))}
         </div>
-      </div>
-      <div className="min-[720px]:grid min-[720px]:mt-16 grid-cols-[max-content_1fr] grid-rows-[1fr] gap-6 min-[1000px]:gap-16">
-        <div className="col-start-2 col-end-3">
+        <div className="col-start-2 col-end-3 row-start-2">
           <label
             htmlFor="search"
             className="block mt-4 relative min-[720px]:mt-0"
@@ -123,7 +123,7 @@ function Page() {
             read more
           </motion.button>
         </div>
-        <div className="w-fit max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-1">
+        <div className="w-fit max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-2">
           <p className="uppercase font-semibold text-lg mb-2">
             related stories:
           </p>
