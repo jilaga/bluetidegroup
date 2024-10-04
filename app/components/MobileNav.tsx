@@ -65,22 +65,38 @@ export default function MobileNav() {
                   padding: isServiceMenuOpen ? '1em' : 0,
                 }}
               >
-                <ServiceLink href="/Services/1" to="ROV Inspection" />
-                <ServiceLink href="/Services/2" to="Air diving" />
                 <ServiceLink
+                  toggleMenu={toggleMenu}
+                  href="/Services/1"
+                  to="ROV Inspection"
+                />
+                <ServiceLink
+                  toggleMenu={toggleMenu}
+                  href="/Services/2"
+                  to="Air diving"
+                />
+                <ServiceLink
+                  toggleMenu={toggleMenu}
                   href="/Services/3"
                   to="Subsea survey and Positioning"
                 />
-                <ServiceLink href="/Services/4" to="Hull Cleaning" />
                 <ServiceLink
+                  toggleMenu={toggleMenu}
+                  href="/Services/4"
+                  to="Hull Cleaning"
+                />
+                <ServiceLink
+                  toggleMenu={toggleMenu}
                   href="/Services/5"
                   to="3rd party IMCA ROV and Diving System audits"
                 />
                 <ServiceLink
+                  toggleMenu={toggleMenu}
                   href="/Services/6"
                   to="Electrical Instrumentation"
                 />
                 <ServiceLink
+                  toggleMenu={toggleMenu}
                   href="/equipments"
                   to="Procurement and equipment rental"
                 />

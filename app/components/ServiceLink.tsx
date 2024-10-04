@@ -1,10 +1,19 @@
 import { HiMiniArrowUpRight } from 'react-icons/hi2';
 import Link from 'next/link';
 
-const ServiceLink = function ({ to, href }: { to: string; href: string }) {
+const ServiceLink = function ({
+  to,
+  href,
+  toggleMenu,
+}: {
+  to: string;
+  href: string;
+  toggleMenu?: () => void;
+}) {
   return (
     <Link
       href={href}
+      onClick={toggleMenu}
       className="flex text-start items-center bg-white gap-2 p-4 rounded-2xl text-foundation-grey-grey-400  w-[300px] justify-between group  hover:scale-105 hover:text-accent transition-[transform]"
     >
       <p className="text-[1rem] break-words leading-[140%] capitalize font-medium font-montserrat whitespace-pre-wrap text-left ">
