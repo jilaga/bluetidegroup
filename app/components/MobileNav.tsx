@@ -2,14 +2,20 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import ServiceLink from './ServiceLink';
+import { usePathname } from 'next/navigation';
 
 export default function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsServiceMenuOpen(false);
+  }, [pathname]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
