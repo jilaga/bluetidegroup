@@ -7,8 +7,22 @@ import { HiOutlineArrowDownCircle } from 'react-icons/hi2';
 
 export default function Newsec() {
   return (
-    <section className="h-[100dvh] w-full p-4 grid relative isolate pb-[5rem]">
-      <div className="absolute inset-0 bg-[#0050AAA1] bg-center bg-no-repeat bg-cover h-full w-full bg-[url('/hero.png')] bg-blend-soft-light -z-[1]" />
+    <section className=" h-[100dvh] w-full p-4 grid relative isolate pb-[5rem]">
+      <div className="absolute inset-0 bg-[#0050AA] -z-[1]">
+        <div
+          className="w-full h-full absolute"
+          style={{
+            backgroundColor: 'rgba(0, 80, 170, 0.63)',
+          }}
+        ></div>
+        <Image
+          src="/hero.png"
+          alt="Hero background"
+          className="h-full w-full object-cover "
+          width={1280}
+          height={960}
+        />
+      </div>
       <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0  md:mx-auto w-full">
         <motion.p
           initial={{ y: '25px', opacity: 0 }}
