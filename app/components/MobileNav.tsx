@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import ServiceLink from './ServiceLink';
@@ -11,11 +11,25 @@ import { usePathname } from 'next/navigation';
 export default function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
+  const mobileNav = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     setIsServiceMenuOpen(false);
   }, [pathname]);
+
+  const handleOuterClick: (this: Document, ev: MouseEvent) => any = function (
+    e
+  ) {
+    if (!mobileNav.current) return;
+    if (!mobileNav.current.contains(e.target as Node)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleOuterClick, true);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -46,7 +60,10 @@ export default function MobileNav() {
         </button>
       </div>
       {isMenuOpen && (
-        <div className=" w-full py-10 flex flex-col justify-between">
+        <div
+          ref={mobileNav}
+          className=" w-full py-10 flex flex-col justify-between"
+        >
           <div className="flex sticky top-0 flex-col items-center justify-center gap-6 md:h-auto text-[2rem] text-foundation-grey-grey-500 font-body-2">
             <Link
               href="/about"
