@@ -9,21 +9,28 @@ export default function HeroSec() {
         threshold={0.1}
         duration={0.2}
         delay={0.2}
-        className="w-full relative flex sm:flex-row flex-col items-start justify-between 
+        className="w-full relative flex sm:flex-row flex-col items-start 
           pt-[20rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2.5rem]
-          gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash"
+          gap-[2rem] md:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100 font-clash"
       >
-        <div className="pr-5 md:pr-8 lg:pr-8 relative tracking-[0.03em] leading-[140%] uppercase font-medium ">
-          <Smallie
-            text="Company history"
-            className="mt-2 lg:mt-5 "
-          />
+        <div className="max-w-[232px] relative tracking-[0.03em] leading-[140%] uppercase font-medium ">
+          <Smallie text="Company history" className="mt-5" />
         </div>
-        <ScrollFade className="w-full flex flex-col items-start justify-start gap-[2.5rem] text-foundation-grey-grey-400 font-satoshi">
-          <b className="relative text-[2.25rem] lg:text-[4.5rem] leading-[130%] lg:leading-[140%] font-semibold font-clash whitespace-pre-wrap">
+        <ScrollFade
+          threshold={0.1}
+          duration={0.3}
+          delay={0.4}
+          className="w-full flex flex-col items-start justify-start gap-[2.5rem] text-foundation-grey-grey-400 font-satoshi"
+        >
+          <ScrollFade
+            threshold={0.1}
+            duration={0.3}
+            delay={0.6}
+            className="relative text-[1.5rem] md:text-[2rem] lg:text-[3.25rem] leading-[130%] lg:leading-[140%] font-semibold font-clash whitespace-pre-wrap"
+          >
             We have successfully and skillfully managed all operations and
             services in line with the highest industry standards.
-          </b>
+          </ScrollFade>
         </ScrollFade>
       </ScrollFade>
     </section>
