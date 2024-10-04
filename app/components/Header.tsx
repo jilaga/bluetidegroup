@@ -12,6 +12,7 @@ import ServiceLink from './ServiceLink';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [areServicesOpen, setAreServicesOpen] = useState(false);
+  const pathname = usePathname();
 
   const serviceMenuRef = useRef<HTMLDivElement>(null);
 
@@ -30,12 +31,14 @@ export default function Navbar() {
     document.addEventListener('scroll', () => setAreServicesOpen(false));
   }, []);
 
-  const pathname = usePathname();
+  useEffect(() => {
+    setAreServicesOpen(false);
+  }, [pathname]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className='w-full'>
+    <header className="w-full">
       <MobileNav />
       <nav className="w-full hidden mx-auto lg:flex justify-center items-center p-4 top-0 fixed z-50  text-nowrap">
         <AnimatePresence>

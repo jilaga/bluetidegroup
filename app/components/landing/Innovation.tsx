@@ -8,9 +8,9 @@ export default function Innovation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['end end', 'start start'],
+    offset: ['end start', 'start end'],
   });
-  const x = useTransform(() => `${scrollYProgress.get() * 100 - 100}%`);
+  const x = useTransform(scrollYProgress, [0, 1], ['-150%', '0%']);
 
   return (
     <div className="grid w-full">

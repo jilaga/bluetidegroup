@@ -19,7 +19,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   <div
     className={`flex w-full flex-col lg:flex-row items-start justify-end  p-2  ${reverse ? 'lg:flex-row-reverse' : ''} mb-10 sm:mb-0`}
   >
-    <div className=" w-full ">
+    <ScrollFade className="w-full ">
       <Image
         src={imageSrc}
         alt={name}
@@ -27,7 +27,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         height={600}
         className="w-full rounded-3xl object-cover h-[600px]"
       />
-    </div>
+    </ScrollFade>
     <div className="txt w-full sm:w-full h-auto lg:h-[600px] no-wrap p-1 sm:p-10 flex flex-col items-start justify-end">
       <div className={`text-left ${reverse ? 'lg:text-right' : ''} w-full`}>
         <ScrollFade className="text-3xl font-semibold text-foundation-grey-grey-500 mb-2">
@@ -43,9 +43,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 
 export function Team() {
   return (
-    <ScrollFade
-      className="w-full flex-col sm:flex-row relative flex gap-4 lg:gap-[7.75rem] items-start justify-start 
-        py-[2.5rem] px-[1.5rem] sm:px-[2.5rem] sm:py-[5rem] lg:py-[7.5rem] lg:px-[5rem] 
+    <div
+      className="w-full flex-col sm:flex-row relative flex gap-4 lg:gap-[7.75rem] items-start justify-start py-[2.5rem] px-[1.5rem] sm:px-[2.5rem] sm:py-[5rem] lg:py-[7.5rem] lg:px-[5rem] 
       text-foundation-grey-grey-100 font-title-1-semibold "
     >
       <Smallie text="our core team" />
@@ -85,6 +84,6 @@ export function Team() {
           reverse
         />
       </div>
-    </ScrollFade>
+    </div>
   );
 }
