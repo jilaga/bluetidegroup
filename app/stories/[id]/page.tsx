@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import Markdown from 'react-markdown';
+import Link from 'next/link';
 
 import { ArticleCardProps, getRandomHexColor } from '../articleCard';
 import './markdown.css';
@@ -20,6 +21,15 @@ async function page({ params }: { params: { id: string } }) {
   const articles: (ArticleCardProps & { content: string })[] = JSON.parse(file);
 
   const article = articles.find((article) => `${article.id}` === params.id);
+
+  const relatedStories = articles
+    .sort(
+      (a, b) =>
+        b.tags.filter((tag) => article?.tags.includes(tag)).length -
+        a.tags.filter((tag) => article?.tags.includes(tag)).length
+    )
+    .filter((article_) => article_.id !== article?.id)
+    .slice(0, 3);
 
   if (!article) {
     return <div>Empty page</div>;
@@ -64,16 +74,15 @@ async function page({ params }: { params: { id: string } }) {
           <p className="uppercase font-semibold text-lg mb-2">
             related stories:
           </p>
-          <a className="block text-[#0070EF] mt-4" href="#">
-            Comprehensive Guide to Underwater Inspection and Maintenance for
-            Offshore Structures
-          </a>
-          <a className="block text-[#0070EF] mt-4" href="#">
-            Advancements in Underwater Hull Cleaning Techniques
-          </a>
-          <a className="block text-[#0070EF] mt-4" href="#">
-            Importance of ROV Services in Modern Marine Operations
-          </a>
+          {relatedStories.map((story) => (
+            <Link
+              key={story.id}
+              className="block text-[#0070EF] mt-4"
+              href={`/stories/${story.id}`}
+            >
+              {story.title}
+            </Link>
+          ))}
         </div>
       </div>
     </div>
