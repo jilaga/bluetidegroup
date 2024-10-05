@@ -6,6 +6,7 @@ export interface ArticleCardProps {
   tags: string[];
   readDuration: string;
   preview: string;
+  previewImg: string;
   id: number;
 }
 
@@ -14,18 +15,19 @@ const ArticleCard = function ({
   tags,
   readDuration,
   preview,
+  previewImg,
   id,
 }: ArticleCardProps) {
   return (
-    <div className="my-4 border-b border-b-[#B2B2B2] pb-6 mt-8 max-w-[385px] min-[720px]:max-w-[unset] mx-auto">
+    <div className="my-4 border-b border-b-[#B2B2B2] pb-16 mt-16 max-w-[385px] min-[720px]:max-w-[unset] mx-auto">
       <Image
         width={327}
         height={280}
-        src="/company.png"
+        src={previewImg}
         alt="company"
         className="w-full min-[720px]:aspect-[872/522] min-[720px]:object-cover min-[720px]:rounded-lg"
       />
-      <div className="flex flex-wrap items-center gap-3 mt-4">
+      <div className="flex flex-wrap items-center gap-3 mt-10">
         {tags
           .sort((a, b) => b.length - a.length)
           .map((tag) => {
@@ -47,7 +49,7 @@ const ArticleCard = function ({
           {readDuration} read
         </p>
       </div>
-      <p className="text-2xl font-semibold mt-4">{title}</p>
+      <p className="text-3xl font-semibold mt-10">{title}</p>
       <div>
         <p className="whitespace-pre-line text-[#1E1E1E] mt-4">{preview}</p>
         <Link
