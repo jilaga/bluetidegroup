@@ -7,7 +7,7 @@ import './markdown.css';
 import { estimateReadingTime } from '@/utils/articleReadTime';
 
 export function generateStaticParams() {
-  const articleCount = 30; //NOTE this should always be the same length as the articles array
+  const articleCount = 33; //NOTE this should always be the same length as the articles array
   const ids = Array(articleCount)
     .fill('')
     .map((_, idx) => ({ id: `${idx + 1}` }));
@@ -28,7 +28,7 @@ async function page({ params }: { params: { id: string } }) {
   return (
     <div className="p-4 pt-60 max-w-[1200px] mx-auto">
       <header className="text-start flex flex-wrap items-center justify-between gap-4 mb-4">
-        <p>stories that touch</p>
+        <p className="text-[#B9B9B9] uppercase">stories that touch</p>
         <div className="flex flex-wrap items-center gap-3 mt-4">
           {article.tags
             .sort((a, b) => b.length - a.length)

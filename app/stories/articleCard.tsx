@@ -6,6 +6,7 @@ export interface ArticleCardProps {
   tags: string[];
   readDuration: string;
   preview: string;
+  previewImg: string;
   id: number;
 }
 
@@ -14,6 +15,7 @@ const ArticleCard = function ({
   tags,
   readDuration,
   preview,
+  previewImg,
   id,
 }: ArticleCardProps) {
   return (
@@ -21,7 +23,7 @@ const ArticleCard = function ({
       <Image
         width={327}
         height={280}
-        src="/company.png"
+        src={previewImg}
         alt="company"
         className="w-full min-[720px]:aspect-[872/522] min-[720px]:object-cover min-[720px]:rounded-lg"
       />
