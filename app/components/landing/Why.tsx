@@ -41,7 +41,10 @@ const StatCard = function ({
   description: string;
 }) {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest) + '+');
+  const rounded = useTransform(
+    count,
+    (latest) => `${Math.round(latest)}`.padStart(2, '0') + '+'
+  );
   const ref = useRef<HTMLDivElement>(null);
   const pRef = useRef<HTMLParagraphElement>(null);
   const isInView = useInView(ref, { amount: 'all' });
