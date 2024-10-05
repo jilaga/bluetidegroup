@@ -110,6 +110,9 @@ export default function Navbar() {
               className={twMerge(
                 'hover:text-foundation-rust-accent-rust-accent-500 relative no-underline cursor-pointer',
                 areServicesOpen
+                  ? 'text-foundation-rust-accent-rust-accent-500'
+                  : '',
+                pathname.startsWith('/services')
                   ? ' text-foundation-rust-accent-rust-accent-500'
                   : ''
               )}
