@@ -97,10 +97,8 @@ export default function Navbar() {
             <Link
               href="/about"
               className={twMerge(
-                'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
-                pathname === '/about'
-                  ? ' text-foundation-rust-accent-rust-accent-500'
-                  : ''
+                'hover:text-[#FF8533] no-underline',
+                pathname === '/about' ? 'text-[#FF8533]' : ''
               )}
             >
               About us
@@ -108,10 +106,9 @@ export default function Navbar() {
             <div
               onClick={() => setAreServicesOpen((prev) => !prev)}
               className={twMerge(
-                'hover:text-foundation-rust-accent-rust-accent-500 relative no-underline cursor-pointer',
-                areServicesOpen
-                  ? ' text-foundation-rust-accent-rust-accent-500'
-                  : ''
+                'hover:text-[#FF8533] relative no-underline cursor-pointer',
+                areServicesOpen ? 'text-[#FF8533]' : '',
+                pathname.startsWith('/services') ? ' text-[#FF8533]' : ''
               )}
             >
               Our services
@@ -119,10 +116,8 @@ export default function Navbar() {
             <Link
               href="/stories"
               className={twMerge(
-                'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
-                pathname === '/stories'
-                  ? ' text-foundation-rust-accent-rust-accent-500'
-                  : ''
+                'hover:text-[#FF8533] no-underline',
+                pathname === '/stories' ? ' text-[#FF8533]' : ''
               )}
             >
               Stories
@@ -130,10 +125,8 @@ export default function Navbar() {
             <Link
               href="/gallery"
               className={twMerge(
-                'hover:text-foundation-rust-accent-rust-accent-500 no-underline',
-                pathname === '/gallery'
-                  ? ' text-foundation-rust-accent-rust-accent-500'
-                  : ''
+                'hover:text-[#FF8533] no-underline',
+                pathname === '/gallery' ? ' text-[#FF8533]' : ''
               )}
             >
               Gallery
@@ -142,7 +135,7 @@ export default function Navbar() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="w-max cursor-pointer no-underline self-stretch rounded-full md:flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 hidden text-base  text-linen"
+            className="w-max cursor-pointer no-underline self-stretch rounded-full md:flex bg-[#FF6700] items-center justify-center py-4 px-6 hidden text-base  text-linen"
             onClick={() => {
               window.scrollTo({
                 top: 9999999,

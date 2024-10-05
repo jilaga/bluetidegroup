@@ -18,10 +18,10 @@ function Why() {
           <p>us?</p>
         </div>
         <QuoteCard>Unmatched safety record</QuoteCard>
-        <StatCard description="years of experience" stat={13} />
+        <StatCard description="years of experience" stat={8} />
       </div>
       <div className="md:w-1/3 md:mt-62  lg:gap-10 flex flex-col self-center max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
-        <StatCard description="projects completed" stat={30} />
+        <StatCard description="projects completed" stat={34} />
         <QuoteCard>State-of-the-art ROV technology</QuoteCard>
       </div>
       <div className="md:w-1/3 md:mt-20 lg:gap-10 flex flex-col max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
@@ -41,7 +41,10 @@ const StatCard = function ({
   description: string;
 }) {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest) + '+');
+  const rounded = useTransform(
+    count,
+    (latest) => `${Math.round(latest)}`.padStart(2, '0') + '+'
+  );
   const ref = useRef<HTMLDivElement>(null);
   const pRef = useRef<HTMLParagraphElement>(null);
   const isInView = useInView(ref, { amount: 'all' });
