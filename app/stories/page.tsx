@@ -57,7 +57,7 @@ function Page() {
           <p
             onClick={() => setSelectedTags(['all'])}
             className={twMerge(
-              'px-6 py-2 rounded-[100vh] w-max cursor-pointer text-[#151515] font-medium',
+              'px-6 py-2 rounded-[100vh] w-max cursor-pointer text-[#151515] text-sm font-medium',
               selectedTags.includes('all') ? 'bg-[#FFF0E6]' : 'bg-[#E6F1FD]'
             )}
           >
@@ -79,7 +79,7 @@ function Page() {
                 });
               }}
               className={twMerge(
-                'px-6 py-2 rounded-[100vh] cursor-pointer w-max text-[#151515] font-medium',
+                'px-6 py-2 rounded-[100vh] text-sm cursor-pointer w-max text-[#151515] font-medium',
                 selectedTags.includes(tag) ? 'bg-[#FFF0E6]' : 'bg-[#E6F1FD]'
               )}
             >
