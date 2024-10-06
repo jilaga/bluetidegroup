@@ -35,7 +35,6 @@ const Brands: React.FC = () => {
     '/brands/petrostuff.png',
     '/brands/TElogo.png',
     '/brands/geodetic.png',
-    
   ];
 
   const scrollRows = [
@@ -60,6 +59,7 @@ const Brands: React.FC = () => {
                 '--scroll-duration': row.duration,
                 '--container-width': 'auto',
                 '--height': '148px',
+                animation: `scroll ${row.duration} linear infinite`,
               } as React.CSSProperties
             }
           >
@@ -81,3 +81,4 @@ const Brands: React.FC = () => {
 };
 
 export default Brands;
+

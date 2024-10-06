@@ -8,7 +8,10 @@ function Company() {
   return (
     <section className="w-full flex justify-center items-center py-20 px-4 md:px-20 ">
       <ScrollFade className="w-full flex flex-col sm:flex-row gap-10 sm:gap-8">
-          <Smallie text="Our Company" className="min-w-40 lg:max-min-w-[150px]"></Smallie>
+        <Smallie
+          text="Our Company"
+          className="min-w-40 lg:max-min-w-[150px]"
+        ></Smallie>
         <div className="w-full flex justify-center items-center gap-10 sm:gap-[7.75rem] ">
           <div className="w-full flex flex-col-reverse min-[1140px]:flex-row relative text-gray gap-10">
             <div className="w-full max-w-[600px] flex flex-col gap-10 ">
@@ -46,7 +49,7 @@ function Company() {
               </motion.div>
             </div>
             <Image
-              src="/company.png"
+              src="/about/about.png"
               alt="Hero background"
               width={360}
               height={300}

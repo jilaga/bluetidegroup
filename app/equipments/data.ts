@@ -6,12 +6,12 @@
 
 export const servicesData: ServiceData[] = [
   {
-    imgUrl: '/service/serv3.png',
+    imgUrl: '/service/equipments/image.png',
     title: 'Multibeam Sonars',
     description: 'For detailed mapping and imaging of the seabed.',
   },
   {
-    imgUrl: '/service/serv3.png',
+    imgUrl: '/service/equipments/image-1.png',
     title: 'Remotely Operated Vehicles (ROVs)',
     description:
       'Versatile, remotely controlled systems for inspection and intervention tasks.',
