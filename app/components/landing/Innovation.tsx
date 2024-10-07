@@ -24,8 +24,8 @@ export default function Innovation() {
               style={{ x }}
               className="text-nowrap w-max min-w-full px-4 text-[#FF6700] text-2xl md:text-4xl font-semibold"
             >
-              we offer INNOVATION and EFFICIENCY to deliver a superior level of
-              excellence.
+              we offer innovative technology and efficient services to
+              consistently deliver exceptional excellence.
             </motion.p>
           </div>
         </div>
