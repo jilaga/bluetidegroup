@@ -107,8 +107,7 @@ export default function Navbar() {
               onClick={() => setAreServicesOpen((prev) => !prev)}
               className={twMerge(
                 'hover:text-[#FF8533] relative no-underline cursor-pointer',
-                areServicesOpen ? 'text-[#FF8533]' : '',
-                pathname.startsWith('/services') ? ' text-[#FF8533]' : ''
+                pathname.startsWith('/Services') ? ' text-[#FF8533]' : ''
               )}
             >
               Our services
