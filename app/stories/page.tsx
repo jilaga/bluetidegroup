@@ -119,13 +119,58 @@ function Page() {
             />
           ))}
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             disabled={filteredArticles.length <= articleLimit}
             onClick={() => setArticleLimit((prev) => prev + 4)}
-            className="bg-[#FF9954] disabled:bg-[#d3d3d3] disabled:cursor-not-allowed block capitalize mx-auto mt-4 text-white border-none outline-none px-12 py-4 rounded-full"
+            className="bg-[#FF9954] relative isolate w-16 h-16 grid place-content-center text-3xl disabled:bg-[#d3d3d3] group disabled:cursor-not-allowed capitalize mx-auto my-8 text-white border-none outline-none p-4 rounded-full"
           >
-            read more
+            +
+            <motion.span
+              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
+              transition={{
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 4,
+                times: [0, 0.1, 1],
+              }}
+            />
+            <motion.span
+              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
+              transition={{
+                repeat: Infinity,
+                repeatType: 'loop',
+                delay: 1,
+                duration: 4,
+                times: [0, 0.1, 1],
+              }}
+            />
+            <motion.span
+              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
+              transition={{
+                repeat: Infinity,
+                repeatType: 'loop',
+                delay: 2,
+                duration: 4,
+                times: [0, 0.1, 1],
+              }}
+            />
+            {/* <motion.span
+              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
+              transition={{
+                repeat: Infinity,
+                repeatType: 'loop',
+                delay: 3,
+                duration: 4,
+                times: [0, 0.1, 1],
+              }}
+            /> */}
           </motion.button>
         </div>
         <div className="w-fit max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-2">
