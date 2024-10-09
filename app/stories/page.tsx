@@ -14,6 +14,13 @@ const tags = [
   ...new Set([...articles.map((article) => article.tags).flat()]),
 ].reverse();
 
+const displayedTags = [
+  'Underwater hull cleaning',
+  'Oil and gas',
+  'ROV',
+  'Marine operations',
+];
+
 const genRandNum = function () {
   return Math.floor(Math.random() * (articles.length - 1));
 };
@@ -63,7 +70,7 @@ function Page() {
           >
             all
           </p>
-          {tags.slice(0, 4).map((tag) => (
+          {displayedTags.map((tag) => (
             <p
               key={tag}
               onClick={() => {
@@ -121,7 +128,7 @@ function Page() {
           <motion.button
             disabled={filteredArticles.length <= articleLimit}
             onClick={() => setArticleLimit((prev) => prev + 4)}
-            className="bg-[#FF9954] relative isolate w-16 h-16 grid place-content-center text-3xl disabled:bg-[#d3d3d3] group disabled:cursor-not-allowed capitalize mx-auto my-8 text-white border-none outline-none p-4 rounded-full"
+            className="bg-[#FF9954] relative isolate w-16 h-16 grid place-content-center text-3xl disabled:bg-[#d3d3d3] group disabled:cursor-not-allowed capitalize mx-auto mt-20 mb-8 text-white border-none outline-none p-4 rounded-full"
           >
             +
             <motion.span
@@ -173,7 +180,7 @@ function Page() {
             /> */}
           </motion.button>
         </div>
-        <div className="w-fit max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-2">
+        <div className="w-fit hidden md:block max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-2">
           <p className="uppercase font-semibold text-lg mb-2">
             related stories:
           </p>
