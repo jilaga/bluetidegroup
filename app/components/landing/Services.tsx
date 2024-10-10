@@ -55,7 +55,7 @@ export default function OurServicesPage() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full flex top-4 flex-col justify-start items-center text-left text-[2.25rem] m-4 md:m-20 gap-4 md:gap-10"
+      className="relative w-full mx-auto max-w-[1440px] flex top-4 flex-col justify-start items-center text-left text-[2.25rem] m-4 md:m-20 gap-4 md:gap-10"
     >
       <div className="sticky top-0 w-full h-[100vh] min-h-screen">
         <motion.div
@@ -78,7 +78,7 @@ export default function OurServicesPage() {
         </motion.div>
       </div>
       <div className="w-full relative flex flex-col justify-center md:flex-row gap-[2rem] md:gap-12 min-[1320px]:gap-16 p-6 md:px-[40px] lg:px-[80px]">
-        <div className="w-full md:w-[300px] lg:w-full relative flex flex-col gap-[2rem] md:gap-12 min-[1320px]:gap-16 ">
+        <div className="w-full sm:w-[300px] lg:w-full relative flex flex-col gap-[2rem] md:gap-12 min-[1320px]:gap-16 ">
           <ResponsiveScrollSwipe>
             <div
               className="self-stretch w-full h-[25rem]  lg:h-[26.25rem] rounded-2xl flex flex-col items-start justify-between  p-6 lg:p-10 box-border bg-cover relative
@@ -114,7 +114,7 @@ export default function OurServicesPage() {
             delay={300}
           />
         </div>
-        <div className="w-full md:w-[300px] lg:w-full relative flex flex-col pt-[0] md:pt-[10rem] gap-[2rem] md:gap-12 min-[1320px]:gap-16 ">
+        <div className="w-full sm:w-[300px] lg:w-full relative flex flex-col pt-[0] md:pt-[10rem] gap-[2rem] md:gap-12 min-[1320px]:gap-16 ">
           <ServiceCard
             bgColor="#E6F1FD"
             title="ROV Inspection"

@@ -1,77 +1,55 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import ScrollFade from '@/utils/SlideFade';
+import { div } from 'framer-motion/client';
+import Smallie from '@/app/components/Smallie';
+
+interface BrandProps {
+  text: string;
+}
+
+const Brand: React.FC<BrandProps> = ({ text }) => {
+  return (
+    <div
+      className="w-[400px] sm:w-[400px] h-[9.25rem] flex relative leading-[140%] uppercase font-medium  p-[1.5rem] justify-center items-center
+      rounded-lg bg-foundation-white-white-500 hover:shadow hover:scale-110 transition-transform  border-foundation-grey-grey-50 border-[0.5px] border-solid box-border overflow-hidden
+       text-center text-[0.875rem] text-foundation-grey-grey-500 font-caption-1"
+    >
+      {text}
+    </div>
+  );
+};
 
 const Brands: React.FC = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const containers = scrollContainerRef.current?.children;
-    if (containers) {
-      Array.from(containers).forEach((container: Element) => {
-        const firstChild = container.children[0] as HTMLElement;
-        const containerWidth =
-          firstChild.clientWidth * container.children.length +
-          parseFloat(getComputedStyle(container as HTMLElement).gap) *
-            (container.children.length - 1);
-
-        (container as HTMLElement).style.setProperty(
-          '--container-width',
-          `${containerWidth}px`
-        );
-      });
-    }
-  }, []);
-
   const items = [
-    '/brands/Allison.png',
-    '/brands/CESL.png',
-    '/brands/Coat.png',
-    '/brands/desicon.png',
-    '/brands/Exon.png',
-    '/brands/Hydrodive.png',
-    '/brands/Kreuz.png',
-    '/brands/petrostuff.png',
-    '/brands/TElogo.png',
-  ];
-
-  const scrollRows = [
-    { reverse: false, duration: '30s' },
-    { reverse: true, duration: '50s' },
-    { reverse: false, duration: '70s' },
+    'IECEx (International Electrotechnical Commission)',
+    'SOLAS (Safety of Life at Sea)',
+    'ATEX (Atmospheres Explosible)',
+    'IMO (International Maritime Organization)',
   ];
 
   return (
-    <ScrollFade>
-      <div ref={scrollContainerRef} className="overflow-hidden py-4">
-        {scrollRows.map((row, index) => (
+    <div
+      className="w-full max-w-[1440px] items-center justify-center flex flex-col py-[7.5rem] 
+       px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2.5rem] 
+        gap-[2rem] md:gap-[2.5rem] overflow-hidden "
+    >
+      <Smallie
+        text="Awards & certifications"
+        className="w-full text-center flex justify-center"
+      />
+      <div className="  flex gap-4 w-full sm:gap-8 py-4   ">
+        {[...items, ...items].map((item, index) => (
           <div
             key={index}
-            className={`flex gap-4 py-4 ${row.reverse ? 'translate-x-full' : '-translate-x-full'}`}
+            className="flex w-full relative  "
             style={{
-              animation: `scroll ${row.duration} linear infinite ${
-                row.reverse ? 'reverse' : ''
-              }`,
+              animation: `scroll 50s linear infinite`,
+              animationDelay: `${index * 100}ms`,
             }}
           >
-            {[...items, ...items].map((src, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 relative"
-              >
-                <Image
-                  src={src}
-                  alt={`Brand ${idx + 1}`}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            ))}
+            <Brand text={item} />
           </div>
         ))}
       </div>
-    </ScrollFade>
+    </div>
   );
 };
 

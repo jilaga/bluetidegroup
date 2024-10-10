@@ -60,7 +60,6 @@ export function Team() {
           imageSrc="/about/Chris.png"
           reverse
         />
-
         <TeamMember
           name="Udoka Okuofu"
           position="Business Development Manager"
@@ -75,7 +74,7 @@ export function Team() {
         <TeamMember
           name="Ibiwari Jack"
           position="finance Manager"
-          imageSrc="/about/ibiwari.png"
+          imageSrc="/about/Ibiwari.png"
         />
         <TeamMember
           name="Wodo-Charles Lifefest Edna"

@@ -3,6 +3,7 @@ import Leading from '../components/about/Leading';
 import { Text } from '../components/about/Text';
 import { Team } from '../components/about/Team';
 import HeroSec from '../components/about/hero/page';
+import Brands from '../components/about/Awards';
 
 export default function page() {
   return (
@@ -11,6 +12,7 @@ export default function page() {
       <Leading />
       <Text />
       <Team />
+      <Brands />
     </main>
   );
 }

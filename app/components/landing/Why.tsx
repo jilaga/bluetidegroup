@@ -13,7 +13,7 @@ function Why() {
   return (
     <div className="w-full p-6 text-[#1E1E1E] mx-auto md:flex md:justify-center gap-4 lg:gap-10 md:px-[40px] lg:px-[80px] bg-white relative">
       <div className="md:w-1/3 lg:gap-10 flex flex-col max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
-        <div className="bg-[#FF6700] p-6 w-full font-thin text-white min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-[2.25rem] text-center">
+        <div className="bg-[#FF6700] p-6 w-full text-white min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-[2.25rem] text-center">
           <p>Why</p>
           <p>us?</p>
         </div>
@@ -71,7 +71,7 @@ const StatCard = function ({
       >
         {rounded}
       </motion.p>
-      <p className="uppercase mt-3">{description}</p>
+      <p className="uppercase mt-3 leading-[140%]">{description}</p>
     </div>
   );
 };
