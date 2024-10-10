@@ -2,7 +2,7 @@
 import React from 'react';
 import { CardComponent } from './CardComponent';
 import { servicesData } from './data';
-import HeroSec from '../components/about/hero/page';
+import Hero from './hero';
 
 const Service: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const Service: React.FC = () => {
 export default function Services() {
   return (
     <section className="antialiased w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center gap-4">
-      <HeroSec />
+      <Hero />
       <Service />
     </section>
   );

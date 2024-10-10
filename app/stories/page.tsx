@@ -56,7 +56,7 @@ function Page() {
 
   return (
     <div className="w-full p-4 pt-60 max-w-[1200px] mx-auto">
-      <div className="min-[720px]:grid min-[720px]:mt-16 grid-cols-[max-content_1fr] grid-rows-[auto_auto] gap-6 min-[1000px]:gap-16">
+      <div className=" min-[720px]:grid min-[720px]:mt-16 grid-cols-[max-content_1fr] grid-rows-[auto_auto] gap-6 min-[1000px]:gap-16">
         <p className="text-[#B9B9B9] uppercase col-start-1 col-end-2 row-start-1">
           stories that touch
         </p>
@@ -125,60 +125,6 @@ function Page() {
               readDuration={`${estimateReadingTime(article.content.split(' ').length)} mins`}
             />
           ))}
-          <motion.button
-            disabled={filteredArticles.length <= articleLimit}
-            onClick={() => setArticleLimit((prev) => prev + 4)}
-            className="bg-[#FF9954] relative isolate w-16 h-16 grid place-content-center text-3xl disabled:bg-[#d3d3d3] group disabled:cursor-not-allowed capitalize mx-auto mt-20 mb-8 text-white border-none outline-none p-4 rounded-full"
-          >
-            +
-            <motion.span
-              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'loop',
-                duration: 4,
-                times: [0, 0.1, 1],
-              }}
-            />
-            <motion.span
-              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'loop',
-                delay: 1,
-                duration: 4,
-                times: [0, 0.1, 1],
-              }}
-            />
-            <motion.span
-              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'loop',
-                delay: 2,
-                duration: 4,
-                times: [0, 0.1, 1],
-              }}
-            />
-            {/* <motion.span
-              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'loop',
-                delay: 3,
-                duration: 4,
-                times: [0, 0.1, 1],
-              }}
-            /> */}
-          </motion.button>
         </div>
         <div className="w-fit hidden md:block max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-2">
           <p className="uppercase font-semibold text-lg mb-2">
@@ -194,6 +140,63 @@ function Page() {
             </Link>
           ))}
         </div>
+      </div>
+
+      <div className="flex w-full justify-center items-center ">
+        <motion.button
+          disabled={filteredArticles.length <= articleLimit}
+          onClick={() => setArticleLimit((prev) => prev + 4)}
+          className="bg-[#FF9954] relative isolate w-16 h-16 grid place-content-center text-3xl disabled:bg-[#d3d3d3] group disabled:cursor-not-allowed capitalize mx-auto mt-20 mb-8 text-white border-none outline-none p-4 rounded-full"
+        >
+          +
+          <motion.span
+            className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: [0, 0.6, 0], scale: 2 }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 4,
+              times: [0, 0.1, 1],
+            }}
+          />
+          <motion.span
+            className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: [0, 0.6, 0], scale: 2 }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              delay: 1,
+              duration: 4,
+              times: [0, 0.1, 1],
+            }}
+          />
+          <motion.span
+            className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: [0, 0.6, 0], scale: 2 }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              delay: 2,
+              duration: 4,
+              times: [0, 0.1, 1],
+            }}
+          />
+          {/* <motion.span
+              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
+              transition={{
+                repeat: Infinity,
+                repeatType: 'loop',
+                delay: 3,
+                duration: 4,
+                times: [0, 0.1, 1],
+              }}
+            /> */}
+        </motion.button>
       </div>
     </div>
   );

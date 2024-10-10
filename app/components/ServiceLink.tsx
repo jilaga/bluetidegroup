@@ -26,8 +26,8 @@ const ServiceLink = function ({
       <p className="text-[1rem] break-words leading-[140%] capitalize font-medium font-montserrat whitespace-pre-wrap text-left ">
         {to}
       </p>
-      <div className="w-[35px] h-[35px] rounded-full border  flex justify-center items-center">
-        <HiMiniArrowUpRight className="text-2xl group-hover:rotate-45 transition-[transform]" />
+      <div className="rounded-full border  flex justify-center items-center">
+        <HiMiniArrowUpRight className="text-2xl group-hover:rotate-45 transition-[transform] m-2 w-[24px] h-[24px] aspect-24/24" />
       </div>
     </Link>
   );

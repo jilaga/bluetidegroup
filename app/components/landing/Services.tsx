@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ResponsiveScrollSwipe from '@/utils/ResponsiveScrollSwipe';
 import { twMerge } from 'tailwind-merge';
+import Smallie from '@/app/components/Smallie';
 
 const ServiceCard: React.FC<{
   title: string;
@@ -84,9 +85,10 @@ export default function OurServicesPage() {
               className="self-stretch w-full h-[25rem]  lg:h-[26.25rem] rounded-2xl flex flex-col items-start justify-between  p-6 lg:p-10 box-border bg-cover relative
              bg-[#FF8533] hover:bg-orange-500 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
             >
-              <p className="text-[1.25rem] md:mb-4 self-stretch relative leading-[130%] font-semibold md:font-medium text-[#FFD0B0] font-clash">
-                Our services
-              </p>
+              <Smallie
+                text=" Our services"
+                className=" text-foundation-rust-accent-rust-accent-100  "
+              />
               <div className="w-full flex flex-col justify-end text-[1.5rem] lg:text-[2rem]">
                 <p className=" w-full leading-[140%] text-foundation-rust-accent-rust-accent-50">
                   We are highly exclusive but not limited to Hydrographic

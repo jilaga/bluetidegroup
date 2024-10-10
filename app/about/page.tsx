@@ -12,7 +12,7 @@ export default function page() {
       <Leading />
       <Text />
       <Team />
-      <Brands />
+      {/* <Brands /> */}
     </main>
   );
 }

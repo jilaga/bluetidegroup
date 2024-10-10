@@ -23,7 +23,7 @@ export default function Newsec() {
           height={960}
         />
       </div>
-      <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0  md:mx-auto w-full">
+      <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0  md:mx-auto w-full mb-10">
         <motion.p
           initial={{ y: '25px', opacity: 0 }}
           whileInView={{ y: '0px', opacity: 1 }}
@@ -48,9 +48,19 @@ export default function Newsec() {
               <HiOutlineArrowDownCircle className="w-6 h-6" />
             </button>
           </p>
-          <button className="bg-[#FF6700] border-none outline-none cursor-pointer text-white px-5 py-4 w-full rounded-full mt-4 sm:hidden">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#FF6700] border-none outline-none cursor-pointer text-white px-5 py-4 w-full rounded-full mt-4 sm:hidden flex justify-center items-center"
+            onClick={() => {
+              window.scrollTo({
+                top: 9999999,
+                behavior: 'smooth',
+              });
+            }}
+          >
             Let&apos;s talk
-          </button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

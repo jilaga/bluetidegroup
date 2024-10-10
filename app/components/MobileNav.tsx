@@ -62,9 +62,9 @@ export default function MobileNav() {
       {isMenuOpen && (
         <div
           ref={mobileNav}
-          className=" w-full py-10 flex flex-col justify-between"
+          className=" w-full py-10 flex flex-col justify-between h-[90dvh]"
         >
-          <div className="flex sticky top-0 flex-col items-center justify-center gap-6 md:h-auto text-[2rem] text-foundation-grey-grey-500 font-body-2">
+          <div className=" flex sticky top-0 flex-col items-center justify-center gap-6 md:h-auto text-[2rem] text-foundation-grey-grey-500 font-body-2">
             <Link
               href="/about"
               className="rounded-81xl text-foundation-grey-grey-500   no-underline"
@@ -140,11 +140,11 @@ export default function MobileNav() {
               Gallery
             </Link>
           </div>
-          <div className="flex w-full justify-center pt-4">
+          <div className=" flex w-full justify-center pt-4">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-max cursor-pointer no-underline self-stretch rounded-full flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 text-base  text-linen"
+              className="w-full cursor-pointer no-underline self-stretch rounded-full flex bg-foundation-rust-accent-rust-accent-500 items-center justify-center py-4 px-6 text-base  text-linen"
               onClick={() => {
                 window.scrollTo({
                   top: 9999999,

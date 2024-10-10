@@ -1,6 +1,6 @@
 import ScrollFade from '@/utils/SlideFade';
 import React from 'react';
-import Smallie from '../../Smallie';
+import Smallie from '../components/Smallie';
 
 export default function HeroSec() {
   return (
@@ -15,7 +15,7 @@ export default function HeroSec() {
       >
         <div className=" relative tracking-[0.03em] leading-[140%] uppercase font-medium ">
           <Smallie
-            text="company history"
+            text=" Procurement and equipment rental"
             className="mt-5 max-w-[232px]"
           />
         </div>
@@ -31,8 +31,8 @@ export default function HeroSec() {
             delay={0.6}
             className="relative text-[1.5rem] md:text-[2rem] lg:text-[3.25rem] leading-[130%] lg:leading-[140%] font-semibold font-clash whitespace-pre-wrap"
           >
-            We have successfully and skillfully managed all operations and
-            services in line with the highest industry standards.
+            We provide rental services for a wide array of specialized subsea
+            equipment, including:
           </ScrollFade>
         </ScrollFade>
       </ScrollFade>
