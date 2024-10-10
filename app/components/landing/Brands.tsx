@@ -139,6 +139,7 @@ const ScrollItem = function ({
         alt="Brand image"
         width={400}
         height={148}
+        loading="eager"
         className="max-w-[200px] md:max-w-[400px] w-full"
       />
     </div>
