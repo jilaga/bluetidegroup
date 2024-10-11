@@ -11,16 +11,16 @@ import { ReactNode, useEffect, useRef } from 'react';
 
 function Why() {
   return (
-    <div className="w-full p-6 text-[#1E1E1E] mx-auto md:flex md:justify-center gap-4 lg:gap-10 md:px-[40px] lg:px-[80px] bg-white relative">
+    <div className="w-full mb-[4rem] sm:mb-[7.5rem] p-6 text-[#1E1E1E] mx-auto md:flex md:justify-center gap-4 lg:gap-10 md:px-[40px] lg:px-[80px] bg-white relative">
       <div className="md:w-1/3 lg:gap-10 flex flex-col max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
-        <div className="bg-[#FF6700] p-6 w-full text-white min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl text-5xl md:text-[2.25rem] text-center">
-          <p>Why</p>
-          <p>us?</p>
+        <div className="bg-[#FF6700] p-6 w-full text-white min-h-80 md:min-h-[220px] lg:min-h-80 grid place-content-center rounded-3xl ">
+          <p className="text-[3rem] text-center">Why</p>
+          <p className="text-[3rem] text-center">us?</p>
         </div>
         <QuoteCard>Unmatched safety record</QuoteCard>
         <StatCard description="years of experience" stat={8} />
       </div>
-      <div className="md:w-1/3 md:mt-62  lg:gap-10 flex flex-col self-center max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
+      <div className="md:w-1/3 md:mt-62  lg:gap-10 flex flex-col-reverse sm:flex-col self-center max-w-[500px] md:max-w-[unset] mx-auto md:mx-0">
         <StatCard description="projects completed" stat={34} />
         <QuoteCard>State-of-the-art ROV technology</QuoteCard>
       </div>
@@ -79,7 +79,7 @@ const StatCard = function ({
 const QuoteCard = function ({ children }: { children: ReactNode }) {
   return (
     <div className="bg-[#B0D3FA] p-6 sm:p-8 md:p-5 lg:p-8 w-full min-h-80 md:min-h-[220px] lg:min-h-80 flex justify-center items-center text-center rounded-3xl text-5xl md:text-sm lg:text-5xl mt-4 ">
-      <p className="font-medium font-clash text-[1.3rem] md:text-[1.rem] lg:text-[2.38rem] tracking-[0.03em] leading-[140%]">
+      <p className="font-medium font-clash text-[1.75rem] md:text-[1.5rem] lg:text-[2.38rem] tracking-[0.03em] leading-[140%]">
         &quot;{children}&quot;
       </p>
     </div>

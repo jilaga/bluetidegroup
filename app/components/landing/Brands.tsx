@@ -6,7 +6,6 @@ const Brands: React.FC = () => {
   const items = [
     '/brands/Allison.png',
     '/brands/CESL.png',
-    '/brands/Coat.png',
     '/brands/desicon.png',
     '/brands/Exon.png',
     '/brands/geodetic.png',
@@ -20,7 +19,7 @@ const Brands: React.FC = () => {
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="flex items-center w-full mb-10">
+      <div className="flex items-center w-full mb-4 sm:mb-8">
         <motion.div
           initial={{ x: '0' }}
           animate={{ x: '-100%' }}
@@ -34,7 +33,7 @@ const Brands: React.FC = () => {
           className="flex shrink-0 items-center"
         >
           {items.slice(0, 4).map((src) => (
-            <ScrollItem key={src} src={src} className="shrink-0 ml-8" />
+            <ScrollItem key={src} src={src} className="shrink-0 ml-4 sm:ml-8" />
           ))}
         </motion.div>
         <motion.div
@@ -50,7 +49,11 @@ const Brands: React.FC = () => {
           className="flex shrink-0 items-center"
         >
           {items.slice(0, 4).map((src) => (
-            <ScrollItem key={src + 1} src={src} className="shrink-0 ml-8" />
+            <ScrollItem
+              key={src + 1}
+              src={src}
+              className="shrink-0 ml-4 sm:ml-8"
+            />
           ))}
         </motion.div>
       </div>
@@ -68,7 +71,7 @@ const Brands: React.FC = () => {
           className="flex shrink-0 items-center"
         >
           {items.slice(4, 8).map((src) => (
-            <ScrollItem key={src} src={src} className="shrink-0 ml-8" />
+            <ScrollItem key={src} src={src} className="shrink-0 ml-4 sm:ml-8" />
           ))}
         </motion.div>
         <motion.div
@@ -84,11 +87,15 @@ const Brands: React.FC = () => {
           className="flex shrink-0 items-center"
         >
           {items.slice(4, 8).map((src) => (
-            <ScrollItem key={src + 1} src={src} className="shrink-0 ml-8" />
+            <ScrollItem
+              key={src + 1}
+              src={src}
+              className="shrink-0 ml-4 sm:ml-8"
+            />
           ))}
         </motion.div>
       </div>
-      <div className="flex items-center w-full mt-10">
+      <div className="flex items-center w-full mt-4 sm:mt-8">
         <motion.div
           initial={{ x: '0' }}
           animate={{ x: '-100%' }}
@@ -102,7 +109,7 @@ const Brands: React.FC = () => {
           className="flex shrink-0 items-center"
         >
           {items.slice(8, 12).map((src) => (
-            <ScrollItem key={src} src={src} className="shrink-0 ml-8" />
+            <ScrollItem key={src} src={src} className="shrink-0 ml-4 sm:ml-8" />
           ))}
         </motion.div>
         <motion.div
@@ -118,7 +125,11 @@ const Brands: React.FC = () => {
           className="flex shrink-0 items-center"
         >
           {items.slice(8, 12).map((src) => (
-            <ScrollItem key={src + 1} src={src} className="shrink-0 ml-8" />
+            <ScrollItem
+              key={src + 1}
+              src={src}
+              className="shrink-0 ml-4 sm:ml-8 "
+            />
           ))}
         </motion.div>
       </div>
