@@ -30,10 +30,10 @@ const TeamMember: React.FC<TeamMemberProps> = ({
     </ScrollFade>
     <div className="txt w-full sm:w-full h-auto lg:h-[600px] no-wrap p-1 sm:p-10 flex flex-col items-start justify-end">
       <div className={`text-left ${reverse ? 'lg:text-right' : ''} w-full`}>
-        <ScrollFade className="text-3xl font-semibold text-foundation-grey-grey-500 mb-2">
+        <ScrollFade className="text-xl sm:text-3xl font-semibold text-foundation-grey-grey-500 mb-2">
           {name}
         </ScrollFade>
-        <ScrollFade className="text-xl uppercase font-medium text-accent">
+        <ScrollFade className="text-[1rem] sm:text-xl uppercase font-medium text-accent">
           {position}
         </ScrollFade>
       </div>

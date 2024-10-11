@@ -22,7 +22,7 @@ export default function Innovation() {
           <div className="text-center font-medium shrink-0 w-full mt-4 translate-x-full">
             <motion.p
               style={{ x }}
-              className="text-nowrap w-max min-w-full px-4 text-[#FF6700] text-2xl md:text-4xl font-semibold"
+              className="text-nowrap w-max min-w-full px-4 text-[#FF6700] text-3xl md:text-6xl font-semibold"
             >
               we offer innovative technology and efficient services to
               consistently deliver exceptional excellence.

@@ -49,7 +49,7 @@ const Page = async ({ params }: ServicePageProps) => {
       pt-[10rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] pb-[2rem] 
       gap-[2rem] sm:gap-[2.55rem] lg:gap-[7.5rem] text-left text-foundation-grey-grey-100
       font-body-1sm:flex-row items-start 
-      md:gap-[2.55rem]  font-clash"
+      md:gap-[2.55rem] "
     >
       <div>
         <ScrollFade
