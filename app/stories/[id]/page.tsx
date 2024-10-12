@@ -36,8 +36,11 @@ async function page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="p-4 pt-60 max-w-[1200px] mx-auto">
-      <header className="text-start flex flex-wrap items-center justify-between gap-4 mb-4">
+    <div
+      className="pt-[20rem] gap-[2rem] md:gap-[2.55rem] lg:gap-[7.5rem]
+       px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] max-w-[1200px] mx-auto"
+    >
+      <header className="text-start flex flex-wrap items-center justify-between gap-4 mb-4 ">
         <p className="text-[#B9B9B9] uppercase">stories that touch</p>
         <div className="flex flex-wrap items-center gap-3 mt-4">
           {article.tags
@@ -63,9 +66,9 @@ async function page({ params }: { params: { id: string } }) {
           </p>
         </div>
       </header>
-      <div className="min-[720px]:grid min-[720px]:mt-16 grid-cols-[max-content_1fr] grid-rows-[1fr] gap-6 min-[1000px]:gap-16">
+      <div className="min-[720px]:grid min-[720px]:mt-16 grid-cols-[max-content_1fr] grid-rows-[1fr] mt-6 gap-6  min-[1000px]:gap-16">
         <div className="text-[#1E1E1E] col-start-2 col-end-3">
-          <h1 className="text-[#B9B9B9] font-semibold text-2xl mb-4">
+          <h1 className="text-[#B9B9B9] font-semibold text-[1.25rem] md:text-[2rem] lg:text-[2.75rem] leading-[130%] lg:leading-[130%]  mb-4 ">
             {article.title}
           </h1>
           <Markdown className="markdown-wrapper">{article.content}</Markdown>

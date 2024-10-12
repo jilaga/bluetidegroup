@@ -18,7 +18,7 @@ const Brands: React.FC = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full pb-[2rem] sm:pb-[5rem] overflow-hidden">
       <div className="flex items-center w-full mb-4 sm:mb-8">
         <motion.div
           initial={{ x: '0' }}

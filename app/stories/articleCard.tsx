@@ -1,3 +1,4 @@
+import { div } from 'framer-motion/client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
@@ -21,49 +22,59 @@ const ArticleCard = function ({
 }: ArticleCardProps) {
   return (
     <div className="my-4 border-b border-b-[#B2B2B2] pb-8 md:pb-16 mt-16 max-w-[385px] min-[720px]:max-w-[unset] mx-auto">
-      <Image
-        width={327}
-        height={280}
-        src={previewImg}
-        alt="company"
-        className="w-full min-[720px]:aspect-[872/522] min-[720px]:object-cover min-[720px]:rounded-lg"
-      />
-      <div className="flex flex-wrap items-center gap-3 mt-5 md:mt-10">
-        {tags
-          .sort((a, b) => b.length - a.length)
-          .map((tag, idx, arr) => {
-            const backgroundColor = getRandomHexColor();
+      <a
+        href={`/stories/${id}`}
+        className="mx-auto"
+      >
+        <Image
+          width={327}
+          height={280}
+          src={previewImg}
+          alt="company"
+          className="w-full min-[720px]:aspect-[872/522] min-[720px]:object-cover min-[720px]:rounded-lg"
+        />
+        <div className="flex flex-wrap items-center gap-3 mt-5 md:mt-10">
+          {tags
+            .sort((a, b) => b.length - a.length)
+            .map((tag, idx, arr) => {
+              const backgroundColor = getRandomHexColor();
 
-            return (
-              <p
-                key={tag}
-                className={twMerge(
-                  'px-6 py-2 rounded-[100vh] w-max text-[#151515] font-medium text-sm',
-                  idx === 0 ? 'mr-auto md:mr-0' : '',
-                  idx !== 0 ? 'hidden md:block' : '',
-                  idx === arr.length - 1 ? '!mr-auto' : ''
-                )}
-                style={{
-                  backgroundColor,
-                }}
-              >
-                {tag}
-              </p>
-            );
-          })}
-        <p className="text-[#686868] uppercase">{readDuration} read</p>
-      </div>
-      <p className="text-xl md:text-4xl font-bold mt-5 md:mt-10">{title}</p>
-      <div className="hidden md:block">
-        <p className="whitespace-pre-line text-[#1E1E1E] mt-4">{preview}</p>
-        <Link
-          href={`/stories/${id}`}
-          className="text-[#FF9954] border-[#FF9954] border outline-none flex items-center gap-3 px-5 py-3 rounded-[100vh] mt-4 cursor-pointer w-max"
-        >
-          Read more
-          <Image src="/stories/arrow.svg" alt="arrow" width={30} height={30} />
-        </Link>
-      </div>
+              return (
+                <p
+                  key={tag}
+                  className={twMerge(
+                    'px-6 py-2 rounded-[100vh] w-max text-[#151515] font-medium text-sm',
+                    idx === 0 ? 'mr-auto md:mr-0' : '',
+                    idx !== 0 ? 'hidden md:block' : '',
+                    idx === arr.length - 1 ? '!mr-auto' : ''
+                  )}
+                  style={{
+                    backgroundColor,
+                  }}
+                >
+                  {tag}
+                </p>
+              );
+            })}
+          <p className="text-[#686868] uppercase">{readDuration} read</p>
+        </div>
+        <p className="text-xl md:text-4xl font-bold mt-5 md:mt-10">{title}</p>
+        <div className="hidden md:block">
+          <p className="whitespace-pre-line text-[#1E1E1E] mt-4">{preview}</p>
+          <Link
+            href={`/stories/${id}`}
+            className="text-[#FF9954] border-[#FF9954] border outline-none flex items-center gap-3 px-5 py-3 rounded-[100vh] mt-4 cursor-pointer w-max"
+          >
+            Read more
+            <Image
+              src="/stories/arrow.svg"
+              alt="arrow"
+              width={30}
+              height={30}
+            />
+          </Link>
+        </div>
+      </a>
     </div>
   );
 };
