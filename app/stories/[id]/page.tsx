@@ -68,7 +68,7 @@ async function page({ params }: { params: { id: string } }) {
       </header>
       <div className="min-[720px]:grid min-[720px]:mt-16 grid-cols-[max-content_1fr] grid-rows-[1fr] mt-6 gap-6  min-[1000px]:gap-16">
         <div className="text-[#1E1E1E] col-start-2 col-end-3">
-          <h1 className="text-[#B9B9B9] font-semibold text-[1.25rem] md:text-[2rem] lg:text-[2.75rem] leading-[130%] lg:leading-[130%]  mb-4 ">
+          <h1 className="text-[#B9B9B9] font-semibold text-[1.25rem] md:text-[2rem] lg:text-[2.5rem] leading-[130%] mb-4 ">
             {article.title}
           </h1>
           <Markdown className="markdown-wrapper">{article.content}</Markdown>
