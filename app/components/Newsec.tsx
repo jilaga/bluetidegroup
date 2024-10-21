@@ -16,7 +16,7 @@ export default function Newsec() {
           }}
         ></div>
         <Image
-          src="/hero.png"
+          src="/hero.JPG"
           alt="Hero background"
           className="h-full w-full object-cover "
           width={1280}
