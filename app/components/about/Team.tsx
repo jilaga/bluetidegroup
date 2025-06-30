@@ -65,22 +65,41 @@ export function Team() {
           position="Business Development Manager"
           imageSrc="/about/image-2.png"
         />
+        {/* 2 new guys */}
         <TeamMember
-          name="Nwamaka Ndukwe"
-          position="Operations Manager"
-          imageSrc="/about/image-1.png"
+          name="Abraham Albert"
+          position="Finance Manager"
+          imageSrc="/about/Albert.png"
           reverse
         />
         <TeamMember
-          name="Ibiwari Jack"
-          position="finance Manager"
-          imageSrc="/about/Ibiwari.png"
+          name="Stanley Amanze"
+          position="Project Manager"
+          imageSrc="/about/Amanze.png"
         />
+        {/* old guy */}
         <TeamMember
           name="Wodo-Charles Lifefest Edna"
           position="Corporate affairs officer"
           imageSrc="/about/Wodo.png"
           reverse
+        />
+        {/* the restnew guys */}
+        <TeamMember
+          name="Waji Hanson"
+          position="Head Of Human Resources"
+          imageSrc="/about/Hanson.png"
+        />
+        <TeamMember
+          name="Lilian Nwaeke"
+          position="Documents Controller"
+          imageSrc="/about/Nwaeke.png"
+          reverse
+        />
+        <TeamMember
+          name="Ibukun Adegoke"
+          position="Accountant"
+          imageSrc="/about/Adegoke.png"
         />
       </div>
     </div>
