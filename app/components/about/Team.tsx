@@ -65,7 +65,6 @@ export function Team() {
           position="Business Development Manager"
           imageSrc="/about/image-2.png"
         />
-        {/* 2 new guys */}
         <TeamMember
           name="Abraham Albert"
           position="Finance Manager"
@@ -77,14 +76,12 @@ export function Team() {
           position="Project Manager"
           imageSrc="/about/Amanze.png"
         />
-        {/* old guy */}
         <TeamMember
           name="Wodo-Charles Lifefest Edna"
           position="Corporate affairs officer"
           imageSrc="/about/Wodo.png"
           reverse
         />
-        {/* the restnew guys */}
         <TeamMember
           name="Waji Hanson"
           position="Head Of Human Resources"
@@ -100,6 +97,17 @@ export function Team() {
           name="Ibukun Adegoke"
           position="Accountant"
           imageSrc="/about/Adegoke.png"
+        />
+        <TeamMember
+          name="Ijeoma Irondi"
+          position="Admin & Operations"
+          imageSrc="/about/Irondi.png"
+          reverse
+        />
+        <TeamMember
+          name="Roxandra Akinola"
+          position="Legal and regulatory compliance consultant"
+          imageSrc="/about/Akinola.png"
         />
       </div>
     </div>
