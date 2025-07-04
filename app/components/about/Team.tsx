@@ -61,9 +61,9 @@ export function Team() {
           reverse
         />
         <TeamMember
-          name="Udoka Okuofu"
-          position="Business Development Manager"
-          imageSrc="/about/image-2.png"
+          name="Stanley Amanze"
+          position="Project Manager"
+          imageSrc="/about/Amanze.png"
         />
         <TeamMember
           name="Abraham Albert"
@@ -71,10 +71,11 @@ export function Team() {
           imageSrc="/about/Albert.png"
           reverse
         />
+        
         <TeamMember
-          name="Stanley Amanze"
-          position="Project Manager"
-          imageSrc="/about/Amanze.png"
+          name="Udoka Okuofu"
+          position="Business Development Manager"
+          imageSrc="/about/image-2.png"
         />
         <TeamMember
           name="Wodo-Charles Lifefest Edna"
