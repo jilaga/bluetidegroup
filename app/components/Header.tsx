@@ -94,7 +94,7 @@ export default function Navbar() {
             />
           </Link>
           <div className="hidden md:flex space-x-6">
-            <Link
+            {/* <Link
               href="/about"
               className={twMerge(
                 'hover:text-[#FF8533] no-underline',
@@ -102,7 +102,7 @@ export default function Navbar() {
               )}
             >
               About us
-            </Link>
+            </Link> */}
             <div
               onClick={() => setAreServicesOpen((prev) => !prev)}
               className={twMerge(
