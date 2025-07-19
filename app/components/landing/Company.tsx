@@ -38,14 +38,14 @@ function Company() {
                 whileTap={{ scale: 0.95 }}
                 className="w-max"
               >
-                {/* <CustomButton
+                <CustomButton
                   link="/about"
                   bgColor=""
                   borderColor="border-accent"
                   textColor="text-accent"
                   iconColor="text-accent"
                   buttonText="Read more"
-                /> */}
+                />
               </motion.div>
             </div>
             <Image

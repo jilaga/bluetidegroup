@@ -65,13 +65,13 @@ export default function MobileNav() {
           className=" w-full py-10 flex flex-col justify-between h-[90dvh]"
         >
           <div className=" flex sticky top-0 flex-col items-center justify-center gap-6 md:h-auto text-[2rem] text-foundation-grey-grey-500 font-body-2">
-            {/* <Link
+            <Link
               href="/about"
               className="rounded-81xl text-foundation-grey-grey-500   no-underline"
               onClick={toggleMenu}
             >
               About us
-            </Link> */}
+            </Link>
             <div
               onClick={() => setIsServiceMenuOpen((prev) => !prev)}
               className="rounded-81xl text-black text-center no-underline"
