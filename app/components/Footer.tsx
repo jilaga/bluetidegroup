@@ -24,7 +24,7 @@ const Footer: NextPage = () => {
             </p>
             <div className="flex flex-col gap-[0.5rem] sm:gap-[0.8rem]">
               <div className="relative leading-[150%] i">
-                (NG) +234 906 376 6251
+                (NG)+234 201 3306 033
               </div>
               <div className="relative leading-[150%]">
                 (UK) +44 738 0341 592
