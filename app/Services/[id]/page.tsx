@@ -1,11 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 import ScrollFade from '@/utils/SlideFade';
 import Smallie from '@/app/components/Smallie';
 import Markdown from 'react-markdown';
 import fs from 'fs/promises';
 import path from 'path';
+import { ServiceSchema } from '@/app/components/schema/ServiceSchema';
+import { BreadcrumbSchema } from '@/app/components/schema/BreadcrumbSchema';
 
 import '../../stories/[id]/markdown.css';
 import { twMerge } from 'tailwind-merge';
@@ -29,18 +32,110 @@ interface Service {
   }[];
 }
 
-const Page = async ({ params }: ServicePageProps) => {
+// Helper function to get service data
+async function getServiceData(id: string) {
   const url = path.join('./', 'app/Services/data.json');
   const file = await fs.readFile(url, 'utf-8');
   const services: Service[] = JSON.parse(file);
+  return services.find((service) => `${service.id}` === id);
+}
 
-  const service = services.find((service) => `${service.id}` === params.id);
+// Generate metadata dynamically
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const service = await getServiceData(params.id);
+
+  if (!service) {
+    return {
+      title: 'Service Not Found',
+    };
+  }
+
+  const serviceNames: { [key: string]: string } = {
+    '1': 'ROV Inspection Services',
+    '2': 'Air Diving Services',
+    '3': 'Subsea Survey and Positioning',
+    '4': 'Hull Cleaning Services',
+    '5': 'IMCA ROV and Diving System Audits',
+    '6': 'Electrical Instrumentation Services'
+  };
+
+  const serviceName = serviceNames[params.id] || service.title.tag;
+  const description = `Professional ${serviceName.toLowerCase()} by Bluetide Group. Expert marine services in Nigeria including ${service.title.title}`;
+
+  return {
+    title: `${serviceName} - Expert Marine Solutions`,
+    description: description,
+    keywords: [
+      serviceName.toLowerCase(),
+      'marine services Nigeria',
+      'underwater services',
+      'offshore services',
+      'Bluetide Group',
+      service.title.tag.toLowerCase()
+    ],
+
+    openGraph: {
+      title: `${serviceName} | Bluetide Group`,
+      description: description,
+      url: `https://bluetidegroup.com/Services/${params.id}`,
+      images: [
+        {
+          url: service.img,
+          width: 1200,
+          height: 630,
+          alt: `${serviceName} by Bluetide Group`,
+        },
+      ],
+      type: 'website',
+    },
+
+    twitter: {
+      card: 'summary_large_image',
+      title: `${serviceName} | Bluetide Group`,
+      description: description,
+      images: [service.img],
+    },
+
+    alternates: {
+      canonical: `https://bluetidegroup.com/Services/${params.id}`,
+    },
+  };
+}
+
+const Page = async ({ params }: ServicePageProps) => {
+  const service = await getServiceData(params.id);
 
   if (!service) {
     return notFound();
   }
 
+  const serviceNames: { [key: string]: string } = {
+    '1': 'ROV Inspection Services',
+    '2': 'Air Diving Services',
+    '3': 'Subsea Survey and Positioning',
+    '4': 'Hull Cleaning Services',
+    '5': 'IMCA ROV and Diving System Audits',
+    '6': 'Electrical Instrumentation Services'
+  };
+
+  const serviceName = serviceNames[params.id] || service.title.tag;
+
   return (
+    <>
+      <ServiceSchema
+        serviceName={serviceName}
+        description={service.title.title}
+        url={`https://bluetidegroup.com/Services/${params.id}`}
+        image={service.img}
+      />
+
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://bluetidegroup.com' },
+          { name: 'Services', url: 'https://bluetidegroup.com/Services' },
+          { name: serviceName, url: `https://bluetidegroup.com/Services/${params.id}` },
+        ]}
+      />
     <ScrollFade
       threshold={0.1}
       duration={0.2}
@@ -108,6 +203,7 @@ const Page = async ({ params }: ServicePageProps) => {
         ))}
       </div>
     </ScrollFade>
+    </>
   );
 };
 

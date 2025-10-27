@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { OptimizedImage } from './OptimizedImage';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiOutlineArrowDownCircle } from 'react-icons/hi2';
@@ -15,12 +15,13 @@ export default function Newsec() {
             backgroundColor: 'rgba(0, 80, 170, 0.63)',
           }}
         ></div>
-        <Image
+        <OptimizedImage
           src="/hero.JPG"
-          alt="Hero background"
-          className="h-full w-full object-cover "
-          width={1280}
-          height={960}
+          alt="Bluetide Group marine services - professional diving and ROV operations"
+          className="h-full w-full object-cover"
+          priority={true}
+          fill={true}
+          sizes="100vw"
         />
       </div>
       <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0  md:mx-auto w-full mb-10">
