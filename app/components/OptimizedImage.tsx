@@ -12,6 +12,24 @@ interface Props {
   sizes?: string
 }
 
+// Blue blur placeholder that matches Bluetide brand colors
+const createBlueBlurDataURL = () => {
+  // Create a 16x16 blue gradient that matches the hero background
+  const svg = `
+    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0050AA;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#0040AA;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#003080;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <rect width="16" height="16" fill="url(#blueGradient)" />
+    </svg>
+  `
+  return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`
+}
+
 export function OptimizedImage({
   src,
   alt,
@@ -30,12 +48,18 @@ export function OptimizedImage({
       height={height}
       fill={fill}
       priority={priority}
-      quality={85} // 85 is optimal for most images
+      quality={90} // Increased quality for better visuals
       placeholder="blur"
-      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+      blurDataURL={createBlueBlurDataURL()}
       sizes={sizes}
       className={className}
       loading={priority ? 'eager' : 'lazy'}
+      // Enhanced Next.js 14 optimizations
+      unoptimized={false} // Use Next.js optimization
+      style={{
+        objectFit: fill ? 'cover' : undefined,
+        objectPosition: 'center',
+      }}
     />
   )
 }

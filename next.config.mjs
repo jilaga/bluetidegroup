@@ -3,14 +3,18 @@ const nextConfig = {
   // Enable React strict mode for better development
   reactStrictMode: true,
 
-  // Image optimization configuration
+  // Enhanced Image optimization configuration for 2025
   images: {
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 31536000, // 1 year
+    formats: ['image/avif', 'image/webp'], // AVIF first (30% smaller than WebP)
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840], // Added 4K support
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 768], // More size options
+    minimumCacheTTL: 31536000, // 1 year cache
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Enhanced optimization settings
+    remotePatterns: [], // For CDN images if needed
+    unoptimized: false, // Ensure optimization is enabled
+    // Quality is set per image in the Image component
   },
 
   // Trailing slash consistency

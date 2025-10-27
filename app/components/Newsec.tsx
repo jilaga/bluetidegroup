@@ -2,7 +2,6 @@
 
 import { OptimizedImage } from './OptimizedImage';
 import React from 'react';
-import { motion } from 'framer-motion';
 import { HiOutlineArrowDownCircle } from 'react-icons/hi2';
 
 export default function Newsec() {
@@ -25,19 +24,10 @@ export default function Newsec() {
         />
       </div>
       <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0  md:mx-auto w-full mb-10">
-        <motion.p
-          initial={{ y: '25px', opacity: 0 }}
-          whileInView={{ y: '0px', opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="font-clash font-semibold sm:mx-[40px] text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] tracking-wide text-white"
-        >
+        <p className="hero-text-animate font-clash font-semibold sm:mx-[40px] text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] tracking-wide text-white">
           Expertise You Can Trust, Excellence You Can See.
-        </motion.p>
-        <motion.div
-          initial={{ y: '25px', opacity: 0 }}
-          whileInView={{ y: '0px', opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
+        </p>
+        <div className="hero-content-animate">
           <p className="text-white font-bold mt-6 sm:max-w-[315px] ml-auto">
             Delivering superior solutions for{' '}
             <span className="text-[#FF8533]">
@@ -49,10 +39,8 @@ export default function Newsec() {
               <HiOutlineArrowDownCircle className="w-6 h-6" />
             </button>
           </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-[#FF6700] border-none outline-none cursor-pointer text-white px-5 py-4 w-full rounded-full mt-4 sm:hidden flex justify-center items-center"
+          <button
+            className="hero-button bg-[#FF6700] border-none outline-none cursor-pointer text-white px-5 py-4 w-full rounded-full mt-4 sm:hidden flex justify-center items-center transition-transform duration-200 hover:scale-105 active:scale-95"
             onClick={() => {
               window.scrollTo({
                 top: 9999999,
@@ -61,8 +49,35 @@ export default function Newsec() {
             }}
           >
             Let&apos;s talk
-          </motion.div>
-        </motion.div>
+          </button>
+        </div>
+
+        <style jsx>{`
+          .hero-text-animate {
+            animation: slideInUp 0.8s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+            transform: translateY(25px);
+          }
+
+          .hero-content-animate {
+            animation: slideInUp 0.8s ease-out forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+            transform: translateY(25px);
+          }
+
+          @keyframes slideInUp {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .hero-button {
+            will-change: transform;
+          }
+        `}</style>
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+// Removed framer-motion for better performance
 import { FiMenu, FiX } from 'react-icons/fi';
 import MobileNav from './MobileNav';
 import { twMerge } from 'tailwind-merge';
@@ -41,45 +41,65 @@ export default function Navbar() {
     <header className="w-full">
       <MobileNav />
       <nav className="w-full hidden mx-auto lg:flex justify-center items-center p-4 top-0 fixed z-50  text-nowrap">
-        <AnimatePresence>
-          {areServicesOpen && (
-            <div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                ref={serviceMenuRef}
-                className="flex flex-wrap items-stretch p-4 max-w-[1040px] mx-auto justify-center gap-4 absolute inset-[auto_0_0_0] translate-y-full bg-[#FFFFFFCC] z-[70] rounded-xl backdrop-blur-md"
-              >
-                <ServiceLink href="/Services/1" to="ROV Inspection" />
-                <ServiceLink href="/Services/2" to="Air diving" />
-                <ServiceLink
-                  href="/Services/3"
-                  to="Subsea survey and Positioning"
-                />
-                <ServiceLink href="/Services/4" to="Hull Cleaning" />
-                <ServiceLink
-                  href="/Services/5"
-                  to="3rd party IMCA ROV and Diving System audits"
-                />
-                <ServiceLink
-                  href="/Services/6"
-                  to="Electrical Instrumentation"
-                />
-                <ServiceLink
-                  href="/equipments"
-                  to="Procurement and equipment rental"
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/50 z-[60]"
+        {areServicesOpen && (
+          <div>
+            <div
+              ref={serviceMenuRef}
+              className="services-dropdown flex flex-wrap items-stretch p-4 max-w-[1040px] mx-auto justify-center gap-4 absolute inset-[auto_0_0_0] translate-y-full bg-[#FFFFFFCC] z-[70] rounded-xl backdrop-blur-md transition-all duration-200 ease-out"
+            >
+              <ServiceLink href="/Services/1" to="ROV Inspection" />
+              <ServiceLink href="/Services/2" to="Air diving" />
+              <ServiceLink
+                href="/Services/3"
+                to="Subsea survey and Positioning"
+              />
+              <ServiceLink href="/Services/4" to="Hull Cleaning" />
+              <ServiceLink
+                href="/Services/5"
+                to="3rd party IMCA ROV and Diving System audits"
+              />
+              <ServiceLink
+                href="/Services/6"
+                to="Electrical Instrumentation"
+              />
+              <ServiceLink
+                href="/equipments"
+                to="Procurement and equipment rental"
               />
             </div>
-          )}
-        </AnimatePresence>
+            <div className="services-overlay fixed inset-0 bg-black/50 z-[60] transition-opacity duration-200 ease-out" />
+          </div>
+        )}
+
+        <style jsx>{`
+          .services-dropdown {
+            animation: dropdownSlideIn 0.2s ease-out forwards;
+          }
+
+          .services-overlay {
+            animation: overlayFadeIn 0.2s ease-out forwards;
+          }
+
+          @keyframes dropdownSlideIn {
+            from {
+              opacity: 0;
+              transform: translateY(calc(100% - 10px));
+            }
+            to {
+              opacity: 1;
+              transform: translateY(100%);
+            }
+          }
+
+          @keyframes overlayFadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+        `}</style>
         <div
           className="w-full max-w-[1040px] [backdrop-filter:blur(320px)] bg-foundation-primary-blue-primary-blue-50 rounded-full shadow border border-white 
        bg-white/50 overflow-hidden flex  items-center justify-between py-3 px-4 pl-6  box-border text-center text-base text-foundation-grey-grey-500 h-max"
@@ -131,10 +151,8 @@ export default function Navbar() {
               Gallery
             </Link>
           </div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-max cursor-pointer no-underline self-stretch rounded-full md:flex bg-[#FF6700] items-center justify-center py-4 px-6 hidden text-base  text-linen"
+          <button
+            className="header-cta-button w-max cursor-pointer no-underline self-stretch rounded-full md:flex bg-[#FF6700] items-center justify-center py-4 px-6 hidden text-base text-linen transition-transform duration-200 ease-out hover:scale-105 active:scale-95"
             onClick={() => {
               window.scrollTo({
                 top: 9999999,
@@ -143,7 +161,7 @@ export default function Navbar() {
             }}
           >
             Let&apos;s talk
-          </motion.div>
+          </button>
           <button onClick={toggleMenu} className="md:hidden">
             {!isMenuOpen ? (
               <FiMenu className="w-6 h-6" />
