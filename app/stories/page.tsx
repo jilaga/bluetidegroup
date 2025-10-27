@@ -113,7 +113,7 @@ function Page() {
               <Image
                 width={18}
                 height={18}
-                src="stories/search.svg"
+                src="/stories/search.svg"
                 alt="search"
               />
             </div>
