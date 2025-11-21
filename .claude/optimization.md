@@ -386,7 +386,7 @@ export const metadata: Metadata = {
     description: 'Leading digital marketing and SEO agency in Lagos, Nigeria. Proven strategies to rank #1 on Google.',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Nexprove Limited - Digital Marketing Agency',
@@ -400,7 +400,7 @@ export const metadata: Metadata = {
     title: 'Nexprove Limited - Expert SEO & Digital Marketing Services',
     description: 'Leading digital marketing and SEO agency in Lagos, Nigeria.',
     creator: '@nexprove',
-    images: ['/images/twitter-card.jpg'],
+    images: ['/images/twitter-card.webp'],
   },
   
   // Verification
@@ -426,11 +426,11 @@ export const metadata: Metadata = {
   // Icons
   icons: {
     icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.webp', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.webp', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.webp', sizes: '180x180', type: 'image/png' },
     ],
   },
   
@@ -472,7 +472,7 @@ export const metadata: Metadata = {
     url: 'https://yoursite.com/services/seo',
     images: [
       {
-        url: '/images/seo-services-og.jpg',
+        url: '/images/seo-services-og.webp',
         width: 1200,
         height: 630,
         alt: 'SEO Services in Lagos Nigeria',
@@ -485,7 +485,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SEO Services Lagos - Rank #1 on Google',
     description: 'Professional SEO services in Lagos, Nigeria. Guaranteed first page rankings.',
-    images: ['/images/seo-services-twitter.jpg'],
+    images: ['/images/seo-services-twitter.webp'],
   },
   
   alternates: {
@@ -596,7 +596,7 @@ async function getPostBySlug(slug: string) {
     author: { name: 'John Doe' },
     publishedAt: '2025-10-15',
     updatedAt: '2025-10-19',
-    featuredImage: '/images/seo-tips-2025.jpg',
+    featuredImage: '/images/seo-tips-2025.webp',
     keywords: ['SEO', 'Google ranking', 'SEO tips 2025'],
   }
 }
@@ -639,7 +639,7 @@ export default function App({ Component, pageProps }: AppProps) {
           siteName: 'Nexprove Limited',
           images: [
             {
-              url: 'https://yoursite.com/images/og-image.jpg',
+              url: 'https://yoursite.com/images/og-image.webp',
               width: 1200,
               height: 630,
               alt: 'Nexprove Limited',
@@ -685,7 +685,7 @@ export default function SEOServicesPage() {
           description: 'Professional SEO services in Lagos, Nigeria.',
           images: [
             {
-              url: 'https://yoursite.com/images/seo-services.jpg',
+              url: 'https://yoursite.com/images/seo-services.webp',
               width: 1200,
               height: 630,
               alt: 'SEO Services',
@@ -760,13 +760,13 @@ export default function SEOServicesPage() {
         <meta property="og:url" content="https://yoursite.com/services/seo" />
         <meta property="og:title" content="SEO Services Lagos - Rank #1 on Google" />
         <meta property="og:description" content="Professional SEO services in Lagos, Nigeria." />
-        <meta property="og:image" content="https://yoursite.com/images/seo-services.jpg" />
+        <meta property="og:image" content="https://yoursite.com/images/seo-services.webp" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="SEO Services Lagos - Rank #1 on Google" />
         <meta name="twitter:description" content="Professional SEO services in Lagos, Nigeria." />
-        <meta name="twitter:image" content="https://yoursite.com/images/seo-services.jpg" />
+        <meta name="twitter:image" content="https://yoursite.com/images/seo-services.webp" />
         
         {/* Structured Data */}
         <script
@@ -798,7 +798,7 @@ export function OrganizationSchema() {
     name: 'Nexprove Limited',
     alternateName: 'Nexprove',
     url: 'https://yoursite.com',
-    logo: 'https://yoursite.com/images/logo.png',
+    logo: 'https://yoursite.com/images/logo.webp',
     description: 'Full-service digital marketing and SEO agency in Lagos, Nigeria',
     email: 'info@yoursite.com',
     telephone: '+234-XXX-XXXX-XXX',
@@ -855,7 +855,7 @@ export function LocalBusinessSchema() {
     '@type': 'LocalBusiness',
     '@id': 'https://yoursite.com/#localbusiness',
     name: 'Nexprove Limited',
-    image: 'https://yoursite.com/images/storefront.jpg',
+    image: 'https://yoursite.com/images/storefront.webp',
     priceRange: '$$',
     url: 'https://yoursite.com',
     telephone: '+234-XXX-XXXX-XXX',
@@ -962,7 +962,7 @@ export function ArticleSchema({
       name: 'Nexprove Limited',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://yoursite.com/images/logo.png',
+        url: 'https://yoursite.com/images/logo.webp',
         width: 600,
         height: 60,
       },
@@ -1127,7 +1127,7 @@ export function OptimizedImage({
 ```tsx
 // Hero image (above fold - high priority)
 <OptimizedImage
-  src="/images/hero-banner.jpg"
+  src="/images/hero-banner.webp"
   alt="Professional SEO services team in Lagos Nigeria"
   width={1920}
   height={1080}
@@ -1137,7 +1137,7 @@ export function OptimizedImage({
 
 // Below fold images (lazy load)
 <OptimizedImage
-  src="/images/service-image.jpg"
+  src="/images/service-image.webp"
   alt="Digital marketing strategy planning session"
   width={800}
   height={600}
@@ -1148,7 +1148,7 @@ export function OptimizedImage({
 // Background image with fill
 <div className="relative w-full h-96">
   <OptimizedImage
-    src="/images/background.jpg"
+    src="/images/background.webp"
     alt="Office background"
     fill={true}
     className="object-cover"
@@ -1175,7 +1175,7 @@ module.exports = {
 ```tsx
 // Using remote images
 <Image
-  src="https://yourdomain.com/uploads/image.jpg"
+  src="https://yourdomain.com/uploads/image.webp"
   alt="Descriptive alt text"
   width={1200}
   height={800}
@@ -1187,7 +1187,7 @@ module.exports = {
 
 ```tsx
 import Image from 'next/image'
-import heroImage from '@/public/images/hero.jpg'
+import heroImage from '@/public/images/hero.webp'
 
 <Image
   src={heroImage}

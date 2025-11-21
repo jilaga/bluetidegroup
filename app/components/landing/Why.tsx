@@ -58,7 +58,7 @@ const StatCard = function ({
     if (isInView) {
       animate(count, stat, { duration: 3 });
     }
-  }, [isPInView, isInView]);
+  }, [isPInView, isInView, count, stat]);
 
   return (
     <div

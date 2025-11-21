@@ -30,7 +30,7 @@ const ArticleCard = function ({
           width={327}
           height={280}
           src={previewImg}
-          alt="company"
+          alt={`${title} - Marine services and offshore operations story`}
           className="w-full min-[720px]:aspect-[872/522] min-[720px]:object-cover min-[720px]:rounded-lg"
         />
         <div className="flex flex-wrap items-center gap-3 mt-5 md:mt-10">
@@ -68,7 +68,7 @@ const ArticleCard = function ({
             Read more
             <Image
               src="/stories/arrow.svg"
-              alt="arrow"
+              alt="Read more arrow icon"
               width={30}
               height={30}
             />

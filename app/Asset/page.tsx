@@ -10,7 +10,7 @@ export default function Asset() {
       className="h-screen w-[800px] flex  flex-col justify-center items-center my-96 border shadow "
     >
       <TiltImage
-        src="/partners/partners.png"
+        src="/partners/partners.webp"
         alt="Description of the image"
         className="w-full "
         // You can now also pass any valid motion.div prop

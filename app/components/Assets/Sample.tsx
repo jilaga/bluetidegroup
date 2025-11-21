@@ -5,7 +5,7 @@ export default function Sample() {
   return (
     <div>
       <TiltImage
-        src="/brands/Kreuz.png"
+        src="/brands/Kreuz.webp"
         alt="Description of the image"
         className="w-72 h-96"
         // You can now also pass any valid motion.div prop

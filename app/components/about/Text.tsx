@@ -16,7 +16,7 @@ export function Text() {
       scrollYProgress.on('change', (latest) => {
         setScrollProgress(Math.floor(latest * length));
       }),
-    []
+    [scrollYProgress, length]
   );
 
   return (

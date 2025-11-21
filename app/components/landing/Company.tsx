@@ -1,9 +1,9 @@
-import React from 'react';
-import Image from 'next/image';
-import * as motion from 'framer-motion/client';
-import CustomButton from '../Button';
-import ScrollFade from '@/utils/SlideFade';
-import Smallie from '@/app/components/Smallie';
+import * as motion from 'framer-motion/client'
+import Image from 'next/image'
+import CustomButton from '../Button'
+import Smallie from '@/app/components/Smallie'
+import ScrollFade from '@/utils/SlideFade'
+
 function Company() {
   return (
     <section className="w-full flex justify-center items-center py-20 px-4 md:px-20 ">
@@ -49,8 +49,8 @@ function Company() {
               </motion.div>
             </div>
             <Image
-              src="/about/about.png"
-              alt="Hero background"
+              src="/about/about.webp"
+              alt="Bluetide Group team members collaborating on marine operations project"
               width={360}
               height={300}
               className="object-cover rounded-xl sm:w-full md:w-auto max-h-[310px] lg:block"

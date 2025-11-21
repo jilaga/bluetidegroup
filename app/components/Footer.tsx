@@ -94,7 +94,7 @@ const Footer: NextPage = () => {
         >
           <Image
             src="/bluetide-footer.svg"
-            alt="bluetide"
+            alt="Bluetide Group - Leading Marine Services in Nigeria"
             width={1280}
             height={206}
             className="w-full mt-8 mb-4"
@@ -144,7 +144,7 @@ const Footer: NextPage = () => {
                   src="/socials/facebook.svg"
                   width={32}
                   height={32}
-                  alt="social Logo"
+                  alt="Follow Bluetide Group on Facebook"
                 />
               </a>
               <a href="https://www.instagram.com/bluetidegroup">
@@ -152,7 +152,7 @@ const Footer: NextPage = () => {
                   src="/socials/instagram.svg"
                   width={32}
                   height={32}
-                  alt="social Logo"
+                  alt="Follow Bluetide Group on Instagram"
                 />
               </a>
               <a
@@ -164,7 +164,7 @@ const Footer: NextPage = () => {
                   src="/socials/x.svg"
                   width={18}
                   height={18}
-                  alt="social Logo"
+                  alt="Follow Bluetide Group on X (Twitter)"
                 />
               </a>
               <a href="https://www.linkedin.com/company/bluetide-integrated-services-ltd">
@@ -172,7 +172,7 @@ const Footer: NextPage = () => {
                   src="/socials/linkedin.svg"
                   width={32}
                   height={32}
-                  alt="social Logo"
+                  alt="Connect with Bluetide Group on LinkedIn"
                 />
               </a>
             </ScrollFade>

@@ -13,7 +13,7 @@ export function ServiceSchema({ serviceName, description, url, image }: Props) {
     name: serviceName,
     description: description,
     url: url,
-    image: image || 'https://bluetidegroup.com/hero.JPG',
+    image: image || 'https://bluetidegroup.com/hero.webp',
     provider: {
       '@type': 'Organization',
       name: 'Bluetide Group',
@@ -37,6 +37,7 @@ export function ServiceSchema({ serviceName, description, url, image }: Props) {
   return (
     <script
       type="application/ld+json"
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: Required for JSON-LD structured data
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   )

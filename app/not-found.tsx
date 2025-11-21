@@ -1,6 +1,6 @@
 // app/not-found.tsx
 import Link from 'next/link'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { OptimizedImage } from './components/OptimizedImage'
 
 export const metadata: Metadata = {
@@ -10,6 +10,48 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+}
+
+// Structured data for 404 page
+function NotFoundSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: '404 Error Page',
+    description: 'Page not found - Bluetide Group Marine Services',
+    url: 'https://bluetidegroup.com/404',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Bluetide Group',
+      url: 'https://bluetidegroup.com'
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://bluetidegroup.com'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: '404 Error',
+          item: 'https://bluetidegroup.com/404'
+        }
+      ]
+    }
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: Required for JSON-LD structured data
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      suppressHydrationWarning
+    />
+  )
 }
 
 export default function NotFound() {
@@ -25,48 +67,14 @@ export default function NotFound() {
 
   return (
     <>
-      {/* Structured data for 404 page */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            name: '404 Error Page',
-            description: 'Page not found - Bluetide Group Marine Services',
-            url: 'https://bluetidegroup.com/404',
-            isPartOf: {
-              '@type': 'WebSite',
-              name: 'Bluetide Group',
-              url: 'https://bluetidegroup.com'
-            },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                {
-                  '@type': 'ListItem',
-                  position: 1,
-                  name: 'Home',
-                  item: 'https://bluetidegroup.com'
-                },
-                {
-                  '@type': 'ListItem',
-                  position: 2,
-                  name: '404 Error',
-                  item: 'https://bluetidegroup.com/404'
-                }
-              ]
-            }
-          })
-        }}
-      />
+      <NotFoundSchema />
 
       <div className="min-h-screen flex items-center justify-center bg-primary-blue px-4 py-12">
         <div className="text-center max-w-4xl mx-auto">
           {/* Error illustration */}
           <div className="mb-8">
             <OptimizedImage
-              src="/hero.JPG"
+              src="/hero.webp"
               alt="Bluetide Group Marine Services"
               width={200}
               height={120}

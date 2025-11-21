@@ -22,7 +22,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
     <ScrollFade className="w-full ">
       <Image
         src={imageSrc}
-        alt={name}
+        alt={`${name}, ${position} at Bluetide Group marine services`}
         width={462}
         height={600}
         className="w-full rounded-3xl object-cover h-[600px]"
@@ -52,63 +52,63 @@ export function Team() {
         <TeamMember
           name="Ifeanyi Enyia"
           position="Founder and CEO"
-          imageSrc="/about/image.png"
+          imageSrc="/about/image.webp"
         />
         <TeamMember
           name="Chris Davis"
           position="survey operations director"
-          imageSrc="/about/Chris.png"
+          imageSrc="/about/Chris.webp"
           reverse
         />
         <TeamMember
           name="Stanley Amanze"
           position="Project Manager"
-          imageSrc="/about/Amanze.png"
+          imageSrc="/about/Amanze.webp"
         />
         <TeamMember
           name="Abraham Albert"
           position="Finance Manager"
-          imageSrc="/about/Albert.png"
+          imageSrc="/about/Albert.webp"
           reverse
         />
         
         <TeamMember
           name="Udoka Okuofu"
           position="Business Development Manager"
-          imageSrc="/about/image-2.png"
+          imageSrc="/about/image-2.webp"
         />
         <TeamMember
           name="Wodo-Charles Lifefest Edna"
           position="Corporate affairs officer"
-          imageSrc="/about/Wodo.png"
+          imageSrc="/about/Wodo.webp"
           reverse
         />
         <TeamMember
           name="Waji Hanson"
           position="Head Of Human Resources"
-          imageSrc="/about/Hanson.png"
+          imageSrc="/about/Hanson.webp"
         />
         <TeamMember
           name="Lilian Nwaeke"
           position="Documents Controller"
-          imageSrc="/about/Nwaeke.png"
+          imageSrc="/about/Nwaeke.webp"
           reverse
         />
         <TeamMember
           name="Ibukun Adegoke"
           position="Accountant"
-          imageSrc="/about/Adegoke.png"
+          imageSrc="/about/Adegoke.webp"
         />
         <TeamMember
           name="Ijeoma Irondi"
           position="Admin & Operations"
-          imageSrc="/about/Irondi.png"
+          imageSrc="/about/Irondi.webp"
           reverse
         />
         <TeamMember
           name="Roxandra Akinola"
           position="Legal and regulatory compliance consultant"
-          imageSrc="/about/Akinola.png"
+          imageSrc="/about/Akinola.webp"
         />
       </div>
     </div>

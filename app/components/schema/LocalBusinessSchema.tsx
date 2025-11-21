@@ -5,7 +5,7 @@ export function LocalBusinessSchema() {
     '@type': 'LocalBusiness',
     '@id': 'https://bluetidegroup.com/#localbusiness',
     name: 'Bluetide Group',
-    image: 'https://bluetidegroup.com/hero.JPG',
+    image: 'https://bluetidegroup.com/hero.webp',
     url: 'https://bluetidegroup.com',
     telephone: '+2347065382326',
     email: 'info@bluetidegroup.com',

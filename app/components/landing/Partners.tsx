@@ -5,13 +5,13 @@ import Smallie from '../Smallie';
 
 const Partners: React.FC = () => {
   const list = [
-    '/partners/partners-1.png',
-    '/partners/partners-2.png',
-    '/partners/partners-3.png',
-    '/partners/partners-4.png',
-    '/partners/partners-5.png',
-    '/partners/partners-6.png',
-    '/partners/partners.png',
+    '/partners/partners-1.webp',
+    '/partners/partners-2.webp',
+    '/partners/partners-3.webp',
+    '/partners/partners-4.webp',
+    '/partners/partners-5.webp',
+    '/partners/partners-6.webp',
+    '/partners/partners.webp',
   ];
 
   return (
@@ -68,7 +68,7 @@ const ScrollItem = function ({
     <div {...props}>
       <Image
         src={src}
-        alt="Brand image"
+        alt="Trusted partner logo in marine and offshore services industry"
         width={400}
         height={148}
         className="w-full md:max-w-[175px]"

@@ -107,7 +107,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center ">
             <Image
               src="/logo 6.svg"
-              alt="Logo"
+              alt="Bluetide Group - Marine Services and Offshore Solutions"
               width={112}
               height={18}
               className="w-28 h-[1.125rem]"

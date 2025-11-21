@@ -107,7 +107,7 @@ export const metadata: Metadata = {
     description: 'Leading marine services company in Nigeria. Expert underwater hull cleaning, diving services, ROV inspection, and subsea positioning.',
     images: [
       {
-        url: '/hero.JPG',
+        url: '/hero.webp',
         width: 1200,
         height: 630,
         alt: 'Bluetide Group - Marine Services Experts',
@@ -120,7 +120,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bluetide Group - Expert Marine Services',
     description: 'Leading marine services company in Nigeria. Expert underwater hull cleaning, diving services, ROV inspection.',
-    images: ['/hero.JPG'],
+    images: ['/hero.webp'],
   },
 
   // Robots
@@ -139,10 +139,12 @@ export const metadata: Metadata = {
 
   // Icons
   icons: {
-    icon: [
-      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
-    ],
+    icon: '/icon.webp',
+    apple: '/apple-icon.webp',
   },
+
+  // Manifest for PWA
+  manifest: '/manifest.json',
 
   // Search Console Verification
   verification: {

@@ -15,8 +15,8 @@ export default function Leading() {
     >
       <div className="w-full max-w-7xl">
         <Image
-          src="/about/about.png"
-          alt="About image"
+          src="/about/about.webp"
+          alt="Bluetide Group team working on subsea marine operations and offshore projects"
           width={1280}
           height={780}
           className="w-full rounded-xl sm:rounded-3xl object-cover h-[17.5rem] sm:h-auto"

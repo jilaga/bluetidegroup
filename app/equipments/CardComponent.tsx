@@ -39,7 +39,7 @@ export const CardComponent: React.FC<CardProps> = ({
             src={imgUrl}
             width={600}
             height={600}
-            alt={title}
+            alt={`${title} - Marine equipment for offshore and subsea operations`}
           />
           <motion.div
             className="absolute inset-0 bg-neutral-950/70"

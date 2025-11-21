@@ -114,7 +114,7 @@ function Page() {
                 width={18}
                 height={18}
                 src="/stories/search.svg"
-                alt="search"
+                alt="Search stories icon"
               />
             </div>
           </label>

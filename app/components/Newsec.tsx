@@ -1,8 +1,7 @@
 'use client';
 
-import { OptimizedImage } from './OptimizedImage';
-import React from 'react';
 import { HiOutlineArrowDownCircle } from 'react-icons/hi2';
+import { OptimizedImage } from './OptimizedImage';
 
 export default function Newsec() {
   return (
@@ -15,7 +14,7 @@ export default function Newsec() {
           }}
         ></div>
         <OptimizedImage
-          src="/hero.JPG"
+          src="/hero.webp"
           alt="Bluetide Group marine services - professional diving and ROV operations"
           className="h-full w-full object-cover"
           priority={true}
@@ -34,17 +33,18 @@ export default function Newsec() {
               Underwater Hull Cleaning, Diving
             </span>{' '}
             and <span className="text-[#FF8533]">ROV Services</span>.
-            <button className="gap-2 hidden sm:flex flex-row items-center justify-center box-border text-left text-[1rem] text-linen mt-4">
+            <button type="button" className="gap-2 hidden sm:flex flex-row items-center justify-center box-border text-left text-[1rem] text-linen mt-4">
               Explore more
               <HiOutlineArrowDownCircle className="w-6 h-6" />
             </button>
           </p>
           <button
-            className="hero-button bg-[#FF6700] border-none outline-none cursor-pointer text-white px-5 py-4 w-full rounded-full mt-4 sm:hidden flex justify-center items-center transition-transform duration-200 hover:scale-105 active:scale-95"
-            onClick={() => {
+              type="button"
+              className="hero-button bg-[#FF6700] border-none outline-none cursor-pointer text-white px-5 py-4 w-full rounded-full mt-4 sm:hidden flex justify-center items-center transition-transform duration-200 hover:scale-105 active:scale-95"
+              onClick={() => {
               window.scrollTo({
-                top: 9999999,
-                behavior: 'smooth',
+              top: 9999999,
+              behavior: 'smooth',
               });
             }}
           >

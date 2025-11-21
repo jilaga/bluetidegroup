@@ -169,7 +169,7 @@ const Page = async ({ params }: ServicePageProps) => {
         >
           <Image
             src={service.img}
-            alt="First service related Image"
+            alt={`${serviceName} - Professional marine and offshore operations by Bluetide Group`}
             width={1280}
             height={780}
             className="w-full rounded-xl sm:rounded-3xl object-cover h-auto lg:h-[48.75rem] sm:h-[28.806rem] "

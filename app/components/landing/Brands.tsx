@@ -4,17 +4,17 @@ import * as motion from 'framer-motion/client';
 
 const Brands: React.FC = () => {
   const items = [
-    '/brands/Allison.png',
-    '/brands/CESL.png',
-    '/brands/desicon.png',
-    '/brands/Exon.png',
-    '/brands/geodetic.png',
-    '/brands/Hydrodive.png',
-    '/brands/James.png',
-    '/brands/Kreuz.png',
-    '/brands/NPA.png',
-    '/brands/petrostuff.png',
-    '/brands/TElogo.png',
+    '/brands/Allison.webp',
+    '/brands/CESL.webp',
+    '/brands/desicon.webp',
+    '/brands/Exon.webp',
+    '/brands/geodetic.webp',
+    '/brands/Hydrodive.webp',
+    '/brands/James.webp',
+    '/brands/Kreuz.webp',
+    '/brands/NPA.webp',
+    '/brands/petrostuff.webp',
+    '/brands/TElogo.webp',
   ];
 
   return (
@@ -147,7 +147,7 @@ const ScrollItem = function ({
     <div {...props}>
       <Image
         src={src}
-        alt="Brand image"
+        alt="Industry brand partner in marine services and offshore operations"
         width={400}
         height={148}
         loading="eager"

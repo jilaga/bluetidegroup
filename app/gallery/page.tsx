@@ -1,7 +1,48 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import ImageReveal from './ImageReveal';
 import ScrollFade from '@/utils/SlideFade';
 import Smallie from '../components/Smallie';
+
+export const metadata: Metadata = {
+  title: 'Gallery - Marine Operations & Project Showcase',
+  description: 'View our extensive gallery of marine operations, underwater projects, and offshore services. See Bluetide Group\'s ROV inspections, diving services, and hull cleaning work in action.',
+  keywords: [
+    'marine operations gallery',
+    'underwater services photos',
+    'ROV inspection images',
+    'diving services gallery',
+    'hull cleaning photos',
+    'offshore operations Nigeria',
+    'subsea projects gallery',
+    'marine services showcase',
+    'underwater inspection photos',
+    'Bluetide Group projects'
+  ],
+  openGraph: {
+    title: 'Gallery - Marine Operations & Project Showcase | Bluetide Group',
+    description: 'View our extensive gallery of marine operations, underwater projects, and offshore services. See Bluetide Group\'s ROV inspections, diving services, and hull cleaning work in action.',
+    url: 'https://bluetidegroup.com/gallery',
+    images: [
+      {
+        url: '/gallery/img1.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Bluetide Group Marine Operations Gallery',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gallery - Marine Operations & Project Showcase | Bluetide Group',
+    description: 'View our marine operations, underwater projects, and offshore services gallery. ROV inspections, diving, and hull cleaning work showcased.',
+    images: ['/gallery/img1.webp'],
+  },
+  alternates: {
+    canonical: 'https://bluetidegroup.com/gallery',
+  },
+};
 
 function page() {
   return (
@@ -18,8 +59,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img1.png"
-              alt="factory"
+              src="/gallery/img1.webp"
+              alt="Offshore marine operations platform during subsea inspection work"
               width={853}
               height={600}
             />
@@ -29,8 +70,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img2.png"
-              alt="factory"
+              src="/gallery/img2.webp"
+              alt="Professional diving team performing underwater hull cleaning service"
               width={427}
               height={300}
             />
@@ -40,8 +81,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img3.png"
-              alt="factory"
+              src="/gallery/img3.webp"
+              alt="ROV remotely operated vehicle conducting subsea survey operations"
               width={428}
               height={300}
             />
@@ -51,8 +92,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img4.png"
-              alt="factory"
+              src="/gallery/img4.webp"
+              alt="Underwater positioning and subsea survey equipment in operation"
               width={428}
               height={600}
             />
@@ -62,8 +103,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img5.png"
-              alt="factory"
+              src="/gallery/img5.webp"
+              alt="Marine vessel undergoing professional maintenance and inspection"
               width={427}
               height={300}
             />
@@ -73,8 +114,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img6.png"
-              alt="factory"
+              src="/gallery/img6.webp"
+              alt="Offshore oil and gas platform with marine support services"
               width={427}
               height={600}
             />
@@ -84,8 +125,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img4.png"
-              alt="factory"
+              src="/gallery/img4.webp"
+              alt="Underwater positioning and subsea survey equipment in operation"
               width={428}
               height={600}
             />
@@ -95,8 +136,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img2.png"
-              alt="factory"
+              src="/gallery/img2.webp"
+              alt="Professional diving team performing underwater hull cleaning service"
               width={427}
               height={300}
             />
@@ -106,8 +147,8 @@ function page() {
           <ScrollFade>
             <Image
               className="w-full mt-6 sm:mt-0"
-              src="/gallery/img3.png"
-              alt="factory"
+              src="/gallery/img3.webp"
+              alt="ROV remotely operated vehicle conducting subsea survey operations"
               width={428}
               height={300}
             />

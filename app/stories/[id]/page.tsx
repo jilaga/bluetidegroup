@@ -2,10 +2,75 @@ import fs from 'fs/promises';
 import path from 'path';
 import Markdown from 'react-markdown';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 import { ArticleCardProps, getRandomHexColor } from '../articleCard';
 import './markdown.css';
 import { estimateReadingTime } from '@/utils/articleReadTime';
+import { ArticleSchema } from '@/app/components/schema/ArticleSchema';
+
+// Helper function to get article data
+async function getArticleData(id: string) {
+  const url = path.join('./', 'app/stories/articles.json');
+  const file = await fs.readFile(url, 'utf-8');
+  const articles: (ArticleCardProps & { content: string })[] = JSON.parse(file);
+  return articles.find((article) => `${article.id}` === id);
+}
+
+// Generate metadata dynamically
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const article = await getArticleData(params.id);
+
+  if (!article) {
+    return {
+      title: 'Story Not Found',
+    };
+  }
+
+  // Clean and truncate preview for description
+  const description = article.preview.length > 160
+    ? article.preview.substring(0, 157) + '...'
+    : article.preview;
+
+  return {
+    title: article.title,
+    description: description,
+    keywords: [
+      ...article.tags,
+      'marine industry insights',
+      'Bluetide Group blog',
+      'offshore services',
+      'marine operations guide',
+      'subsea technology'
+    ],
+    openGraph: {
+      title: `${article.title} | Bluetide Group`,
+      description: description,
+      url: `https://bluetidegroup.com/stories/${params.id}`,
+      images: [
+        {
+          url: article.previewImg,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+      type: 'article',
+      publishedTime: new Date().toISOString(),
+      authors: ['Bluetide Group'],
+      tags: article.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${article.title} | Bluetide Group`,
+      description: description,
+      images: [article.previewImg],
+    },
+    alternates: {
+      canonical: `https://bluetidegroup.com/stories/${params.id}`,
+    },
+  };
+}
 
 export function generateStaticParams() {
   const articleCount = 33; //NOTE this should always be the same length as the articles array
@@ -20,7 +85,7 @@ async function page({ params }: { params: { id: string } }) {
   const file = await fs.readFile(url, 'utf-8');
   const articles: (ArticleCardProps & { content: string })[] = JSON.parse(file);
 
-  const article = articles.find((article) => `${article.id}` === params.id);
+  const article = await getArticleData(params.id);
 
   const relatedStories = articles
     .sort(
@@ -35,12 +100,29 @@ async function page({ params }: { params: { id: string } }) {
     return <div>Empty page</div>;
   }
 
+  const canonicalUrl = `https://bluetidegroup.com/stories/${params.id}`;
+  const fullImageUrl = article.previewImg.startsWith('http')
+    ? article.previewImg
+    : `https://bluetidegroup.com${article.previewImg}`;
+
+  // Using a default date since articles don't have explicit dates
+  // In production, you should add date fields to articles.json
+  const publicationDate = '2024-01-01T00:00:00Z';
+
   return (
-    <div
-      className="pt-[20rem] gap-[2rem] md:gap-[2.55rem] lg:gap-[7.5rem]
-       px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] max-w-[1200px] mx-auto"
-    >
-      <header className="text-start flex flex-wrap items-center justify-between gap-4 mb-4 ">
+    <>
+      <ArticleSchema
+        title={article.title}
+        description={article.preview}
+        image={fullImageUrl}
+        datePublished={publicationDate}
+        dateModified={publicationDate}
+        url={canonicalUrl}
+      />
+      <div
+        className="pt-[20rem] gap-[2rem] md:gap-[2.55rem] lg:gap-[7.5rem] px-[1.5rem] md:px-[2.5rem] lg:px-[5rem] max-w-[1200px] mx-auto"
+      >
+        <header className="text-start flex flex-wrap items-center justify-between gap-4 mb-4 ">
         <p className="text-[#B9B9B9] uppercase">stories that touch</p>
         <div className="flex flex-wrap items-center gap-3 mt-4">
           {article.tags
@@ -88,7 +170,8 @@ async function page({ params }: { params: { id: string } }) {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

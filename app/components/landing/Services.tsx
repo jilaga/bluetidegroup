@@ -11,7 +11,7 @@ import Smallie from '@/app/components/Smallie';
 const ServiceCard: React.FC<{
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
   delay: number;
   bgColor: string;
   href: string;
@@ -70,10 +70,10 @@ export default function OurServicesPage() {
             }}
           ></div>
           <Image
-            src="/service/bg.png"
+            src="/service/bg.webp"
             width={1440}
             height={1000}
-            alt="service bg image"
+            alt="Underwater marine operations and offshore services background"
             className="w-full h-full object-cover "
           />
         </motion.div>
@@ -102,7 +102,7 @@ export default function OurServicesPage() {
             bgColor="#E6F1FD"
             title="Hull Cleaning"
             description="We provide expert hull cleaning services for vessels, ensuring optimal performance, efficiency, and environmental compliance."
-            imageSrc="/service/serv1.png"
+            
             href="/Services/1"
             delay={100}
           />
@@ -111,7 +111,6 @@ export default function OurServicesPage() {
             bgColor="#FFF0E6"
             title="Equipment procurement and hire"
             description="We provide rental services for a wide array of specialized subsea equipment."
-            imageSrc="/service/serv2.png"
             href="/Services/2"
             delay={300}
           />
@@ -121,7 +120,6 @@ export default function OurServicesPage() {
             bgColor="#E6F1FD"
             title="ROV Inspection"
             description="We provide specialized inspection and maintenance services for Remotely Operated Vehicles (ROVs)."
-            imageSrc="/service/serv3.png"
             href="/Services/3"
             delay={500}
           />
@@ -130,7 +128,6 @@ export default function OurServicesPage() {
             bgColor="#FFF0E6"
             title="Air diving"
             description="We offer comprehensive air diving services tailored to meet the unique needs of our clients."
-            imageSrc="/service/serv4.png"
             href="/Services/4"
             delay={700}
           />
@@ -139,7 +136,6 @@ export default function OurServicesPage() {
             bgColor="#E6F1FD"
             title="Subsea survey and Positioning"
             description="We specialize in delivering expert subsea positioning and survey solutions to empower our clients to achieve accurate and efficient underwater operations."
-            imageSrc="/service/serv5.png"
             href="/Services/5"
             delay={900}
           />
