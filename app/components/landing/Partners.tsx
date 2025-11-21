@@ -5,13 +5,13 @@ import Smallie from '../Smallie';
 
 const Partners: React.FC = () => {
   const list = [
-    '/partners/partners-1.webp',
-    '/partners/partners-2.webp',
-    '/partners/partners-3.webp',
-    '/partners/partners-4.webp',
-    '/partners/partners-5.webp',
-    '/partners/partners-6.webp',
-    '/partners/partners.webp',
+    '/Partners/partners-1.webp',
+    '/Partners/partners-2.webp',
+    '/Partners/partners-3.webp',
+    '/Partners/partners-4.webp',
+    '/Partners/partners-5.webp',
+    '/Partners/partners-6.webp',
+    '/Partners/partners.webp',
   ];
 
   return (

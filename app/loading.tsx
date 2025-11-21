@@ -3,7 +3,7 @@
 
 export default function Loading() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-primary-blue relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-primary-blue/20 relative overflow-hidden">
       {/* Animated background waves */}
       <div className="absolute inset-0 opacity-10">
         <div className="wave-animation"></div>
