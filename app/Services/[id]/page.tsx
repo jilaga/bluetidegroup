@@ -1,17 +1,19 @@
-import React from 'react';
+import type { Metadata } from 'next';
+
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
-import ScrollFade from '@/utils/SlideFade';
-import Smallie from '@/app/components/Smallie';
 import Markdown from 'react-markdown';
-import fs from 'fs/promises';
-import path from 'path';
-import { ServiceSchema } from '@/app/components/schema/ServiceSchema';
+import { twMerge } from 'tailwind-merge';
+
 import { BreadcrumbSchema } from '@/app/components/schema/BreadcrumbSchema';
+import { ServiceSchema } from '@/app/components/schema/ServiceSchema';
+import Smallie from '@/app/components/Smallie';
+import ScrollFade from '@/utils/SlideFade';
 
 import '../../stories/[id]/markdown.css';
-import { twMerge } from 'tailwind-merge';
 
 type ServicePageProps = {
   params: {
@@ -179,7 +181,7 @@ const Page = async ({ params }: ServicePageProps) => {
       <div>
         {service.sections.map((section, idx) => (
           <div
-            key={idx}
+            key={section.tag}
             className={twMerge(
               'w-full flex flex-col gap-8 sm:flex-row sm:gap-10 pt-16 pb-12',
               idx !== 0 ? 'border-t border-[#B2B2B2]' : ''
