@@ -1,6 +1,6 @@
-import { div } from 'framer-motion/client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { HiArrowRight } from 'react-icons/hi2';
 import { twMerge } from 'tailwind-merge';
 
 export interface ArticleCardProps {
@@ -66,12 +66,7 @@ const ArticleCard = function ({
             className="text-[#FF9954] border-[#FF9954] border outline-none flex items-center gap-3 px-5 py-3 rounded-[100vh] mt-4 cursor-pointer w-max"
           >
             Read more
-            <Image
-              src="/stories/arrow.svg"
-              alt="Read more arrow icon"
-              width={30}
-              height={30}
-            />
+            <HiArrowRight className="w-6 h-6 text-[#FF9954]" />
           </Link>
         </div>
       </a>

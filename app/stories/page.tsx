@@ -1,17 +1,19 @@
 'use client';
 
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { useEffect, useState } from 'react';
+
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { HiMagnifyingGlass } from 'react-icons/hi2';
+import { twMerge } from 'tailwind-merge';
+
+import { estimateReadingTime } from '@/utils/articleReadTime';
 
 import ArticleCard from './articleCard';
 import articles from './articles.json';
-import { estimateReadingTime } from '@/utils/articleReadTime';
 
 const tags = [
-  ...new Set([...articles.map((article) => article.tags).flat()]),
+  ...new Set([...articles.flatMap((article) => article.tags)]),
 ].reverse();
 
 const displayedTags = [
@@ -21,9 +23,7 @@ const displayedTags = [
   'Marine operations',
 ];
 
-const genRandNum = function () {
-  return Math.floor(Math.random() * (articles.length - 1));
-};
+const genRandNum = () => Math.floor(Math.random() * (articles.length - 1));
 const relatedStories = [genRandNum(), genRandNum(), genRandNum()];
 
 function Page() {
@@ -61,7 +61,8 @@ function Page() {
           stories that touch
         </p>
         <div className="flex flex-wrap items-center gap-3 mt-4 mb-8 min-[720px]:mt-0 min-[720px]:mb-0 col-start-2 col-end-3 row-start-1">
-          <p
+          <button
+            type="button"
             onClick={() => setSelectedTags(['all'])}
             className={twMerge(
               'px-6 py-2 rounded-[100vh] w-max cursor-pointer text-[#151515] text-sm font-medium',
@@ -69,9 +70,10 @@ function Page() {
             )}
           >
             all
-          </p>
+          </button>
           {displayedTags.map((tag) => (
-            <p
+            <button
+              type="button"
               key={tag}
               onClick={() => {
                 setSelectedTags((prev) => {
@@ -91,7 +93,7 @@ function Page() {
               )}
             >
               {tag}
-            </p>
+            </button>
           ))}
         </div>
         <div className="col-start-2 col-end-3 row-start-2">
@@ -110,12 +112,7 @@ function Page() {
               className="pr-5 py-5 outline-none border-b bg-[#FAFAFA] border-[#686868] w-full"
             />
             <div className="w-11 h-11 grid place-items-center bg-[#FF6700] rounded-full absolute inset-[50%_1em_auto_auto] translate-y-[-50%]">
-              <Image
-                width={18}
-                height={18}
-                src="/stories/search.svg"
-                alt="Search stories icon"
-              />
+              <HiMagnifyingGlass className="w-5 h-5 text-white" />
             </div>
           </label>
           {filteredArticles.slice(0, articleLimit).map((article) => (
@@ -184,18 +181,6 @@ function Page() {
               times: [0, 0.1, 1],
             }}
           />
-          {/* <motion.span
-              className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{ opacity: [0, 0.6, 0], scale: 2 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'loop',
-                delay: 3,
-                duration: 4,
-                times: [0, 0.1, 1],
-              }}
-            /> */}
         </motion.button>
       </div>
     </div>
