@@ -101,8 +101,7 @@ export default function Navbar() {
           }
         `}</style>
         <div
-          className="w-full max-w-[1040px] [backdrop-filter:blur(320px)] bg-foundation-primary-blue-primary-blue-50 rounded-full shadow border border-white 
-       bg-white/50 overflow-hidden flex  items-center justify-between py-3 px-4 pl-6  box-border text-center text-base text-foundation-grey-grey-500 h-max"
+          className="w-full max-w-[1040px] [backdrop-filter:blur(320px)] bg-foundation-primary-blue-primary-blue-50 rounded-full shadow border border-white bg-white/50 overflow-hidden flex items-center justify-between py-3 px-4 pl-6 box-border text-center text-base text-foundation-grey-grey-500 h-max"
         >
           <Link href="/" className="flex items-center ">
             <Image

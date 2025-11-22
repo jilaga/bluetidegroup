@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-
+import Image from 'next/image';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-import Image from 'next/image';
+import type { Metadata } from 'next';
+
 import { notFound } from 'next/navigation';
 import Markdown from 'react-markdown';
 import { twMerge } from 'tailwind-merge';

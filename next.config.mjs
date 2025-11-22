@@ -14,7 +14,6 @@ const nextConfig = {
     // Enhanced optimization settings
     remotePatterns: [], // For CDN images if needed
     unoptimized: false, // Ensure optimization is enabled
-    // Quality is set per image in the Image component
   },
 
   // Trailing slash consistency
@@ -73,9 +72,6 @@ const nextConfig = {
   // Compression (Next.js does this by default, but ensure it's on)
   compress: true,
 
-  // Power optimizations
-  swcMinify: true, // Use SWC for faster minification
-
   // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['@/components', 'lucide-react', 'react-icons'],
@@ -84,6 +80,17 @@ const nextConfig = {
   // Production source maps (disable for security)
   productionBrowserSourceMaps: false,
 
+  // Turbopack config (Next.js 16 default bundler)
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
+
+  // Keep webpack config for fallback compatibility
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

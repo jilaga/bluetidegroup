@@ -1,12 +1,13 @@
 'use client';
 
-import { useRef } from 'react';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import { twMerge } from 'tailwind-merge';
+import { useRef } from 'react';
+import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
 
 import ResponsiveScrollSwipe from '@/utils/ResponsiveScrollSwipe';
 
