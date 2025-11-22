@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
+
 import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
-import { twMerge } from 'tailwind-merge';
 import Script from 'next/script';
-import { OptimizedImage } from './components/OptimizedImage';
-import { GoogleAnalytics } from './components/analytics/GoogleAnalytics';
+import { twMerge } from 'tailwind-merge';
+
 import { CoreWebVitalsMonitoring, PerformanceBudgetMonitor } from './components/analytics/CoreWebVitals';
-import { searchConsoleMetadata } from './components/seo/GoogleSearchConsole';
+import { GoogleAnalytics } from './components/analytics/GoogleAnalytics';
+import Footer from './components/Footer';
+import Navbar from './components/Header';
+import Choose from './components/landing/Choose';
+import { OptimizedImage } from './components/OptimizedImage';
 import { INPOptimization, InteractionFeedback } from './components/performance/INPOptimization';
 
-import Navbar from './components/Header';
-import Footer from './components/Footer';
-import Choose from './components/landing/Choose';
 import './globals.css';
 
 const montserrat = Montserrat({

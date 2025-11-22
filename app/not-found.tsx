@@ -1,7 +1,9 @@
 // app/not-found.tsx
-import Link from 'next/link'
-import type { Metadata } from 'next'
-import { OptimizedImage } from './components/OptimizedImage'
+import type { Metadata } from 'next';
+
+import Link from 'next/link';
+
+import { OptimizedImage } from './components/OptimizedImage';
 
 export const metadata: Metadata = {
   title: '404 - Page Not Found | Bluetide Group',

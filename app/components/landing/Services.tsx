@@ -1,12 +1,15 @@
 'use client';
-import React, { PropsWithoutRef, useRef } from 'react';
+
+import { useRef } from 'react';
+
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { HiArrowUpRight } from 'react-icons/hi2';
 import Image from 'next/image';
 import Link from 'next/link';
-import ResponsiveScrollSwipe from '@/utils/ResponsiveScrollSwipe';
+import { HiArrowUpRight } from 'react-icons/hi2';
 import { twMerge } from 'tailwind-merge';
+
 import Smallie from '@/app/components/Smallie';
+import ResponsiveScrollSwipe from '@/utils/ResponsiveScrollSwipe';
 
 const ServiceCard: React.FC<{
   title: string;

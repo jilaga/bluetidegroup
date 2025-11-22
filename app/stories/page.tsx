@@ -12,6 +12,7 @@ import { estimateReadingTime } from '@/utils/articleReadTime';
 import ArticleCard from './articleCard';
 import articles from './articles.json';
 
+
 const tags = [
   ...new Set([...articles.flatMap((article) => article.tags)]),
 ].reverse();

@@ -1,8 +1,10 @@
-import * as motion from 'framer-motion/client'
-import Image from 'next/image'
-import CustomButton from '../Button'
-import Smallie from '@/app/components/Smallie'
-import ScrollFade from '@/utils/SlideFade'
+import * as motion from 'framer-motion/client';
+import Image from 'next/image';
+
+import Smallie from '@/app/components/Smallie';
+import ScrollFade from '@/utils/SlideFade';
+
+import CustomButton from '../Button';
 
 function Company() {
   return (
