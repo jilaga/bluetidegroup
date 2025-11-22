@@ -17,9 +17,9 @@ import Smallie from '@/app/components/Smallie';
 import '../../stories/[id]/markdown.css';
 
 type ServicePageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 interface Service {
@@ -45,7 +45,8 @@ async function getServiceData(id: string) {
 
 // Generate metadata dynamically
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-  const service = await getServiceData(params.id);
+  const { id } = await params;
+  const service = await getServiceData(id);
 
   if (!service) {
     return {
@@ -62,7 +63,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     '6': 'Electrical Instrumentation Services'
   };
 
-  const serviceName = serviceNames[params.id] || service.title.tag;
+  const serviceName = serviceNames[id] || service.title.tag;
   const description = `Professional ${serviceName.toLowerCase()} by Bluetide Group. Expert marine services in Nigeria including ${service.title.title}`;
 
   return {
@@ -80,7 +81,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     openGraph: {
       title: `${serviceName} | Bluetide Group`,
       description: description,
-      url: `https://bluetidegroup.com/Services/${params.id}`,
+      url: `https://bluetidegroup.com/Services/${id}`,
       images: [
         {
           url: service.img,
@@ -100,13 +101,14 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     },
 
     alternates: {
-      canonical: `https://bluetidegroup.com/Services/${params.id}`,
+      canonical: `https://bluetidegroup.com/Services/${id}`,
     },
   };
 }
 
 const Page = async ({ params }: ServicePageProps) => {
-  const service = await getServiceData(params.id);
+  const { id } = await params;
+  const service = await getServiceData(id);
 
   if (!service) {
     return notFound();
@@ -121,14 +123,14 @@ const Page = async ({ params }: ServicePageProps) => {
     '6': 'Electrical Instrumentation Services'
   };
 
-  const serviceName = serviceNames[params.id] || service.title.tag;
+  const serviceName = serviceNames[id] || service.title.tag;
 
   return (
     <>
       <ServiceSchema
         serviceName={serviceName}
         description={service.title.title}
-        url={`https://bluetidegroup.com/Services/${params.id}`}
+        url={`https://bluetidegroup.com/Services/${id}`}
         image={service.img}
       />
 
@@ -136,7 +138,7 @@ const Page = async ({ params }: ServicePageProps) => {
         items={[
           { name: 'Home', url: 'https://bluetidegroup.com' },
           { name: 'Services', url: 'https://bluetidegroup.com/Services' },
-          { name: serviceName, url: `https://bluetidegroup.com/Services/${params.id}` },
+          { name: serviceName, url: `https://bluetidegroup.com/Services/${id}` },
         ]}
       />
     <ScrollFade

@@ -1,25 +1,30 @@
-import fs from 'fs/promises';
-import path from 'path';
-import Markdown from 'react-markdown';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Metadata } from 'next';
+import Markdown from 'react-markdown';
 
-import { ArticleCardProps, getRandomHexColor } from '../articleCard';
-import './markdown.css';
-import { estimateReadingTime } from '@/utils/articleReadTime';
 import { ArticleSchema } from '@/app/components/schema/ArticleSchema';
+import { estimateReadingTime } from '@/utils/articleReadTime';
 
-// Helper function to get article data
-async function getArticleData(id: string) {
+import { type ArticleCardProps, getColorForTag } from '../articleCard';
+import './markdown.css';
+
+type Article = ArticleCardProps & { content: string };
+
+// Single read function to avoid duplicate file reads
+async function getAllArticles(): Promise<Article[]> {
   const url = path.join('./', 'app/stories/articles.json');
   const file = await fs.readFile(url, 'utf-8');
-  const articles: (ArticleCardProps & { content: string })[] = JSON.parse(file);
-  return articles.find((article) => `${article.id}` === id);
+  return JSON.parse(file);
 }
 
 // Generate metadata dynamically
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const article = await getArticleData(params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const articles = await getAllArticles();
+  const article = articles.find((a) => `${a.id}` === id);
 
   if (!article) {
     return {
@@ -46,7 +51,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     openGraph: {
       title: `${article.title} | Bluetide Group`,
       description: description,
-      url: `https://bluetidegroup.com/stories/${params.id}`,
+      url: `https://bluetidegroup.com/stories/${id}`,
       images: [
         {
           url: article.previewImg,
@@ -67,40 +72,38 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
       images: [article.previewImg],
     },
     alternates: {
-      canonical: `https://bluetidegroup.com/stories/${params.id}`,
+      canonical: `https://bluetidegroup.com/stories/${id}`,
     },
   };
 }
 
-export function generateStaticParams() {
-  const articleCount = 33; //NOTE this should always be the same length as the articles array
-  const ids = Array(articleCount)
-    .fill('')
-    .map((_, idx) => ({ id: `${idx + 1}` }));
-  return ids;
+export async function generateStaticParams() {
+  const articles = await getAllArticles();
+  return articles.map((article) => ({ id: `${article.id}` }));
 }
 
-async function page({ params }: { params: { id: string } }) {
-  const url = path.join('./', 'app/stories/articles.json');
-  const file = await fs.readFile(url, 'utf-8');
-  const articles: (ArticleCardProps & { content: string })[] = JSON.parse(file);
+async function page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
-  const article = await getArticleData(params.id);
-
-  const relatedStories = articles
-    .sort(
-      (a, b) =>
-        b.tags.filter((tag) => article?.tags.includes(tag)).length -
-        a.tags.filter((tag) => article?.tags.includes(tag)).length
-    )
-    .filter((article_) => article_.id !== article?.id)
-    .slice(0, 3);
+  // Single file read - reuse for both article and related stories
+  const articles = await getAllArticles();
+  const article = articles.find((a) => `${a.id}` === id);
 
   if (!article) {
     return <div>Empty page</div>;
   }
 
-  const canonicalUrl = `https://bluetidegroup.com/stories/${params.id}`;
+  // Get related stories by tag overlap (most relevant first)
+  const relatedStories = articles
+    .map((a) => ({
+      ...a,
+      relevance: a.tags.filter((tag) => article.tags.includes(tag)).length,
+    }))
+    .filter((a) => a.id !== article.id)
+    .sort((a, b) => b.relevance - a.relevance)
+    .slice(0, 3);
+
+  const canonicalUrl = `https://bluetidegroup.com/stories/${id}`;
   const fullImageUrl = article.previewImg.startsWith('http')
     ? article.previewImg
     : `https://bluetidegroup.com${article.previewImg}`;
@@ -128,7 +131,7 @@ async function page({ params }: { params: { id: string } }) {
           {article.tags
             .sort((a, b) => b.length - a.length)
             .map((tag) => {
-              const backgroundColor = getRandomHexColor();
+              const backgroundColor = getColorForTag(tag);
 
               return (
                 <p

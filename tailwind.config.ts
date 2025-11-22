@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+import type { Config, PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
   content: [
@@ -117,13 +117,12 @@ const config: Config = {
     },
   },
   plugins: [
-    function ({ addUtilities }: { addUtilities: Function }) {
-      const newUtilities = {
+    ({ addUtilities }: PluginAPI) => {
+      addUtilities({
         '.pause': {
           'animation-play-state': 'paused',
         },
-      };
-      addUtilities(newUtilities, ['hover']);
+      });
     },
   ],
 };
