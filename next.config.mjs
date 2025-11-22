@@ -8,6 +8,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'], // AVIF first (30% smaller than WebP)
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840], // Added 4K support
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 768], // More size options
+    qualities: [75, 90], // Allow quality 75 (default) and 90 for high-quality images
     minimumCacheTTL: 31536000, // 1 year cache
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

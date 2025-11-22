@@ -140,7 +140,7 @@ export const metadata: Metadata = {
 
   // Icons
   icons: {
-    icon: '/icon.webp',
+    icon: '/icon.png',
     apple: '/apple-icon.webp',
   },
 

@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useEffect  } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
 import { twMerge } from 'tailwind-merge';
@@ -11,6 +10,7 @@ import { estimateReadingTime } from '@/utils/articleReadTime';
 
 import articles from './articles.json';
 import ArticleCard from './articleCard';
+import './pulse-animation.css';
 
 const tags = [
   ...new Set([...articles.flatMap((article) => article.tags)]),
@@ -23,36 +23,53 @@ const displayedTags = [
   'Marine operations',
 ];
 
-const genRandNum = () => Math.floor(Math.random() * (articles.length - 1));
-const relatedStories = [genRandNum(), genRandNum(), genRandNum()];
+// Deterministic "featured" stories based on article IDs (not random)
+// This ensures consistent server/client rendering and better caching
+const featuredStoryIds = [
+  articles.length - 1, // Most recent
+  articles.length - 2, // Second most recent
+  articles.length - 3, // Third most recent
+].filter((id) => id >= 0);
 
 function Page() {
   const [selectedTags, setSelectedTags] = useState(['all']);
   const [articleLimit, setArticleLimit] = useState(4);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredArticles = articles
-    .filter((article) => {
-      if (selectedTags[0] === 'all') return true;
-      if (searchQuery.trim() === '')
-        return selectedTags.some((tag) => article.tags.includes(tag));
-      return (
-        selectedTags.some((tag) => article.tags.includes(tag)) ||
-        article.title.toLowerCase().includes(searchQuery.trim().toLowerCase())
-      );
-    })
-    .reverse();
+  // Memoize normalized search query
+  const normalizedQuery = useMemo(
+    () => searchQuery.toLowerCase().trim(),
+    [searchQuery]
+  );
+
+  // Memoize filtered articles to prevent recalculation on every render
+  const filteredArticles = useMemo(() => {
+    return articles
+      .filter((article) => {
+        if (selectedTags[0] === 'all') return true;
+        if (normalizedQuery === '')
+          return selectedTags.some((tag) => article.tags.includes(tag));
+        return (
+          selectedTags.some((tag) => article.tags.includes(tag)) ||
+          article.title.toLowerCase().includes(normalizedQuery)
+        );
+      })
+      .reverse();
+  }, [selectedTags, normalizedQuery]);
+
+  // Memoize matching tags for search
+  const matchingTags = useMemo(() => {
+    if (normalizedQuery === '') return ['all'];
+    return tags.filter((tag) =>
+      tag.toLowerCase().includes(normalizedQuery)
+    );
+  }, [normalizedQuery]);
 
   useEffect(() => {
-    const input = searchQuery.toLowerCase().trim();
-    let value: string[] = [];
-    if (input === '') {
-      value = ['all'];
-    } else {
-      value = tags.filter((tag) => tag.toLowerCase().trim().includes(input));
-    }
-    setSelectedTags(value);
-  }, [searchQuery]);
+    setSelectedTags(matchingTags);
+  }, [matchingTags]);
+
+  const isLoadMoreDisabled = filteredArticles.length <= articleLimit;
 
   return (
     <div className="w-full p-4 pt-60 max-w-[1200px] mx-auto">
@@ -115,73 +132,52 @@ function Page() {
               <HiMagnifyingGlass className="w-5 h-5 text-white" />
             </div>
           </label>
-          {filteredArticles.slice(0, articleLimit).map((article) => (
+          {filteredArticles.slice(0, articleLimit).map((article, index) => (
             <ArticleCard
               key={article.id}
               {...article}
               readDuration={`${estimateReadingTime(article.content.split(' ').length)} mins`}
+              priority={index < 2}
             />
           ))}
         </div>
         <div className="w-fit hidden md:block max-w-[250px] min-[900px]:max-w-[300px] col-start-1 col-end-2 row-start-2">
           <p className="uppercase font-semibold text-lg mb-2">
-            related stories:
+            featured stories:
           </p>
-          {relatedStories.map((num) => (
+          {featuredStoryIds.map((idx) => (
             <Link
-              key={num}
+              key={articles[idx].id}
               className="block text-[#0070EF] mt-4"
-              href={`stories/${num}`}
+              href={`stories/${articles[idx].id}`}
             >
-              {articles[num].title}
+              {articles[idx].title}
             </Link>
           ))}
         </div>
       </div>
 
       <div className="flex w-full justify-center items-center ">
-        <motion.button
-          disabled={filteredArticles.length <= articleLimit}
+        <button
+          type="button"
+          disabled={isLoadMoreDisabled}
           onClick={() => setArticleLimit((prev) => prev + 4)}
-          className="bg-[#FF9954] relative isolate w-16 h-16 grid place-content-center text-3xl disabled:bg-[#d3d3d3] group disabled:cursor-not-allowed capitalize mx-auto mt-20 mb-8 text-white border-none outline-none p-4 rounded-full"
+          className="bg-[#FF9954] relative isolate w-16 h-16 grid place-content-center text-3xl disabled:bg-[#d3d3d3] group disabled:cursor-not-allowed capitalize mx-auto mt-20 mb-8 text-white border-none outline-none p-4 rounded-full cursor-pointer"
         >
           +
-          <motion.span
-            className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: [0, 0.6, 0], scale: 2 }}
-            transition={{
-              repeat: Infinity,
-              repeatType: 'loop',
-              duration: 4,
-              times: [0, 0.1, 1],
-            }}
+          <span
+            className="pulse-ring absolute inset-0 bg-[#FF9954] rounded-full -z-10 group-disabled:hidden"
+            style={{ animationDelay: '0s' }}
           />
-          <motion.span
-            className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: [0, 0.6, 0], scale: 2 }}
-            transition={{
-              repeat: Infinity,
-              repeatType: 'loop',
-              delay: 1,
-              duration: 4,
-              times: [0, 0.1, 1],
-            }}
+          <span
+            className="pulse-ring absolute inset-0 bg-[#FF9954] rounded-full -z-10 group-disabled:hidden"
+            style={{ animationDelay: '1.33s' }}
           />
-          <motion.span
-            className="absolute inset-0 group-disabled:!opacity-0 group-disabled:!transform-none bg-inherit rounded-full -z-10"
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: [0, 0.6, 0], scale: 2 }}
-            transition={{
-              repeat: Infinity,
-              repeatType: 'loop',
-              delay: 2,
-              duration: 4,
-              times: [0, 0.1, 1],
-            }}
+          <span
+            className="pulse-ring absolute inset-0 bg-[#FF9954] rounded-full -z-10 group-disabled:hidden"
+            style={{ animationDelay: '2.66s' }}
           />
-        </motion.button>
+        </button>
       </div>
     </div>
   );

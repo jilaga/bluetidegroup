@@ -34,8 +34,9 @@ export function CoreWebVitalsMonitoring() {
         }
 
         // Send to custom analytics endpoint (optional)
-        if (process.env.NEXT_PUBLIC_ANALYTICS_ENDPOINT) {
-          fetch(process.env.NEXT_PUBLIC_ANALYTICS_ENDPOINT, {
+        const analyticsEndpoint = process.env.NEXT_PUBLIC_ANALYTICS_ENDPOINT;
+        if (analyticsEndpoint && analyticsEndpoint.trim() !== '') {
+          fetch(analyticsEndpoint, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -50,7 +51,9 @@ export function CoreWebVitalsMonitoring() {
               timestamp: Date.now(),
               userAgent: navigator.userAgent
             }),
-          }).catch(console.error)
+          }).catch(() => {
+            // Silently fail if analytics endpoint is not available
+          })
         }
       }
 

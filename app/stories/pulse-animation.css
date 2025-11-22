@@ -1,0 +1,18 @@
+/* Pulse animation for load more button - replaces framer-motion (~40KB savings) */
+@keyframes pulse-scale {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.pulse-ring {
+  animation: pulse-scale 4s ease-out infinite;
+}
