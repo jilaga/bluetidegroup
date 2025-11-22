@@ -8,8 +8,9 @@ import Link from 'next/link';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import { twMerge } from 'tailwind-merge';
 
-import Smallie from '@/app/components/Smallie';
 import ResponsiveScrollSwipe from '@/utils/ResponsiveScrollSwipe';
+
+import Smallie from '@/app/components/Smallie';
 
 const ServiceCard: React.FC<{
   title: string;

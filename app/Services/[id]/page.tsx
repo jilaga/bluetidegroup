@@ -8,13 +8,13 @@ import { notFound } from 'next/navigation';
 import Markdown from 'react-markdown';
 import { twMerge } from 'tailwind-merge';
 
+import ScrollFade from '@/utils/SlideFade';
+
 import { BreadcrumbSchema } from '@/app/components/schema/BreadcrumbSchema';
 import { ServiceSchema } from '@/app/components/schema/ServiceSchema';
 import Smallie from '@/app/components/Smallie';
-import ScrollFade from '@/utils/SlideFade';
 
 import '../../stories/[id]/markdown.css';
-
 
 type ServicePageProps = {
   params: {

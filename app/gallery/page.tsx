@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 
 import Image from 'next/image';
 
-import Smallie from '../components/Smallie';
-import ImageReveal from './ImageReveal';
-
 import ScrollFade from '@/utils/SlideFade';
+
+import ImageReveal from './ImageReveal';
+import Smallie from '../components/Smallie';
 
 export const metadata: Metadata = {
   title: 'Gallery - Marine Operations & Project Showcase',

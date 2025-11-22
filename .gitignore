@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+ 
 
 # production
 /build
@@ -37,3 +38,8 @@ next-env.d.ts
 
 docs/*
 docs
+.claude 
+claude
+claude.md
+.claude.md
+CLAUADE.md

@@ -9,9 +9,8 @@ import { twMerge } from 'tailwind-merge';
 
 import { estimateReadingTime } from '@/utils/articleReadTime';
 
-import ArticleCard from './articleCard';
 import articles from './articles.json';
-
+import ArticleCard from './articleCard';
 
 const tags = [
   ...new Set([...articles.flatMap((article) => article.tags)]),
