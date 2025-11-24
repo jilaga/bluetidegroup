@@ -1,4 +1,3 @@
-import { div } from 'framer-motion/client';
 import Smallie from '@/app/components/Smallie';
 
 interface BrandProps {
@@ -34,9 +33,9 @@ const Brands: React.FC = () => {
         className="w-full text-center flex justify-center"
       />
       <div className="  flex gap-2 w-full sm:gap-4 py-4   ">
-        {[...items].map((item, index) => (
+        {items.map((item, index) => (
           <div
-            key={index}
+            key={item}
             className="flex w-full px-4 relative  "
             style={{
               animation: `scroll 50s linear infinite`,

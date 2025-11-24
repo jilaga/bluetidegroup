@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 14 website for Bluetide Group, a marine services company specializing in ROV inspection, diving services, underwater hull cleaning, and subsea positioning. The site is built with TypeScript, Tailwind CSS, and Framer Motion for animations.
+This is a Next.js 16 website for Bluetide Group, a marine services company specializing in ROV inspection, diving services, underwater hull cleaning, and subsea positioning. The site is built with TypeScript, Tailwind CSS, and Framer Motion for animations.
 
 **Tech Stack:**
 
-- Next.js 14 (App Router)
+- Next.js 16 (App Router with Turbopack as default bundler)
 - TypeScript (strict mode enabled)
 - Tailwind CSS with extensive custom color system
 - Framer Motion for animations
@@ -39,7 +39,7 @@ bun run format           # Format code with Prettier
 
 ## Project Architecture
 
-### App Router Structure (Next.js 14)
+### App Router Structure (Next.js 16)
 
 - **`app/layout.tsx`** - Root layout with global metadata, analytics, fonts (Montserrat, Clash Display, Satoshi)
 - **`app/page.tsx`** - Homepage with component composition and structured data schemas
@@ -122,7 +122,7 @@ NEXT_PUBLIC_YANDEX_VERIFICATION_ID=      # Yandex verification
 NEXT_PUBLIC_ANALYTICS_ENDPOINT=          # Custom analytics endpoint
 ```
 
-See `ENVIRONMENT_VARIABLES_GUIDE.md` for detailed usage information.
+Set these in `.env.local` for local development.
 
 ## Data Management
 
@@ -179,7 +179,7 @@ Before committing:
 
 ## Contact Integration
 
-WhatsApp contact is hardcoded to `+2347065382326` in `app/layout.tsx:185`. Update if contact changes.
+WhatsApp contact is hardcoded to `+2347065382326` in `app/layout.tsx:188`. Update if contact changes.
 
 ## SEO Configuration
 
