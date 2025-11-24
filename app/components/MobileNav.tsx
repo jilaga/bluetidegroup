@@ -1,12 +1,13 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState, useEffect, useRef } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
-import { motion } from 'framer-motion';
-import ServiceLink from './ServiceLink';
 import { usePathname } from 'next/navigation';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
+
+import ServiceLink from './ServiceLink';
 
 export default function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,22 +15,24 @@ export default function MobileNav() {
   const mobileNav = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: pathname change should trigger menu close
   useEffect(() => {
     setIsServiceMenuOpen(false);
   }, [pathname]);
 
-  const handleOuterClick: (this: Document, ev: MouseEvent) => any = function (
-    e
-  ) {
+  const handleOuterClick = useCallback((e: MouseEvent) => {
     if (!mobileNav.current) return;
     if (!mobileNav.current.contains(e.target as Node)) {
       setIsMenuOpen(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     document.addEventListener('click', handleOuterClick, true);
-  }, []);
+    return () => {
+      document.removeEventListener('click', handleOuterClick, true);
+    };
+  }, [handleOuterClick]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -51,7 +54,7 @@ export default function MobileNav() {
             className="w-20 md:w-28 h-[1.125rem]"
           />
         </Link>
-        <button onClick={toggleMenu}>
+        <button type="button" onClick={toggleMenu} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
           {!isMenuOpen ? (
             <FiMenu className="w-6 h-6" />
           ) : (
@@ -72,9 +75,10 @@ export default function MobileNav() {
             >
               About us
             </Link>
-            <div
+            <button
+              type="button"
               onClick={() => setIsServiceMenuOpen((prev) => !prev)}
-              className="rounded-81xl text-black text-center no-underline"
+              className="rounded-81xl text-black text-center no-underline bg-transparent border-none cursor-pointer text-[2rem] font-body-2"
             >
               Our services
               <motion.div
@@ -124,7 +128,7 @@ export default function MobileNav() {
                   to="Procurement and equipment rental"
                 />
               </motion.div>
-            </div>
+            </button>
             <Link
               href="/stories"
               className="rounded-81xl text-black  no-underline"

@@ -1,12 +1,13 @@
 'use client';
-import { useState, useEffect, useMemo, useRef } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-// Removed framer-motion for better performance
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
-import MobileNav from './MobileNav';
 import { twMerge } from 'tailwind-merge';
+
+import MobileNav from './MobileNav';
 import ServiceLink from './ServiceLink';
 
 export default function Navbar() {
@@ -16,21 +17,27 @@ export default function Navbar() {
 
   const serviceMenuRef = useRef<HTMLDivElement>(null);
 
-  const handleOuterClick: (this: Document, ev: MouseEvent) => any = function (
-    e
-  ) {
+  const handleOuterClick = useCallback((e: MouseEvent) => {
     if (!serviceMenuRef.current) return;
     if (!serviceMenuRef.current.contains(e.target as Node)) {
       setAreServicesOpen(false);
     }
-  };
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    setAreServicesOpen(false);
+  }, []);
 
   useEffect(() => {
     document.addEventListener('click', handleOuterClick, true);
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      document.removeEventListener('click', handleOuterClick, true);
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleOuterClick, handleScroll]);
 
-    document.addEventListener('scroll', () => setAreServicesOpen(false));
-  }, []);
-
+  // biome-ignore lint/correctness/useExhaustiveDependencies: pathname change should trigger menu close
   useEffect(() => {
     setAreServicesOpen(false);
   }, [pathname]);
@@ -122,15 +129,16 @@ export default function Navbar() {
             >
               About us
             </Link>
-            <div
+            <button
+              type="button"
               onClick={() => setAreServicesOpen((prev) => !prev)}
               className={twMerge(
-                'hover:text-[#FF8533] relative no-underline cursor-pointer',
+                'hover:text-[#FF8533] relative no-underline cursor-pointer bg-transparent border-none text-base text-foundation-grey-grey-500',
                 pathname.startsWith('/Services') ? ' text-[#FF8533]' : ''
               )}
             >
               Our services
-            </div>
+            </button>
             <Link
               href="/stories"
               className={twMerge(
@@ -151,6 +159,7 @@ export default function Navbar() {
             </Link>
           </div>
           <button
+            type="button"
             className="header-cta-button w-max cursor-pointer no-underline self-stretch rounded-full md:flex bg-[#FF6700] items-center justify-center py-4 px-6 hidden text-base text-linen transition-transform duration-200 ease-out hover:scale-105 active:scale-95"
             onClick={() => {
               window.scrollTo({
@@ -161,7 +170,7 @@ export default function Navbar() {
           >
             Let&apos;s talk
           </button>
-          <button onClick={toggleMenu} className="md:hidden">
+          <button type="button" onClick={toggleMenu} className="md:hidden" aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
             {!isMenuOpen ? (
               <FiMenu className="w-6 h-6" />
             ) : (
