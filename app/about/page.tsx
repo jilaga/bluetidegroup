@@ -24,13 +24,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Us - Leading Marine Services Provider | Bluetide Group',
     description: 'Discover Bluetide Group, Nigeria\'s premier marine services company. Learn about our mission to deliver innovative subsea solutions and exceptional offshore industry support.',
-    url: 'https://bluetidegroup.com/about',
+    url: 'https://www.bluetidegroup.com/about',
     images: [
       {
-        url: '/hero.webp',
+        url: 'https://www.bluetidegroup.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Bluetide Group - About Our Marine Services Team',
+        type: 'image/jpeg',
       },
     ],
     type: 'website',
@@ -39,10 +40,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Us - Leading Marine Services Provider | Bluetide Group',
     description: 'Discover Bluetide Group, Nigeria\'s premier marine services company. Our mission: innovative subsea solutions and exceptional offshore support.',
-    images: ['/hero.webp'],
+    images: ['https://www.bluetidegroup.com/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://bluetidegroup.com/about',
+    canonical: 'https://www.bluetidegroup.com/about',
   },
 };
 

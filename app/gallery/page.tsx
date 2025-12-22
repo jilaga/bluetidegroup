@@ -24,13 +24,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Gallery - Marine Operations & Project Showcase | Bluetide Group',
     description: 'View our extensive gallery of marine operations, underwater projects, and offshore services. See Bluetide Group\'s ROV inspections, diving services, and hull cleaning work in action.',
-    url: 'https://bluetidegroup.com/gallery',
+    url: 'https://www.bluetidegroup.com/gallery',
     images: [
       {
-        url: '/gallery/img1.webp',
+        url: 'https://www.bluetidegroup.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Bluetide Group Marine Operations Gallery',
+        type: 'image/jpeg',
       },
     ],
     type: 'website',
@@ -39,10 +40,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gallery - Marine Operations & Project Showcase | Bluetide Group',
     description: 'View our marine operations, underwater projects, and offshore services gallery. ROV inspections, diving, and hull cleaning work showcased.',
-    images: ['/gallery/img1.webp'],
+    images: ['https://www.bluetidegroup.com/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://bluetidegroup.com/gallery',
+    canonical: 'https://www.bluetidegroup.com/gallery',
   },
 };
 
