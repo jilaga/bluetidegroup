@@ -76,7 +76,7 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bluetidegroup.com'),
+  metadataBase: new URL('https://www.bluetidegroup.com'),
   title: {
     default: 'Bluetide Group - Expert Marine Services | ROV, Diving & Hull Cleaning',
     template: '%s | Bluetide Group',
@@ -102,13 +102,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://bluetidegroup.com',
+    url: 'https://www.bluetidegroup.com',
     siteName: 'Bluetide Group',
     title: 'Bluetide Group - Expert Marine Services | ROV, Diving & Hull Cleaning',
     description: 'Leading marine services company in Nigeria. Expert underwater hull cleaning, diving services, ROV inspection, and subsea positioning.',
     images: [
       {
-        url: 'https://bluetidegroup.com/og-image.jpg',
+        url: 'https://www.bluetidegroup.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Bluetide Group - Marine Services Experts',
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bluetide Group - Expert Marine Services',
     description: 'Leading marine services company in Nigeria. Expert underwater hull cleaning, diving services, ROV inspection.',
-    images: ['https://bluetidegroup.com/og-image.jpg'],
+    images: ['https://www.bluetidegroup.com/og-image.jpg'],
   },
 
   // Robots
