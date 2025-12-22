@@ -89,6 +89,14 @@ SVGs are handled via `@svgr/webpack`:
 - Import as URL: `import logoUrl from './logo.svg?url'`
 - Type definitions in `svgr.d.ts`
 
+### Code Quality Standards
+
+- **Linter**: Biome is configured for strict linting
+- **Accessibility**: Use semantic HTML (`<button>` not `<div>` for interactive elements)
+- **Button attributes**: Always include `type="button"` and `aria-label` for accessibility
+- **React hooks**: Wrap event handlers in `useCallback`, add cleanup functions to `useEffect`
+- **Import sorting**: Imports must be sorted per Biome requirements (external libs → Next.js → local)
+
 ### Performance Optimizations
 
 - **Image optimization**:
@@ -183,7 +191,10 @@ WhatsApp contact is hardcoded to `+2347065382326` in `app/layout.tsx:188`. Updat
 
 ## SEO Configuration
 
-- Metadata base URL: `https://bluetidegroup.com`
+- **Metadata base URL**: `https://bluetidegroup.com`
+- **Open Graph image**: `public/og-image.jpg` (294KB, 1200x630 JPEG)
+  - Must use absolute URL in meta tags for social media crawlers
+  - Current: `https://bluetidegroup.com/og-image.jpg`
 - All pages should include proper meta descriptions and Open Graph tags
 - Follow pattern in `app/layout.tsx` for global metadata
 - Individual pages can override with their own metadata exports
