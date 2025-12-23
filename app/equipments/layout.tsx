@@ -22,13 +22,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Marine Equipment & Technology - Advanced Subsea Tools | Bluetide Group',
     description: 'Explore our comprehensive range of marine equipment including ROVs, AUVs, multibeam sonars, diving gear, and subsea construction tools for offshore operations.',
-    url: 'https://bluetidegroup.com/equipments',
+    url: 'https://www.bluetidegroup.com/equipments',
     images: [
       {
-        url: '/service/equipment/image.webp',
+        url: 'https://www.bluetidegroup.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Bluetide Group Marine Equipment and Subsea Technology',
+        type: 'image/jpeg',
       },
     ],
     type: 'website',
@@ -37,10 +38,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Marine Equipment & Technology - Advanced Subsea Tools | Bluetide Group',
     description: 'Comprehensive marine equipment: ROVs, AUVs, multibeam sonars, diving gear, and subsea construction tools for offshore operations.',
-    images: ['/service/equipment/image.webp'],
+    images: ['https://www.bluetidegroup.com/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://bluetidegroup.com/equipments',
+    canonical: 'https://www.bluetidegroup.com/equipments',
   },
 };
 

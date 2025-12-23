@@ -18,13 +18,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Stories & Insights - Marine Industry Blog | Bluetide Group',
     description: 'Explore expert insights on underwater hull cleaning, ROV services, marine operations, and offshore industry trends. Stay updated with Bluetide Group\'s marine services blog.',
-    url: 'https://bluetidegroup.com/stories',
+    url: 'https://www.bluetidegroup.com/stories',
     images: [
       {
-        url: '/stories/under.webp',
+        url: 'https://www.bluetidegroup.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Bluetide Group Marine Industry Blog & Insights',
+        type: 'image/jpeg',
       },
     ],
     type: 'website',
@@ -33,10 +34,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Stories & Insights - Marine Industry Blog | Bluetide Group',
     description: 'Expert insights on underwater hull cleaning, ROV services, and marine operations. Stay updated with industry trends and best practices.',
-    images: ['/stories/under.webp'],
+    images: ['https://www.bluetidegroup.com/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://bluetidegroup.com/stories',
+    canonical: 'https://www.bluetidegroup.com/stories',
   },
 };
 
