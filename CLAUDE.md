@@ -191,10 +191,93 @@ WhatsApp contact is hardcoded to `+2347065382326` in `app/layout.tsx:188`. Updat
 
 ## SEO Configuration
 
-- **Metadata base URL**: `https://bluetidegroup.com`
-- **Open Graph image**: `public/og-image.jpg` (294KB, 1200x630 JPEG)
-  - Must use absolute URL in meta tags for social media crawlers
-  - Current: `https://bluetidegroup.com/og-image.jpg`
-- All pages should include proper meta descriptions and Open Graph tags
-- Follow pattern in `app/layout.tsx` for global metadata
-- Individual pages can override with their own metadata exports
+- **Metadata base URL**: `https://www.bluetidegroup.com` (must include www)
+- **Open Graph image**: `public/og-image.jpg` (146KB, 1200x630 JPEG)
+  - Must use absolute URL with www subdomain: `https://www.bluetidegroup.com/og-image.jpg`
+  - All OG images must include `type: 'image/jpeg'` property
+- **Canonical URLs**: Always use `https://www.bluetidegroup.com` format (with www)
+- All pages must export metadata with:
+  - Unique title (uses template from layout.tsx)
+  - Description (150-160 characters)
+  - Keywords array
+  - Open Graph configuration with absolute URLs
+  - Twitter Card configuration
+  - Canonical URL
+
+### Adding Metadata to Pages
+
+```tsx
+export const metadata: Metadata = {
+  title: 'Page Title',
+  description: 'Page description here',
+  keywords: ['keyword1', 'keyword2'],
+  openGraph: {
+    title: 'Full Title | Bluetide Group',
+    description: 'Description',
+    url: 'https://www.bluetidegroup.com/page-path',
+    images: [
+      {
+        url: 'https://www.bluetidegroup.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Alt text',
+        type: 'image/jpeg',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Title',
+    description: 'Description',
+    images: ['https://www.bluetidegroup.com/og-image.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.bluetidegroup.com/page-path',
+  },
+};
+```
+
+## Dynamic Routes & Data
+
+### Services Pages
+- Data source: `app/Services/data.json`
+- Route: `/Services/[id]` where id is 1-6
+- Each service has: id, title (tag + title), img, sections array
+- Sections contain: tag (heading) and content (markdown)
+
+### Stories/Blog Pages
+- Data source: `app/stories/articles.json`
+- Route: `/stories/[id]` where id is 1-3
+- Each article has: id, title, tags, preview, previewImg, content (markdown)
+- Related content in: `app/stories/moreContent.json`
+
+### Static Generation
+Both Services and Stories use static generation:
+- Built at build time using data from JSON files
+- All routes pre-rendered as static HTML
+- No `generateStaticParams` needed - Next.js auto-generates from file structure
+
+## Image Optimization Guidelines
+
+### Using OptimizedImage Component
+- ALWAYS use `OptimizedImage` instead of `next/image` directly
+- All images should be WebP format for optimal performance
+- OG images must be JPEG (better social media compatibility)
+
+### Image Size Requirements
+- **OG Images**: Exactly 1200x630, JPEG format, <500KB
+- **Hero Images**: WebP format, optimized with Sharp
+- **Gallery Images**: WebP format, various sizes
+- Use `npx sharp-cli` for image optimization:
+  ```bash
+  npx sharp-cli -i input.jpg -o output.webp resize 1200 630 --fit cover --quality 85
+  ```
+
+## Common Pitfalls to Avoid
+
+1. **Never use relative URLs in OG tags** - Always use absolute URLs with `https://www.bluetidegroup.com`
+2. **Always include www subdomain** - Site redirects non-www to www
+3. **Don't forget `type` property** - All OG images need `type: 'image/jpeg'` or `type: 'image/webp'`
+4. **Check image file paths** - Deleted files referenced in code will cause build failures
+5. **Environment variables** - All client-side vars must start with `NEXT_PUBLIC_`
