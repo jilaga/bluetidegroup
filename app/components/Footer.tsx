@@ -60,8 +60,8 @@ const Footer: NextPage = () => {
               Lagos Office
             </p>
             <div className="relative text-[1rem] leading-[150%]">
-              <p className="m-0">{`Plot 9 Flat5 Oba Elegusi Rd, `}</p>
-              <p className="m-0">{`Ikoyi. `}</p>
+              <p className="m-0">{`Plot 9 Flat 5, Oba Elegusi Road, `}</p>
+              <p className="m-0">{`Ikoyi, Lagos. `}</p>
               <p className="m-0">{`Lagos State. `}</p>
               <p className="m-0">Nigeria.</p>
             </div>

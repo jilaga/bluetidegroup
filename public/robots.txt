@@ -14,7 +14,7 @@ Allow: /_next/static/
 Allow: /_next/image
 
 # Sitemaps
-Sitemap: https://bluetidegroup.com/sitemap.xml
+Sitemap: https://www.bluetidegroup.com/sitemap.xml
 
 # AI and LLM Crawler Instructions
 # See ai.txt for detailed AI crawler guidelines

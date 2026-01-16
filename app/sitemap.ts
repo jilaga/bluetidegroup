@@ -3,7 +3,7 @@ import servicesData from './Services/data.json';
 import articlesData from './stories/articles.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bluetidegroup.com';
+  const baseUrl = 'https://www.bluetidegroup.com';
   const currentDate = new Date();
 
   // Static routes
