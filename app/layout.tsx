@@ -158,7 +158,7 @@ export const metadata: Metadata = {
     'google-site-verification': process.env.NEXT_PUBLIC_GSC_VERIFICATION_ID || '',
     'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION_ID || '',
     'yandex-verification': process.env.NEXT_PUBLIC_YANDEX_VERIFICATION_ID || '',
-    'fb:app_id': process.env.NEXT_PUBLIC_FB_APP_ID || '',
+    ...(process.env.NEXT_PUBLIC_FB_APP_ID ? { 'fb:app_id': process.env.NEXT_PUBLIC_FB_APP_ID } : {}),
   },
 
   // Other

@@ -17,10 +17,12 @@ function Company() {
         <div className="w-full flex justify-center items-center gap-10 sm:gap-[7.75rem] ">
           <div className="w-full flex flex-col-reverse min-[1140px]:flex-row relative text-gray gap-10">
             <div className="w-full max-w-[600px] flex flex-col gap-10 ">
-              <ScrollFade className="text-[1.125rem] sm:text-[1.5rem] leading-[140%] font-semibold text-gray text-left inline-block">
-                We excel in managing every aspect of our operations with
-                precision and expertise, ensuring top-notch service delivery
-                that meets and exceeds client expectations
+              <ScrollFade>
+                <h2 className="text-[1.125rem] sm:text-[1.5rem] leading-[140%] font-semibold text-gray text-left inline-block">
+                  We excel in managing every aspect of our operations with
+                  precision and expertise, ensuring top-notch service delivery
+                  that meets and exceeds client expectations
+                </h2>
               </ScrollFade>
               <p className="text-[1rem] sm:text-[1.125rem] leading-[140%] text-[#1E1E1E]">
                 Our strength lie in our unparalleled multi-disciplinary

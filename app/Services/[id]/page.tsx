@@ -13,6 +13,7 @@ import ScrollFade from '@/utils/SlideFade';
 import { BreadcrumbSchema } from '@/app/components/schema/BreadcrumbSchema';
 import { ServiceSchema } from '@/app/components/schema/ServiceSchema';
 import Smallie from '@/app/components/Smallie';
+import RelatedServices from '@/app/components/RelatedServices';
 
 import '../../stories/[id]/markdown.css';
 
@@ -207,6 +208,8 @@ const Page = async ({ params }: ServicePageProps) => {
           </div>
         ))}
       </div>
+
+      <RelatedServices currentServiceId={id} />
     </ScrollFade>
     </>
   );

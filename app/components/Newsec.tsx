@@ -23,9 +23,9 @@ export default function Newsec() {
         />
       </div>
       <div className="mt-auto max-w-[394px] mx-auto sm:max-w-[unset] sm:mx-0  md:mx-auto w-full mb-10">
-        <p className="hero-text-animate font-clash font-semibold sm:mx-[40px] text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] tracking-wide text-white">
+        <h1 className="hero-text-animate font-clash font-semibold sm:mx-[40px] text-4xl sm:text-[3rem] sm:max-w-[555px] md:max-w-[615px] md:text-[3.5rem] leading-[1.4] tracking-wide text-white">
           Expertise You Can Trust, Excellence You Can See.
-        </p>
+        </h1>
         <div className="hero-content-animate">
           <p className="text-white font-bold mt-6 sm:max-w-[315px] ml-auto">
             Delivering superior solutions for{' '}
